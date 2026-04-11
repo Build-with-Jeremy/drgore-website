@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqs = [
+  { q: "Any relation to Al Gore?", a: "No." },
+  { q: "Are you sure there is not any family connection at all?", a: 'My father (who was a brand-new American), had our name shortened to Gore, from Gorewicz. "Gorewicz" is a Russian/Polish slang word that means "Easily cures depression," ironically enough.' },
+  { q: "Why did you become a psychologist?", a: 'I help people, it is fun, it is extremely challenging and it is never, ever boring. And, it is a career for a lifetime. A novelist once said, "I am going to be an even better novelist in my fifties than I am in my forties, and I will be an even better writer in my sixties than in my fifties." The same is true with being a psychotherapist.' },
+  { q: "What is your therapeutic approach?", a: "I variously practice Structural-strategic therapy, experiential therapy, cognitive-behavioral therapy, Bowenian therapy, and psychodynamic therapy (for long-term work) depending upon my client's individual needs. I do whatever works." },
+  { q: "How come you are not on a lot of managed care provider panels?", a: "Most often, effective therapy does not accompany rigid timetables — each family, couple, and individual is unique, and deserves treatment appropriate to their needs. They also reimburse quite poorly. Lastly, and perhaps most importantly, confidentiality is (at best) compromised, and (usually) disregarded altogether. Computers tend to have a lot of memory." },
+  { q: "Will I receive therapy directly from you?", a: "Yes. My practice is a solo, fee-for-service practice, and I treat my clients as I would want my own family members treated. And some of them needed a lot of treatment." },
+  { q: "What are your fees?", a: "I currently charge $415.00 for Individual sessions (fifty-minute sessions). Initial Appointments, Couple's and Family Therapy sessions are $500.00 (sixty-minute sessions)." },
+  { q: "Do you take Blue Cross Insurance?", a: "No." },
+  { q: "Do you take Humana Insurance?", a: "No." },
+  { q: "Do you take Aetna Health Insurance?", a: "No." },
+  { q: "Do you take Eastern Central Michigan Teacher's Insurance?", a: "Yes." },
+  { q: "Really?", a: "No, I don't." },
+  { q: "Do you accept insurance?", a: "I am not on any insurance plans. Some insurance plans will pay something for out-of-network services. It is expected for you to pay for your session at the time of services." },
+  { q: "What can I expect from your services?", a: "1. Fast callbacks from 9:00 AM – Midnight.\n2. I have spent 42 years and over 55,000 hours helping people change. I am at the \"top of my game\".\n3. The \"buck\" stops with me. If you need me, I will be readily available. I will do whatever it takes to help you make the emotional and behavioral changes you need to make now." },
+  { q: "How long will it take for us/me to see results?", a: "Pretty quickly, if you so desire. It also depends on the \"depth\" of your problems, and on the level and intensity of your commitment to change." },
+  { q: "What do you specialize in?", a: "I am a general practitioner. I am trained to work with young children, adolescents, and adults of all ages. Here are my \"unique\" specialty niches:\n1. Whole families, two or three generations at a time.\n2. Addicts/alcoholics, both adults or teenagers.\n3. Pregnancy and postpartum mood disorders, and couples/family therapy of women with pregnancy.\n4. Successful men who are not happy, and whose families are not happy, either.\n5. Little kids, ages 3 to 10. I do not do \"play therapy\" with the child. I will see them alone for brief intervals, but I treat young children only with the involvement of the whole family." },
+  { q: 'What do you mean the "whole family?"', a: "At least the Mom, Dad, and children." },
+  { q: "What if they are divorced?", a: "Especially if they are divorced." },
+  { q: "What if one parent refuses to participate?", a: "I would be proud to say that a sixth specialty of mine is getting uninvolved members more involved in the lives of the \"patient.\" No matter the age of this identified \"patient.\"" },
+  { q: "What if my child is the one having problems? Can't I just drop him or her off?", a: "If you want to do that, then I am not the right doctor for you. Anybody who treats children or adolescents mainly through individual therapy is doing the wrong thing." },
+  { q: "Are you sure you are not related to Al Gore?", a: "You are starting to bother me. No." },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
+---
+<Layout
+  title="FAQ — Dr. David Gore, Atlanta Family Therapist"
+  description="Frequently asked questions about Dr. Gore's practice: fees, insurance, therapeutic approach, specialties, and what to expect from therapy."
+  canonical="https://drgore.com/faqs"
+  schema={schema}
+>
+  <section class="py-16 bg-secondary">
+    <div class="container max-w-3xl">
+      <h1 class="font-display text-4xl font-bold text-foreground mb-4">
+        Frequently Asked Questions
+      </h1>
+      <p class="text-muted-foreground text-lg">
+        Common questions about Dr. Gore's practice, fees, insurance, and therapeutic approach.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container max-w-3xl space-y-3">
+      {faqs.map((faq, i) => (
+        <details class="border rounded-lg bg-card overflow-hidden">
+          <summary class="flex items-center justify-between px-6 py-4 font-semibold text-foreground cursor-pointer hover:bg-muted/30 transition-colors select-none gap-4">
+            <span>{faq.q}</span>
+            <svg class="faq-chevron h-4 w-4 text-muted-foreground transition-transform flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </summary>
+          <div class="px-6 pb-5 text-muted-foreground leading-relaxed whitespace-pre-line">
+            {faq.a}
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+</Layout>

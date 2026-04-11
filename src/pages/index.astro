@@ -1,0 +1,172 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    image: '/assets/services/child-psychology.jpg',
+    title: 'Child & Teen Therapy for Anxiety, Behavior, and Emotional Regulation',
+    description: "If your child isn't doing well, we need to act now. Change rarely happens in isolation. I'll meet with your child individually at times, but meaningful progress requires the whole family. Parents shape change more powerfully than any therapist ever could.",
+    tagline: 'When parents shift, children stabilize.',
+  },
+  {
+    image: '/assets/services/family-therapy.jpg',
+    title: 'Family Therapy & Parent Guidance',
+    description: "When conflict becomes the norm, families start walking on eggshells. Conversations turn tense. Distance grows. I help families change the way they relate to one another so the same arguments don't keep repeating. Change happens when someone learns to listen differently — and respond differently.",
+    tagline: 'Stronger communication, stronger families, stronger kids.',
+  },
+  {
+    image: '/assets/services/addiction-recovery.jpg',
+    title: 'Substance Abuse & Addiction Treatment',
+    description: "When alcohol or drug use begins affecting work, relationships, or family life, avoidance only makes it worse. I provide direct, structured treatment focused on accountability, clarity, and long-term stability. Recovery starts when someone decides the current path isn't working.",
+    tagline: 'Clarity replaces chaos when change begins.',
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Dr. David Karol Gore",
+  "description": "Expert family therapy, child psychology, and substance abuse addiction treatment in Atlanta, Georgia.",
+  "url": "https://drgore.com",
+  "telephone": "+1-404-237-4300",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "6065 Lake Forrest Drive, Suite 250",
+    "addressLocality": "Atlanta",
+    "addressRegion": "GA",
+    "postalCode": "30328",
+    "addressCountry": "US"
+  }
+};
+---
+<Layout
+  title="Dr. Gore — Atlanta Family Therapist, Psychologist & Addiction Specialist"
+  description="Atlanta family therapist Dr. David Karol Gore provides therapy for depression and anxiety, counseling for children and teens, and specialized substance abuse and addiction treatment."
+  canonical="https://drgore.com/"
+  schema={schema}
+>
+  <!-- Hero -->
+  <section class="w-full">
+    <div class="relative w-full h-[60vh] md:h-[75vh] overflow-hidden">
+      <img
+        src="/assets/hero-family.jpg"
+        alt="Family together — Dr. Gore Atlanta Family Therapist"
+        style="object-position: 60% 20%; transform: scale(1.15); transform-origin: 60% 20%;"
+        class="absolute inset-0 w-full h-full object-cover hidden md:block"
+      />
+      <img
+        src="/assets/hero-family-mobile.png"
+        alt="Family together — Dr. Gore Atlanta Family Therapist"
+        class="absolute inset-0 w-full h-full object-cover object-top md:hidden"
+      />
+      <div class="absolute inset-0 flex items-end pl-24 md:pl-32 pb-20 md:pb-24">
+        <p class="text-white font-display text-2xl md:text-4xl lg:text-5xl font-bold max-w-md leading-tight drop-shadow-lg">
+          I can get you unstuck.
+          <span class="block text-xl md:text-2xl lg:text-3xl mt-2 font-semibold">—Dr. Gore</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-primary py-12 md:py-16">
+      <div class="container">
+        <div class="max-w-3xl mx-auto text-center animate-fade-in-up">
+          <h1 class="font-display text-3xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-4 md:mb-6 leading-tight">
+            Atlanta Family Therapist for Adults, Teens, and Families
+          </h1>
+          <p class="text-primary-foreground/90 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+            Therapy for depression and anxiety in adults, counseling for children and teens, and specialized substance abuse and addiction treatment for individuals and families in&nbsp;Atlanta.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/contact"
+              class="inline-block bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-4 rounded-md font-semibold transition-colors"
+            >
+              Schedule a Consultation
+            </a>
+            <a
+              href="/about"
+              class="inline-block border border-accent text-accent-foreground bg-accent/10 hover:bg-accent/20 text-lg px-8 py-4 rounded-md font-semibold transition-colors"
+            >
+              Learn More About My Approach
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="py-20 bg-secondary">
+    <div class="container">
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-center text-foreground mb-4">
+        How I Can Help
+      </h2>
+      <p class="text-muted-foreground text-center max-w-2xl mx-auto mb-12">
+        Structured therapy for depression, anxiety, family conflict, and substance abuse recovery.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {services.map((service) => (
+          <div class="border-none shadow-lg hover:shadow-xl transition-shadow bg-card overflow-hidden rounded-lg">
+            <img
+              src={service.image}
+              alt={service.title}
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-8 text-center">
+              <h3 class="font-display text-xl font-semibold text-foreground mb-4">
+                {service.title}
+              </h3>
+              <p class="text-muted-foreground leading-relaxed text-sm text-justify">
+                {service.description}
+              </p>
+              {service.tagline && (
+                <p class="font-display font-bold text-base text-foreground mt-3 italic">
+                  {service.tagline}
+                </p>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Video -->
+  <section class="py-16 bg-background">
+    <div class="container max-w-4xl text-center">
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
+        This Is Who We Are. This Is Who We Want to Be.
+      </h2>
+      <p class="text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-4">
+        The gap between where you are and where you want to be is where therapy begins. Watch this short video to hear how we think about that journey.
+      </p>
+      <div class="relative w-full rounded-xl shadow-lg overflow-hidden" style="padding: 56.25% 0 0 0; position: relative;">
+        <iframe
+          src="https://player.vimeo.com/video/1171891484?loop=1"
+          class="absolute top-0 left-0 w-full h-full"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+          title="Dr. Gore - Family Therapy"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO section -->
+  <section class="py-16 bg-background">
+    <div class="container text-center max-w-2xl mx-auto">
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
+        Atlanta Family Therapist You Can Trust
+      </h2>
+      <p class="text-muted-foreground leading-relaxed">
+        Dr. Gore provides expert family therapy, child psychology, and Atlanta substance abuse
+        addiction treatment services. Whether you're seeking help for your child, your parents,
+        your family, or yourself, the first step is reaching out.
+      </p>
+      <a href="tel:+14042374300" class="mt-6 inline-block text-lg font-semibold text-foreground hover:text-primary transition-colors">
+        (404) 237-4300
+      </a>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,107 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { articles, type ArticleSection } from '../../data/articles';
+
+export async function getStaticPaths() {
+  return articles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+---
+<Layout
+  title={`${article.title} — Dr. Gore`}
+  description={article.summary}
+  canonical={`https://drgore.com/articles/${article.slug}`}
+>
+  <section class="py-16 bg-secondary">
+    <div class="container max-w-3xl">
+      <a
+        href="/articles"
+        class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-6 transition-colors"
+      >
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="m15 18-6-6 6-6"/>
+        </svg>
+        Back to Articles
+      </a>
+      <h1 class="font-display text-4xl font-bold text-foreground mb-2">
+        {article.title}
+      </h1>
+      {article.date && (
+        <p class="text-sm text-muted-foreground">{article.date}</p>
+      )}
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container max-w-3xl space-y-6">
+      {article.content.map((section: ArticleSection) => {
+        if (section.type === 'heading') {
+          return <h2 class="font-display text-2xl font-bold text-foreground mt-8">{section.text}</h2>;
+        }
+        if (section.type === 'subheading') {
+          return <h3 class="font-display text-xl font-semibold text-foreground mt-6">{section.text}</h3>;
+        }
+        if (section.type === 'paragraph') {
+          return <p class="text-muted-foreground leading-relaxed">{section.text}</p>;
+        }
+        if (section.type === 'list') {
+          return (
+            <ul class="list-disc pl-6 space-y-2 text-muted-foreground leading-relaxed">
+              {section.items?.map((item: string) => <li>{item}</li>)}
+            </ul>
+          );
+        }
+        if (section.type === 'numbered-list') {
+          return (
+            <ol class="list-decimal pl-6 space-y-2 text-muted-foreground leading-relaxed">
+              {section.items?.map((item: string) => (
+                <li class="whitespace-pre-line">{item}</li>
+              ))}
+            </ol>
+          );
+        }
+        if (section.type === 'quote') {
+          return (
+            <blockquote class="border-l-4 border-primary pl-6 italic text-muted-foreground leading-relaxed">
+              {section.text}
+            </blockquote>
+          );
+        }
+        if (section.type === 'note') {
+          return (
+            <div class="bg-secondary rounded-lg p-6 text-sm text-foreground font-medium leading-relaxed">
+              <strong>Note:</strong> {section.text}
+            </div>
+          );
+        }
+        if (section.type === 'comparison') {
+          return (
+            <div class="grid md:grid-cols-2 gap-0 border rounded-lg overflow-hidden">
+              <div class="bg-primary p-6">
+                <h3 class="font-display text-xl font-bold text-primary-foreground mb-4">
+                  {article.slug === 'enabling-versus-caring' ? 'ENABLING' : 'INTIMATE'}
+                </h3>
+                <ul class="space-y-3 text-primary-foreground/90 text-sm">
+                  {section.columns?.left.map((item: string) => <li>{item}</li>)}
+                </ul>
+              </div>
+              <div class="bg-muted p-6">
+                <h3 class="font-display text-xl font-bold text-foreground mb-4">
+                  {article.slug === 'enabling-versus-caring' ? 'CARING' : 'DYSFUNCTIONAL'}
+                </h3>
+                <ul class="space-y-3 text-muted-foreground text-sm">
+                  {section.columns?.right.map((item: string) => <li>{item}</li>)}
+                </ul>
+              </div>
+            </div>
+          );
+        }
+        return null;
+      })}
+    </div>
+  </section>
+</Layout>

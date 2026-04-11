@@ -1,0 +1,104 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const milestones = [
+  { year: 'November 1959', event: 'Born. Weighed 9 pounds, 11 ounces. I was almost adorable.' },
+  { year: 'Fall 1976', event: 'Captain of H.S. Football Team. Record: 1 win, 7 losses. They were not as good as the record indicates.' },
+  { year: 'Spring 1982', event: 'B.A. Degree, University of Pennsylvania, Psychology major.' },
+  { year: 'Spring 1985', event: 'M.S. Degree, Georgia State University, Clinical Psychology.' },
+  { year: 'July 1986 to June 1987', event: 'Internship at IJR in Chicago, under the supervision of Richard Schwartz, Ph.D.' },
+  { year: 'March 1988', event: 'Ph.D. Degree, Georgia State University, Clinical Psychology.' },
+  { year: 'June 1988', event: 'Nominated for the Nobel Peace Prize for his work with the Kregelman family.' },
+  { year: 'Summer 1989', event: 'Licensed Psychologist, State of Georgia (#1366).' },
+  { year: 'September 1992', event: 'Opens David Karol Gore, Ph.D., P.C., a solo psychology practice.' },
+  { year: 'December 1999', event: 'Launches drgore.com. Quickly becomes the third most visited website (just behind amazon.com and ebay.com).' },
+  { year: 'September 2005', event: "Abruptly fired as wife's lactation coach." },
+  { year: 'February 2011', event: 'Teenage daughter threatens to call DFCS because he refuses to buy a Wii, Nintendo or XBox.' },
+  { year: 'July 2013', event: 'Loses all ability to engage in small talk. This occurred during the third hour of a swim meet.' },
+  { year: 'May 2016', event: 'Invents fidget spinners. Singlehandedly ends the ADHD epidemic.' },
+  { year: 'September 2016', event: 'Realizes he forgot to patent "Fidget Spinners." Knock-offs appear. Life savings disappear.' },
+  { year: 'August 2018', event: "Gets kicked out of Brene Brown's Daring Way program because he refused to use the \"é\" and used the \"e\" in her first name." },
+  { year: 'March 2020', event: 'Moves into current eleven office suite, which led to the beginning of covid.' },
+  { year: 'March 2026', event: 'Malcolm Gladwell estimates that he has practiced over 55,142 hours of therapy.' },
+];
+---
+<Layout
+  title="Biography — Dr. David Karol Gore, Atlanta Psychologist"
+  description="Meet Dr. David Karol Gore — Atlanta psychologist and family therapist since 1983. Board-certified, University of Pennsylvania B.A., Georgia State University Ph.D."
+  canonical="https://drgore.com/biography"
+>
+  <!-- Hero -->
+  <section class="bg-secondary py-16">
+    <div class="container max-w-5xl">
+      <div class="grid md:grid-cols-5 gap-10 items-start">
+        <div class="md:col-span-2">
+          <img
+            src="/assets/dr-gore.png"
+            alt="Dr. David Karol Gore — Atlanta Psychologist and Family Therapist"
+            class="rounded-xl shadow-lg w-full max-w-sm mx-auto"
+          />
+        </div>
+        <div class="md:col-span-3">
+          <h1 class="font-display text-4xl font-bold text-foreground mb-2">
+            Meet Dr. Gore
+          </h1>
+          <p class="text-accent font-semibold mb-6">
+            Atlanta Psychologist, Family Therapist &amp; Alcohol/Substance Use Counselor
+          </p>
+          <p class="text-muted-foreground leading-relaxed mb-4">
+            Dr. David Gore is a specialist in Psychotherapy, Family Therapy,
+            and Addiction Recovery in Atlanta, Roswell, and Sandy Springs, Georgia.
+          </p>
+          <p class="text-xs text-muted-foreground/70 italic">
+            NOTE: There is currently a two to four week waiting period for new clients.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bio content -->
+  <section class="py-16">
+    <div class="container max-w-3xl space-y-6 text-muted-foreground leading-relaxed">
+      <p>
+        Dr. David Karol Gore has been practicing psychotherapy since 1983. His interest in helping
+        people began as an undergraduate at the University of Pennsylvania. He began working at the
+        Philadelphia Child Guidance Clinic in 1978, which is acknowledged as one of the birthplaces
+        of directive, solution-focused treatment. There, he learned of the family systems (family
+        therapy) approach to treatment, and this has been his focus ever since.
+      </p>
+      <p>
+        Dr. Gore chose to obtain his Master's and Doctoral Degree at Georgia State University,
+        graduating in 1988. His advanced degrees are in clinical psychology, specializing in family
+        therapy. Dr. Gore has been in private practice in Atlanta since 1989 and has been running
+        his own practice since 1992. Although families are his focus, Dr. Gore's expertise extends
+        to individual therapy for all age groups, as well as family therapy.
+      </p>
+      <p>
+        Dr. Gore grew up in New York, and still talks funny. After living in Midtown for fifteen
+        years, he became a suburbanite in 1997. When time allows, Dr. Gore
+        enjoys reading, doing electrical repairs with the circuit breaker on, basketball and other
+        sports. When not at work, Dr. Gore is usually found keeping his animals happy, missing his grown-ass children or trying to fix stuff that breaks around his house.
+      </p>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="py-16 bg-secondary">
+    <div class="container max-w-3xl">
+      <h2 class="font-display text-2xl font-bold text-foreground mb-8 text-center">
+        The Abbreviated Resume
+      </h2>
+      <div class="space-y-4">
+        {milestones.map((m) => (
+          <div class="flex gap-4 items-start">
+            <span class="text-sm font-semibold text-primary whitespace-nowrap min-w-[160px] text-right">
+              {m.year}
+            </span>
+            <span class="text-sm text-muted-foreground">{m.event}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

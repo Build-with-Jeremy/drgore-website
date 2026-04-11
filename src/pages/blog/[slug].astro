@@ -1,0 +1,67 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { blogPosts } from '../../data/blogPosts';
+
+export async function getStaticPaths() {
+  return blogPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+---
+<Layout
+  title={`${post.title} — Dr. Gore`}
+  description={post.summary}
+  canonical={`https://drgore.com/blog/${post.slug}`}
+>
+  <section class="py-16 bg-secondary">
+    <div class="container max-w-3xl">
+      <a
+        href="/blog"
+        class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-6 transition-colors"
+      >
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="m15 18-6-6 6-6"/>
+        </svg>
+        Back to Blog
+      </a>
+      <h1 class="font-display text-3xl md:text-4xl font-bold text-foreground mb-2">
+        {post.title}
+      </h1>
+      <p class="text-sm text-muted-foreground">{post.date}</p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container max-w-3xl">
+      <div class="rounded-xl overflow-hidden mb-10">
+        <img
+          src={post.thumbnail}
+          alt={post.title}
+          class="w-full aspect-[2/1] object-cover"
+        />
+      </div>
+      <div class="space-y-5">
+        {post.content.map((paragraph: string) => (
+          <p class="text-muted-foreground leading-relaxed whitespace-pre-line">
+            {paragraph}
+          </p>
+        ))}
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-border">
+        <p class="text-foreground font-medium mb-2">
+          Ready to break the cycle?
+        </p>
+        <a
+          href="/contact"
+          class="inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 rounded-md font-medium hover:bg-primary/90 transition-colors"
+        >
+          Schedule a Consultation
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

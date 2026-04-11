@@ -1,0 +1,127 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  keywords?: string;
+  schema?: object;
+  noIndex?: boolean;
+}
+
+const {
+  title,
+  description = 'Expert family therapy, child psychology, and substance abuse addiction treatment in Atlanta, Georgia. Dr. David Karol Gore — Atlanta psychologist serving individuals, teens, and families.',
+  canonical = Astro.url.href,
+  ogImage = 'https://drgore.com/assets/og-image.jpg',
+  keywords = 'Atlanta family therapist, Atlanta psychologist, child psychology, addiction treatment, family therapy, Atlanta therapy, Dr. Gore',
+  schema,
+  noIndex = false,
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Dr. David Karol Gore — Atlanta Family Therapist",
+  "description": "Expert family therapy, child psychology, and substance abuse addiction treatment in Atlanta, Georgia.",
+  "url": "https://drgore.com",
+  "telephone": "+1-404-237-4300",
+  "email": "dave@drgore.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "6065 Lake Forrest Drive, Suite 250",
+    "addressLocality": "Atlanta",
+    "addressRegion": "GA",
+    "postalCode": "30328",
+    "addressCountry": "US"
+  },
+  "priceRange": "$$",
+  "openingHours": "Mo-Fr 09:00-17:00",
+  "areaServed": {
+    "@type": "City",
+    "name": "Atlanta"
+  },
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Family Therapy",
+        "description": "Family therapy and parent guidance for stronger communication and relationships."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Child & Teen Therapy",
+        "description": "Therapy for children and teens dealing with anxiety, behavior issues, and emotional regulation."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Substance Abuse & Addiction Treatment",
+        "description": "Structured treatment for alcohol and drug addiction focused on accountability and long-term recovery."
+      }
+    }
+  ]
+};
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    {noIndex && <meta name="robots" content="noindex, nofollow" />}
+
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Dr. Gore" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Business Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
+
+    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+  </head>
+  <body class="flex min-h-screen flex-col">
+    <Header currentPath={currentPath} client:load />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

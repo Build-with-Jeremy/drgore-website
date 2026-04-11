@@ -1,0 +1,53 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { articles } from '../../data/articles';
+---
+<Layout
+  title="Articles — Dr. Gore, Atlanta Family Therapist"
+  description="Insights and resources from Dr. Gore on therapy, relationships, addiction, family life, and mental health."
+  canonical="https://drgore.com/articles"
+>
+  <section class="py-16 bg-secondary">
+    <div class="container max-w-5xl">
+      <h1 class="font-display text-4xl font-bold text-foreground mb-4">
+        Articles
+      </h1>
+      <p class="text-muted-foreground text-lg">
+        Insights and resources from Dr. Gore on therapy, relationships, addiction, and family life.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container max-w-5xl">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {articles.map((article) => (
+          <a
+            href={`/articles/${article.slug}`}
+            class="group block overflow-hidden rounded-lg border bg-card hover:shadow-lg transition-all hover:border-primary/30"
+          >
+            <div class="aspect-square overflow-hidden">
+              <img
+                src={article.thumbnail}
+                alt={article.title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-4">
+              <h2 class="font-display text-lg font-semibold text-foreground mb-1 group-hover:text-primary transition-colors line-clamp-2">
+                {article.title}
+              </h2>
+              {article.date && (
+                <p class="text-xs text-muted-foreground/70 mb-2">{article.date}</p>
+              )}
+              <p class="text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                {article.summary}
+              </p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

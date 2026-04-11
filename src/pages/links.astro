@@ -1,0 +1,96 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const resources = [
+  {
+    title: "Alcoholics Anonymous",
+    description: "A support group for those with a drinking problem. AA helps recovering alcoholics find the support they need through their famous 12-Step Program. AA Georgia's website provides information on finding a support group in the Atlanta metro area and throughout the State of Georgia.",
+    url: "https://www.aageorgia.org",
+  },
+  {
+    title: "Atlanta Alcoholics Anonymous",
+    description: "Provides information on meeting schedules and information on events in the Georgia Region for those who desire to stop drinking.",
+    url: "https://www.atlantaaa.org",
+  },
+  {
+    title: "Georgia Regional Service Committee of Narcotics Anonymous",
+    description: "Narcotics Anonymous is a community-based association of recovering drug addicts. The GRSCNA website provides information on meeting schedules and events in the Georgia Region.",
+    url: "https://www.grscna.org",
+  },
+  {
+    title: "National Association of Anorexia Nervosa and Associated Disorders",
+    description: "Dedicated to the prevention and alleviation of eating disorders. ANAD promotes eating disorder awareness, prevention and recovery, and provides information about eating disorders and ways to get help.",
+    url: "https://www.anad.org",
+  },
+  {
+    title: "Georgia Nar-Anon",
+    description: "Helps relatives and friends of drug abusers find support through other families and friends of drug addicts. Learn about drug abuse, share experiences, and learn effective ways to cope.",
+    url: "https://www.nar-anon.org",
+  },
+  {
+    title: "Al-Anon",
+    description: "Provides strength and hope for friends and families of problem drinkers. Alateen meetings provide help for younger family members of alcoholics. Find information about the program and local meetings.",
+    url: "https://al-anon.org",
+  },
+  {
+    title: "S-Anon",
+    description: "Helps those who have been affected by someone else's sexual behavior. S-Anon meetings are based on the Twelve Step Program. They also provide help for teenagers through the S-Ateen program.",
+    url: "https://www.sanon.org",
+  },
+  {
+    title: "Georgia Psychological Association",
+    description: "Involved in improving the development of psychology and promoting human welfare. The GPA Legal and Legislative Committee helps monitor legislation of social concerns that improve mental health.",
+    url: "https://www.gapsychology.org",
+  },
+  {
+    title: "American Association for Marriage and Family Therapy",
+    description: "A professional association for the field of marriage and family therapy. Provides information about Marriage and Family Therapists.",
+    url: "https://www.aamft.org",
+  },
+  {
+    title: "Calm Clinic",
+    description: "Provides information about managing anxiety and panic. Articles about anxiety disorders and ways to reduce and eliminate anxiety.",
+    url: "https://www.calmclinic.com",
+  },
+];
+---
+<Layout
+  title="Links — Resources for Marriage, Addiction, and Family — Dr. Gore"
+  description="Curated mental health and addiction recovery resources recommended by Dr. Gore: AA, Nar-Anon, Al-Anon, and more."
+  canonical="https://drgore.com/links"
+>
+  <section class="py-16 bg-secondary">
+    <div class="container max-w-3xl">
+      <h1 class="font-display text-4xl font-bold text-foreground mb-4">
+        Links Relating to Marriage, Addiction, Disorders, Children &amp; Families
+      </h1>
+      <p class="text-muted-foreground text-lg">
+        Curated resources recommended by Dr. Gore for clients and families.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container max-w-3xl">
+      <div class="grid gap-4">
+        {resources.map((r) => (
+          <a href={r.url} target="_blank" rel="noopener noreferrer">
+            <div class="border rounded-lg bg-card p-6 hover:shadow-md transition-shadow hover:border-primary/30">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h2 class="font-semibold text-foreground mb-2">{r.title}</h2>
+                  <p class="text-sm text-muted-foreground leading-relaxed">{r.description}</p>
+                </div>
+                <svg class="h-4 w-4 text-muted-foreground shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15 3 21 3 21 9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

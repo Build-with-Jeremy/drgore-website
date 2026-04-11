@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  title="Page Not Found — Dr. Gore"
+  description="The page you're looking for doesn't exist."
+  noIndex={true}
+>
+  <section class="py-32 text-center">
+    <div class="container max-w-xl">
+      <h1 class="font-display text-6xl font-bold text-foreground mb-4">404</h1>
+      <p class="text-xl text-muted-foreground mb-8">
+        This page doesn't exist. Even I can't fix that.
+      </p>
+      <a
+        href="/"
+        class="inline-block bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-md font-semibold transition-colors"
+      >
+        Back to Home
+      </a>
+    </div>
+  </section>
+</Layout>

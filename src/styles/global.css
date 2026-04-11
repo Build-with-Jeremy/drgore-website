@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Logo-derived palette: steel blue ring, sage green tree, lavender branches, soft sky bg */
+    --background: 160 20% 97%;
+    --foreground: 210 35% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 35% 20%;
+
+    --primary: 210 40% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 150 18% 92%;
+    --secondary-foreground: 210 35% 20%;
+
+    --muted: 155 14% 93%;
+    --muted-foreground: 210 12% 45%;
+
+    --accent: 210 38% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 15% 87%;
+    --input: 200 15% 87%;
+    --ring: 210 40% 35%;
+
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Source Sans 3", sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Playfair Display", serif;
+  }
+}
+
+/* Accordion (native details/summary) */
+details > summary {
+  list-style: none;
+  cursor: pointer;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details[open] .faq-chevron {
+  transform: rotate(180deg);
+}
