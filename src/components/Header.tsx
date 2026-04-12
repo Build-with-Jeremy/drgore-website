@@ -6,6 +6,7 @@ const navLinks = [
   { label: 'Biography', path: '/biography' },
   { label: 'About My Practice', path: '/about' },
   { label: 'FAQ', path: '/faqs' },
+  { label: 'Articles', path: '/articles' },
   { label: 'Links', path: '/links' },
   { label: 'Blog', path: '/blog' },
   { label: 'Store', path: '/store' },
