@@ -26,12 +26,13 @@ import { articles } from '../../data/articles';
             href={`/articles/${article.slug}`}
             class="group block overflow-hidden rounded-lg border bg-card hover:shadow-lg transition-all hover:border-primary/30"
           >
-            <div class="aspect-square overflow-hidden">
+            <div class="aspect-square overflow-hidden bg-gradient-to-br from-secondary to-muted">
               <img
                 src={article.thumbnail}
                 alt={article.title}
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 loading="lazy"
+                onerror="this.style.display='none'"
               />
             </div>
             <div class="p-4">
