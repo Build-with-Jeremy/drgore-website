@@ -1,0 +1,199 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { videos, getRelatedVideos } from '../../data/videos';
+import { blogPosts } from '../../data/blogPosts';
+
+export async function getStaticPaths() {
+  return videos
+    .filter((video) => video.transcript && video.transcript.length > 0)
+    .map((video) => ({
+      params: { slug: video.slug },
+      props: { video },
+    }));
+}
+
+const { video } = Astro.props;
+const related = getRelatedVideos(video, 4);
+const relatedBlog = video.relatedBlogSlug
+  ? blogPosts.find((p) => p.slug === video.relatedBlogSlug)
+  : undefined;
+const isVertical = video.orientation !== 'horizontal';
+
+const videoSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'VideoObject',
+  name: video.title,
+  description: video.summary,
+  thumbnailUrl: `https://i.ytimg.com/vi/${video.youtubeId}/maxresdefault.jpg`,
+  uploadDate: video.date,
+  contentUrl: `https://www.youtube.com/watch?v=${video.youtubeId}`,
+  embedUrl: `https://www.youtube.com/embed/${video.youtubeId}`,
+  ...(video.transcript ? { transcript: video.transcript.map((b) => b.text).join('\n\n') } : {}),
+};
+---
+<Layout
+  title={`${video.title} — Dr. Gore Videos`}
+  description={video.summary}
+  canonical={`https://drgore.com/videos/${video.slug}`}
+  ogImage={`https://i.ytimg.com/vi/${video.youtubeId}/maxresdefault.jpg`}
+  schema={videoSchema}
+>
+  <section class="py-12 md:py-16 bg-secondary">
+    <div class="container max-w-3xl">
+      <a
+        href="/videos"
+        class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-6 transition-colors"
+      >
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="m15 18-6-6 6-6"/>
+        </svg>
+        Back to Videos
+      </a>
+      <h1 class="font-display text-3xl md:text-4xl font-bold text-foreground mb-2">
+        {video.title}
+      </h1>
+      <p class="text-sm text-muted-foreground">{video.date}</p>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16">
+    <div class="container max-w-3xl">
+      <div
+        class={`relative mx-auto rounded-xl overflow-hidden shadow-lg bg-black ${
+          isVertical ? 'max-w-[420px]' : 'w-full'
+        }`}
+        style={`aspect-ratio: ${isVertical ? '9 / 16' : '16 / 9'};`}
+      >
+        <iframe
+          src={`https://www.youtube.com/embed/${video.youtubeId}?rel=0`}
+          title={video.title}
+          class="absolute inset-0 w-full h-full"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <p class="mt-8 text-lg text-foreground leading-relaxed">
+        {video.summary}
+      </p>
+
+      <p class="mt-4 text-sm">
+        <a
+          href={`https://www.youtube.com/watch?v=${video.youtubeId}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-primary hover:underline"
+        >
+          Watch on YouTube →
+        </a>
+      </p>
+
+      {video.tags.length > 0 && (
+        <div class="mt-6 flex flex-wrap gap-2">
+          {video.tags.map((tag) => (
+            <a
+              href={`/videos?tag=${encodeURIComponent(tag)}`}
+              class="px-3 py-1 text-xs font-medium uppercase tracking-wide rounded-full bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+            >
+              {tag}
+            </a>
+          ))}
+        </div>
+      )}
+
+      {video.transcript && video.transcript.length > 0 && (
+        <div class="mt-12 pt-8 border-t border-border">
+          <h2 class="font-display text-2xl font-bold text-foreground mb-6">Transcript</h2>
+          <div class="space-y-5">
+            {video.transcript.map((block) => {
+              if (block.type === 'heading') {
+                return (
+                  <h3 class="font-display text-xl font-semibold text-foreground mt-6">
+                    {block.text}
+                  </h3>
+                );
+              }
+              if (block.type === 'quote') {
+                return (
+                  <blockquote class="border-l-4 border-primary pl-4 italic text-foreground text-lg">
+                    {block.text}
+                  </blockquote>
+                );
+              }
+              return (
+                <p class="text-muted-foreground leading-relaxed whitespace-pre-line">
+                  {block.text}
+                </p>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {relatedBlog && (
+        <div class="mt-12 pt-8 border-t border-border">
+          <p class="text-sm uppercase tracking-wide text-muted-foreground mb-3">Related reading</p>
+          <a
+            href={`/blog/${relatedBlog.slug}`}
+            class="group block rounded-xl border border-border p-5 hover:border-primary/40 hover:shadow-md transition-all"
+          >
+            <h3 class="font-display text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+              {relatedBlog.title}
+            </h3>
+            <p class="text-sm text-muted-foreground mt-1 line-clamp-2">
+              {relatedBlog.summary}
+            </p>
+          </a>
+        </div>
+      )}
+
+      <div class="mt-12 pt-8 border-t border-border">
+        <p class="text-foreground font-medium mb-2">
+          Had a reaction to this? Let's talk.
+        </p>
+        <a
+          href="/contact"
+          class="inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 rounded-md font-medium hover:bg-primary/90 transition-colors"
+        >
+          Schedule a Consultation
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {related.length > 0 && (
+    <section class="py-16 bg-secondary">
+      <div class="container max-w-6xl">
+        <h2 class="font-display text-2xl md:text-3xl font-bold text-foreground mb-8">
+          More from Dr. Gore
+        </h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
+          {related.map((r) => {
+            const href = r.transcript ? `/videos/${r.slug}` : `/videos`;
+            const isV = r.orientation !== 'horizontal';
+            return (
+              <a
+                href={href}
+                class="group relative block overflow-hidden rounded-xl bg-muted"
+                style={`aspect-ratio: ${isV ? '9 / 16' : '16 / 9'};`}
+              >
+                <img
+                  src={`https://i.ytimg.com/vi/${r.youtubeId}/maxresdefault.jpg`}
+                  alt={r.title}
+                  loading="lazy"
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute inset-x-0 bottom-0 p-3 text-white">
+                  <h3 class="font-display font-semibold text-sm leading-tight line-clamp-2 drop-shadow-md">
+                    {r.title}
+                  </h3>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  )}
+</Layout>

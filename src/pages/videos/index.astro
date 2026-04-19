@@ -1,0 +1,46 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import VideoReelsGrid from '../../components/VideoReelsGrid';
+import { videos, getAllUsedTags } from '../../data/videos';
+
+const allTags = getAllUsedTags();
+---
+<Layout
+  title="Videos — Dr. Gore, Atlanta Family Therapist"
+  description="Short-form videos from Dr. David Karol Gore on anxiety, parenting, relationships, and getting unstuck — searchable, filterable, and pulled straight from his YouTube channel."
+  canonical="https://drgore.com/videos"
+>
+  <section class="py-16 bg-secondary">
+    <div class="container max-w-5xl">
+      <h1 class="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
+        Videos
+      </h1>
+      <p class="text-muted-foreground text-lg max-w-2xl">
+        Short takes on anxiety, parenting, marriage, and the patterns we carry. Filter by topic, search by transcript, or just scroll.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16">
+    <div class="container max-w-6xl">
+      <VideoReelsGrid videos={videos} allTags={allTags} client:load />
+    </div>
+  </section>
+
+  <section class="py-16 bg-secondary">
+    <div class="container max-w-3xl text-center">
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
+        Want to talk, not just watch?
+      </h2>
+      <p class="text-muted-foreground mb-8">
+        I return every call. Nine in the morning to midnight, 42 years running.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-4 rounded-md font-semibold transition-colors"
+      >
+        Schedule a Consultation
+      </a>
+    </div>
+  </section>
+</Layout>

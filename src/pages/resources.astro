@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { blogPosts } from '../data/blogPosts';
+
+const recentPosts = blogPosts.slice(0, 3);
+
+const sections = [
+  {
+    label: 'FAQs',
+    path: '/faqs',
+    description: "Honest answers to the questions people ask before they ever pick up the phone. No jargon, no runaround.",
+    cta: 'Browse FAQs',
+  },
+  {
+    label: 'Articles',
+    path: '/articles',
+    description: "Long-form writing on therapy, relationships, addiction, and the hard work of change.",
+    cta: 'Read articles',
+  },
+  {
+    label: 'Links',
+    path: '/links',
+    description: "A curated set of organizations and resources I trust and recommend to patients and families.",
+    cta: 'See links',
+  },
+  {
+    label: 'Videos',
+    path: '/videos',
+    description: "Watch Dr. Gore discuss therapy, mental health, and what it actually means to get better.",
+    cta: 'Watch videos',
+  },
+];
+---
+
+<Layout
+  title="Resources — Dr. Gore, Atlanta Family Therapist"
+  description="FAQs, articles, curated links, blog posts, and videos from Dr. David Gore — Atlanta family therapist and psychologist."
+  canonical="https://drgore.com/resources"
+>
+  <section class="py-16 bg-secondary">
+    <div class="container max-w-4xl">
+      <h1 class="font-display text-4xl font-bold text-foreground mb-4">Resources</h1>
+      <p class="text-muted-foreground text-lg">
+        Forty-two years of practice means a lot to share. Here's where to find it.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container max-w-4xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        {sections.map((section) => (
+          <a
+            href={section.path}
+            class="group block rounded-xl border bg-card p-8 hover:shadow-lg hover:border-primary/30 transition-all"
+          >
+            <h2 class="font-display text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+              {section.label}
+            </h2>
+            <p class="text-muted-foreground leading-relaxed mb-4">
+              {section.description}
+            </p>
+            <span class="text-primary font-medium text-sm group-hover:underline">
+              {section.cta} →
+            </span>
+          </a>
+        ))}
+      </div>
+
+      {/* Blog section with recent posts */}
+      <div class="rounded-xl border bg-card overflow-hidden">
+        <div class="p-8 pb-4">
+          <div class="flex items-baseline justify-between mb-2">
+            <h2 class="font-display text-2xl font-bold text-foreground">Blog</h2>
+            <a href="/blog" class="text-primary font-medium text-sm hover:underline">View all →</a>
+          </div>
+          <p class="text-muted-foreground leading-relaxed">
+            Personal writing from someone who has spent 42 years listening. Some pieces are funny. Some are not.
+          </p>
+        </div>
+        <div class="divide-y divide-border">
+          {recentPosts.map((post) => (
+            <a
+              href={`/blog/${post.slug}`}
+              class="group flex items-center gap-4 px-8 py-4 hover:bg-muted transition-colors"
+            >
+              <div class="flex-1 min-w-0">
+                <p class="text-xs text-muted-foreground/60 font-medium uppercase tracking-wider mb-1">
+                  {post.date}
+                </p>
+                <h3 class="font-medium text-foreground group-hover:text-primary transition-colors truncate">
+                  {post.title}
+                </h3>
+              </div>
+              <span class="text-primary text-sm shrink-0 group-hover:underline">Read →</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
