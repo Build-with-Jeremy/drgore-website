@@ -60,7 +60,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const resend = getResend();
     const emailResponse = await resend.emails.send({
-      from: 'Dr. David Gore <noreply@drgore.com>',
+      from: 'drgore.com <noreply@buildwithjeremy.com>',
       to: ['dave@drgore.com'],
       cc: ['jeremy@buildwithjeremy.com'],
       replyTo: email,
