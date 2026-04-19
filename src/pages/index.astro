@@ -4,21 +4,21 @@ import Layout from '../layouts/Layout.astro';
 const services = [
   {
     image: '/assets/services/child-psychology.jpg',
-    title: 'Child & Teen Therapy for Anxiety, Behavior, and Emotional Regulation',
-    description: "If your child isn't doing well, we need to act now. Change rarely happens in isolation. I'll meet with your child individually at times, but meaningful progress requires the whole family. Parents shape change more powerfully than any therapist ever could.",
+    title: 'Kids & Teens',
+    description: "Kids don't get better in isolation. I'll see your child individually when it makes sense — but the real work happens when the whole family is in the room. Parents have more power to change a child's behavior than any therapist ever could. I'm going to ask you to use it.",
     tagline: 'When parents shift, children stabilize.',
   },
   {
     image: '/assets/services/family-therapy.jpg',
-    title: 'Family Therapy & Parent Guidance',
-    description: "When conflict becomes the norm, families start walking on eggshells. Conversations turn tense. Distance grows. I help families change the way they relate to one another so the same arguments don't keep repeating. Change happens when someone learns to listen differently — and respond differently.",
-    tagline: 'Stronger communication, stronger families, stronger kids.',
+    title: 'Couples & Families',
+    description: "If you're having the same fight on repeat and nothing ever resolves, that's not a communication problem. That's a refusal to change. I help couples and families shift the way they relate to each other — which means somebody in the room has to go first.",
+    tagline: 'Different input. Different output.',
   },
   {
     image: '/assets/services/addiction-recovery.jpg',
-    title: 'Substance Abuse & Addiction Treatment',
-    description: "When alcohol or drug use begins affecting work, relationships, or family life, avoidance only makes it worse. I provide direct, structured treatment focused on accountability, clarity, and long-term stability. Recovery starts when someone decides the current path isn't working.",
-    tagline: 'Clarity replaces chaos when change begins.',
+    title: 'Substance Abuse & Addiction',
+    description: "Detox centers aren't the cure — they're the first step. Real recovery requires family involvement, accountability, and someone willing to push hard. I push hard. I believe in the 12-step approach and I'm not shy about saying so.",
+    tagline: 'Recovery starts when someone decides the current path isn\'t working.',
   },
 ];
 
@@ -41,7 +41,7 @@ const schema = {
 ---
 <Layout
   title="Dr. Gore — Atlanta Family Therapist, Psychologist & Addiction Specialist"
-  description="Atlanta family therapist Dr. David Karol Gore provides therapy for depression and anxiety, counseling for children and teens, and specialized substance abuse and addiction treatment."
+  description="Atlanta family therapist Dr. David Karol Gore has spent 42 years and 55,000+ hours helping people get unstuck. Therapy for depression, anxiety, kids, teens, couples, and addiction in Atlanta."
   canonical="https://drgore.com/"
   schema={schema}
 >
@@ -66,30 +66,56 @@ const schema = {
         </p>
       </div>
     </div>
+  </section>
 
-    <div class="bg-primary py-12 md:py-16">
-      <div class="container">
-        <div class="max-w-3xl mx-auto text-center animate-fade-in-up">
-          <h1 class="font-display text-3xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-4 md:mb-6 leading-tight">
-            Atlanta Family Therapist for Adults, Teens, and Families
+  <!-- Intro: Photo + Copy -->
+  <section class="py-16 md:py-20 bg-background">
+    <div class="container max-w-6xl">
+      <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <div class="order-2 md:order-1">
+          <h1 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
+            Atlanta Family Therapist, Psychologist &amp; Addiction Specialist
           </h1>
-          <p class="text-primary-foreground/90 text-lg md:text-xl mb-8 font-body max-w-2xl mx-auto">
-            Therapy for depression and anxiety in adults, counseling for children and teens, and specialized substance abuse and addiction treatment for individuals and families in&nbsp;Atlanta.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <div class="space-y-4 text-muted-foreground leading-relaxed text-lg">
+            <p>Are you feeling stuck?</p>
+            <p>
+              Not vaguely dissatisfied. Actually stuck. Same arguments. Same distance.
+              Same patterns your parents had, now running on autopilot in your own house.
+            </p>
+            <p>
+              I've spent 42 years and over 55,000 hours figuring out why people get stuck —
+              and what it actually takes to change. Real change. The kind where you come back
+              six months later and can't quite remember why everything felt so impossible.
+            </p>
+            <p>
+              Most people don't need more time in therapy. They need someone willing to tell
+              them the truth about what's actually happening. That's what I do.
+            </p>
+            <p class="font-semibold text-foreground">
+              If nothing changes, nothing will change.
+            </p>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-4 mt-8">
             <a
               href="/contact"
-              class="inline-block bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-4 rounded-md font-semibold transition-colors"
+              class="inline-block bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-4 rounded-md font-semibold transition-colors"
             >
               Schedule a Consultation
             </a>
             <a
               href="/about"
-              class="inline-block border border-accent text-accent-foreground bg-accent/10 hover:bg-accent/20 text-lg px-8 py-4 rounded-md font-semibold transition-colors"
+              class="inline-block border border-border text-foreground hover:bg-secondary text-lg px-8 py-4 rounded-md font-semibold transition-colors"
             >
-              Learn More About My Approach
+              About My Practice
             </a>
           </div>
+        </div>
+        <div class="order-1 md:order-2 flex justify-center md:justify-end">
+          <img
+            src="/assets/dr-gore.png"
+            alt="Dr. David Karol Gore — Atlanta Family Therapist and Psychologist"
+            class="w-72 md:w-full max-w-sm rounded-2xl shadow-xl object-cover object-top"
+          />
         </div>
       </div>
     </div>
@@ -102,7 +128,8 @@ const schema = {
         How I Can Help
       </h2>
       <p class="text-muted-foreground text-center max-w-2xl mx-auto mb-12">
-        Structured therapy for depression, anxiety, family conflict, and substance abuse recovery.
+        I'm a generalist — and proud of it. I treat kids, teens, couples, families, and individuals
+        dealing with depression, anxiety, and addiction. Here's how I think about each.
       </p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {services.map((service) => (
@@ -112,21 +139,26 @@ const schema = {
               alt={service.title}
               class="w-full h-48 object-cover"
             />
-            <div class="p-8 text-center">
+            <div class="p-8">
               <h3 class="font-display text-xl font-semibold text-foreground mb-4">
                 {service.title}
               </h3>
-              <p class="text-muted-foreground leading-relaxed text-sm text-justify">
+              <p class="text-muted-foreground leading-relaxed text-sm">
                 {service.description}
               </p>
               {service.tagline && (
-                <p class="font-display font-bold text-base text-foreground mt-3 italic">
+                <p class="font-display font-bold text-sm text-foreground mt-4 italic">
                   {service.tagline}
                 </p>
               )}
             </div>
           </div>
         ))}
+      </div>
+      <div class="text-center mt-10">
+        <a href="/about" class="text-primary font-semibold hover:underline">
+          Read more about how I work →
+        </a>
       </div>
     </div>
   </section>
@@ -135,10 +167,13 @@ const schema = {
   <section class="py-16 bg-background">
     <div class="container max-w-4xl text-center">
       <h2 class="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
-        This Is Who We Are. This Is Who We Want to Be.
+        See How I Think
       </h2>
-      <p class="text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-4">
-        The gap between where you are and where you want to be is where therapy begins. Watch this short video to hear how we think about that journey.
+      <p class="text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8">
+        I've been posting videos for a while now. This one gets at something I believe
+        pretty deeply about relationships and how we end up where we do.
+        Watch it and see if you recognize yourself anywhere in it.
+        Don't worry if you do — that's the point.
       </p>
       <div class="relative w-full rounded-xl shadow-lg overflow-hidden" style="padding: 56.25% 0 0 0; position: relative;">
         <iframe
@@ -150,23 +185,45 @@ const schema = {
           title="Dr. Gore - Family Therapy"
         ></iframe>
       </div>
+      <p class="text-muted-foreground text-sm mt-4">
+        More videos at <a href="https://www.youtube.com/@the.cynical.psychologist" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">@The.Cynical.Psychologist</a> on YouTube and Instagram.
+      </p>
     </div>
   </section>
 
-  <!-- SEO section -->
-  <section class="py-16 bg-background">
-    <div class="container text-center max-w-2xl mx-auto">
-      <h2 class="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
-        Atlanta Family Therapist You Can Trust
+  <!-- Call me CTA -->
+  <section class="py-20 bg-primary">
+    <div class="container max-w-3xl text-center">
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
+        Call me. I'll call you back.
       </h2>
-      <p class="text-muted-foreground leading-relaxed">
-        Dr. Gore provides expert family therapy, child psychology, and Atlanta substance abuse
-        addiction treatment services. Whether you're seeking help for your child, your parents,
-        your family, or yourself, the first step is reaching out.
+      <div class="space-y-4 text-primary-foreground/90 text-lg max-w-xl mx-auto mb-10">
+        <p>
+          I return every call. Every one. Nine in the morning to midnight.
+        </p>
+        <p>
+          That's not a marketing line — I've been doing it for 42 years.
+          If I can't take you on, I'll tell you who can.
+          Either way, you'll hear from me.
+        </p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a
+          href="tel:+14042374300"
+          class="inline-block bg-accent text-accent-foreground hover:bg-accent/90 text-xl px-10 py-4 rounded-md font-bold transition-colors"
+        >
+          (404) 237-4300
+        </a>
+        <a
+          href="/contact"
+          class="inline-block border border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 text-lg px-8 py-4 rounded-md font-semibold transition-colors"
+        >
+          Send a message instead
+        </a>
+      </div>
+      <p class="text-primary-foreground/60 text-sm mt-8">
+        Sandy Springs / Atlanta · 6065 Lake Forrest Drive, Suite 250
       </p>
-      <a href="tel:+14042374300" class="mt-6 inline-block text-lg font-semibold text-foreground hover:text-primary transition-colors">
-        (404) 237-4300
-      </a>
     </div>
   </section>
 </Layout>
