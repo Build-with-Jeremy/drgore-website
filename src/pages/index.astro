@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import StoreCallout from '../components/StoreCallout.astro';
 
 const services = [
   {
@@ -162,6 +163,15 @@ const schema = {
       </div>
     </div>
   </section>
+
+  <!-- Gore Store callout -->
+  <StoreCallout
+    slug="anti-whining"
+    variant="banner"
+    kicker="And now, a word from The Gore Store"
+    headline="Prefer a product to a process?"
+    body="No judgment. Dr. Gore's also got a store. The products don't work, but the bit does."
+  />
 
   <!-- Video -->
   <section class="py-16 bg-background">

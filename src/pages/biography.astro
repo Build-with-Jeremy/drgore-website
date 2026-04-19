@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import StoreCallout from '../components/StoreCallout.astro';
 
 const milestones = [
   { year: 'November 1959', event: 'Born. Weighed 9 pounds, 11 ounces. I was almost adorable.' },
@@ -21,9 +22,9 @@ const milestones = [
   { year: 'July 2013', event: 'Loses all ability to engage in small talk. This occurred during the third hour of a swim meet.' },
   { year: 'May 2016', event: 'Invents fidget spinners. Singlehandedly ends the ADHD epidemic.' },
   { year: 'September 2016', event: 'Realizes he forgot to patent "Fidget Spinners." Knock-offs appear. Life savings disappear.' },
-  { year: 'August 2018', event: "Gets kicked out of Brene Brown's Daring Way program because he refused to use the \"é\" and used the \"e\" in her first name." },
-  { year: 'March 2020', event: 'Moves into current eleven office suite, which led to the beginning of covid.' },
-  { year: 'March 2026', event: 'Malcolm Gladwell estimates that he has practiced over 55,142 hours of therapy.' },
+  { year: 'August 2018', event: "Gets kicked out of Brene Brown's Daring Way Certification program for using \"e\" instead of \"é.\"" },
+  { year: 'March 2020', event: 'Designs and tries to rent out an eleven-office suite, which led to the beginning of covid.' },
+  { year: 'March 2026', event: 'Malcolm Gladwell estimates that Dr. Gore has practiced over 55,142 hours of therapy.' },
 ];
 ---
 <Layout
@@ -83,7 +84,7 @@ const milestones = [
         Dr. Gore grew up in New York, and still talks funny. After living in Midtown for fifteen
         years, he became a suburbanite in 1997. When time allows, Dr. Gore
         enjoys reading, doing electrical repairs with the circuit breaker on, basketball and other
-        sports. When not at work, Dr. Gore is usually found keeping his animals happy, missing his grown-ass children or trying to fix stuff that breaks around his house.
+        sports. When not at work, Dr. Gore is usually found keeping his animals and wife happy, missing his grown-ass children, or trying to fix stuff that breaks around his house.
       </p>
     </div>
   </section>
@@ -103,6 +104,16 @@ const milestones = [
             <span class="text-sm text-muted-foreground">{m.event}</span>
           </div>
         ))}
+      </div>
+
+      <div class="mt-12">
+        <StoreCallout
+          slug="childhood-album"
+          variant="card"
+          kicker="Inspired by real life"
+          headline="Convinced your childhood was fine? So is everyone."
+          body="Bundled with our proprietary PhotoShopDenial software, this is the product Dr. Gore has been forced to invent after 42 years of hearing the same sentence. Unlike therapy, it will not help."
+        />
       </div>
     </div>
   </section>
