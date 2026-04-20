@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 
 interface NavChild {
@@ -50,6 +50,48 @@ function isActive(link: NavLink, currentPath: string): boolean {
 export default function Header({ currentPath }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const closeTimer = useRef<number | null>(null);
+  const navRef = useRef<HTMLElement | null>(null);
+
+  const cancelClose = () => {
+    if (closeTimer.current !== null) {
+      window.clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  };
+
+  const scheduleClose = () => {
+    cancelClose();
+    closeTimer.current = window.setTimeout(() => {
+      setOpenDropdown(null);
+      closeTimer.current = null;
+    }, 150);
+  };
+
+  const openNow = (path: string) => {
+    cancelClose();
+    setOpenDropdown(path);
+  };
+
+  useEffect(() => {
+    function onDocClick(e: MouseEvent) {
+      if (!navRef.current) return;
+      if (!navRef.current.contains(e.target as Node)) {
+        setOpenDropdown(null);
+      }
+    }
+    function onKey(e: KeyboardEvent) {
+      if (e.key === 'Escape') setOpenDropdown(null);
+    }
+    document.addEventListener('click', onDocClick);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('click', onDocClick);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, []);
+
+  useEffect(() => () => cancelClose(), []);
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border">
@@ -68,41 +110,64 @@ export default function Header({ currentPath }: HeaderProps) {
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-1">
-          {navLinks.map((link) => (
-            <div key={link.path} className="relative group">
-              <a
-                href={link.path}
-                className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-md transition-colors hover:bg-muted hover:text-foreground ${
-                  isActive(link, currentPath)
-                    ? 'text-primary font-semibold'
-                    : 'text-muted-foreground'
-                }`}
+        <nav ref={navRef} className="hidden lg:flex items-center gap-1">
+          {navLinks.map((link) => {
+            const hasChildren = !!link.children;
+            const isOpen = openDropdown === link.path;
+            return (
+              <div
+                key={link.path}
+                className="relative"
+                onMouseEnter={hasChildren ? () => openNow(link.path) : undefined}
+                onMouseLeave={hasChildren ? scheduleClose : undefined}
               >
-                {link.label}
-                {link.children && (
-                  <ChevronDown className="h-3.5 w-3.5 opacity-60 group-hover:opacity-100 transition-opacity" />
-                )}
-              </a>
-              {link.children && (
-                <div className="absolute top-full left-0 mt-1 hidden group-hover:block min-w-[200px] rounded-lg border bg-background shadow-lg py-1 z-50">
-                  {link.children.map((child) => (
-                    <a
-                      key={child.path}
-                      href={child.path}
-                      className={`block px-4 py-2.5 text-sm hover:bg-muted transition-colors ${
-                        currentPath === child.path
-                          ? 'text-primary font-semibold'
-                          : 'text-muted-foreground hover:text-foreground'
+                <a
+                  href={link.path}
+                  aria-haspopup={hasChildren ? 'menu' : undefined}
+                  aria-expanded={hasChildren ? isOpen : undefined}
+                  className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-md transition-colors hover:bg-muted hover:text-foreground ${
+                    isActive(link, currentPath)
+                      ? 'text-primary font-semibold'
+                      : 'text-muted-foreground'
+                  }`}
+                >
+                  {link.label}
+                  {hasChildren && (
+                    <ChevronDown
+                      className={`h-3.5 w-3.5 transition-all ${
+                        isOpen ? 'rotate-180 opacity-100' : 'opacity-60'
                       }`}
-                    >
-                      {child.label}
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
+                    />
+                  )}
+                </a>
+                {hasChildren && isOpen && (
+                  <div
+                    role="menu"
+                    className="absolute top-full left-0 pt-2 min-w-[220px] z-50"
+                    onMouseEnter={cancelClose}
+                    onMouseLeave={scheduleClose}
+                  >
+                    <div className="rounded-lg border bg-background shadow-lg py-1">
+                      {link.children!.map((child) => (
+                        <a
+                          key={child.path}
+                          href={child.path}
+                          role="menuitem"
+                          className={`block px-4 py-2.5 text-sm hover:bg-muted transition-colors ${
+                            currentPath === child.path
+                              ? 'text-primary font-semibold'
+                              : 'text-muted-foreground hover:text-foreground'
+                          }`}
+                        >
+                          {child.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
           <a
             href="/contact"
             className="ml-2 px-4 py-2 rounded-md bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-sm transition-colors"
