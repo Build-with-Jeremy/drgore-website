@@ -55,47 +55,75 @@ const schema = {
     </div>
   </section>
 
-  <section class="py-16">
+  <section class="pt-10 pb-6">
+    <div class="container max-w-3xl">
+      <StoreCallout
+        slug="anti-whining"
+        variant="banner"
+        kicker="A paid message from The Gore Store"
+        headline="Got questions? We've got products."
+        body="While you're reading, our legal team would like to remind you that Dr. Gore also sells a line of entirely fake therapeutic solutions. No appointment required. No actual results either."
+      />
+    </div>
+  </section>
+
+  <section class="py-10">
     <div class="container max-w-3xl space-y-3">
-      {faqs.map((faq, i) => (
-        <>
-          <details class="border rounded-lg bg-card overflow-hidden">
-            <summary class="flex items-center justify-between px-6 py-4 font-semibold text-foreground cursor-pointer hover:bg-muted/30 transition-colors select-none gap-4">
-              <span>{faq.q}</span>
-              <svg class="faq-chevron h-4 w-4 text-muted-foreground transition-transform flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="m6 9 6 6 6-6"/>
-              </svg>
-            </summary>
-            <div class="px-6 pb-5 text-muted-foreground leading-relaxed whitespace-pre-line">
-              {faq.a}
-            </div>
-          </details>
-          {i === 7 && (
-            <StoreCallout
-              slug="scams-guide"
-              variant="inline-mini"
-              kicker="Can't afford the session? Try the book."
-              headline="Save on therapy. Spend $1,299 on a CD instead."
-            />
-          )}
-          {i === 16 && (
-            <StoreCallout
-              slug="drinking-pill"
-              variant="inline-mini"
-              kicker="Or, for those unwilling to do the work"
-              headline="The pill that makes AA unnecessary. Allegedly."
-            />
-          )}
-          {i === 20 && (
-            <StoreCallout
-              slug="anti-whining"
-              variant="inline-mini"
-              kicker="Or the low-effort version"
-              headline='Skip family therapy. Try "Anti-Whining" Drops.'
-            />
-          )}
-        </>
+      {faqs.map((faq) => (
+        <details class="border rounded-lg bg-card overflow-hidden">
+          <summary class="flex items-center justify-between px-6 py-4 font-semibold text-foreground cursor-pointer hover:bg-muted/30 transition-colors select-none gap-4">
+            <span>{faq.q}</span>
+            <svg class="faq-chevron h-4 w-4 text-muted-foreground transition-transform flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </summary>
+          <div class="px-6 pb-5 text-muted-foreground leading-relaxed whitespace-pre-line">
+            {faq.a}
+          </div>
+        </details>
       ))}
+    </div>
+  </section>
+
+  <section class="py-14 bg-secondary">
+    <div class="container max-w-3xl">
+      <div class="text-center mb-8">
+        <p class="text-xs uppercase tracking-widest text-accent font-bold mb-2">
+          And now, the part where we try to sell you something
+        </p>
+        <h2 class="font-display text-2xl md:text-3xl font-bold text-foreground">
+          Still have questions? Try a product instead.
+        </h2>
+        <p class="text-sm text-muted-foreground italic mt-2">
+          Same result. Less effort. No actual improvement.
+        </p>
+      </div>
+      <div class="space-y-4">
+        <StoreCallout
+          slug="scams-guide"
+          variant="inline-mini"
+          kicker="Can't afford the session? Try the book."
+          headline="Save on therapy. Spend $1,299 on a CD instead."
+        />
+        <StoreCallout
+          slug="drinking-pill"
+          variant="inline-mini"
+          kicker="For those unwilling to do the work"
+          headline="The pill that makes AA unnecessary. Allegedly."
+        />
+        <StoreCallout
+          slug="anti-whining"
+          variant="inline-mini"
+          kicker="The low-effort option"
+          headline='Skip family therapy. Try "Anti-Whining" Drops.'
+        />
+      </div>
+      <div class="text-center mt-8">
+        <a href="/store" class="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
+          Browse the full Gore Store
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
     </div>
   </section>
 </Layout>
