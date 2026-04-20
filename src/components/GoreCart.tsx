@@ -27,6 +27,12 @@ export default function GoreCart() {
   const [ui, setUi] = useState(getUi());
   const [toastVisible, setToastVisible] = useState(false);
   const [lastAddedSlug, setLastAddedSlug] = useState<string | null>(null);
+  const [isStorePage, setIsStorePage] = useState(false);
+
+  useEffect(() => {
+    const path = window.location.pathname.replace(/\/$/, '');
+    setIsStorePage(path === '/store');
+  }, []);
 
   useEffect(() => {
     const unsub = subscribe((nextItems, nextUi) => {
@@ -59,7 +65,8 @@ export default function GoreCart() {
 
   return (
     <>
-      {/* Floating cart button */}
+      {/* Floating cart button — store page only */}
+      {isStorePage && (
       <button
         type="button"
         onClick={openDrawer}
@@ -78,6 +85,7 @@ export default function GoreCart() {
           </span>
         )}
       </button>
+      )}
 
       {/* Add-to-cart toast */}
       {toastVisible && lastAddedProduct && (
