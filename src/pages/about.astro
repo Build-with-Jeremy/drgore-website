@@ -1,19 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const iconSvgs: Record<string, string> = {
-  heart: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`,
-  user: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`,
-  briefcase: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>`,
-  pill: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>`,
-  shield: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
-  'map-pin': `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>`,
-  baby: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h.01"/><path d="M15 12h.01"/><path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/><path d="M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1"/></svg>`,
-  users: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
-  wine: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22h8"/><path d="M7 10h10"/><path d="M12 15v7"/><path d="M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H7c-1.5 4-2 6-2 8a5 5 0 0 0 5 5z"/></svg>`,
-  stethoscope: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6 6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg>`,
-};
-
 const insuranceQuestions = [
   "Do I have out-of-network mental health benefits?",
   "What is my out-of-network deductible, and how much of it has been met?",
@@ -30,22 +17,22 @@ const insuranceQuestions = [
 const sections = [
   {
     title: "Professional, Caring and Responsive",
-    icon: "heart",
+    image: "/assets/about/professional-caring.jpg",
     content: "I will treat you with care, respect and dignity. I am always available by phone, and I will call you back as quickly as I can. Asking for help is hard, and I promise to make it as easy as possible for you to get started.",
   },
   {
     title: "Flexible Approach",
-    icon: "user",
+    image: "/assets/about/flexible-approach.jpg",
     content: "I'll go slow where we need to go slow, and try to go quickly where we can go quickly. I don't have just one or two techniques that I use: I will do whatever is needed to get you or your family on the way to happiness.",
   },
   {
     title: "My Practice",
-    icon: "briefcase",
+    image: "/assets/about/my-practice.jpg",
     content: "I have a thriving, busy (but not too busy) practice, filled with wonderful clients. I don't keep people in therapy for years and years — most of my clients seem to come and go rather quickly. Then, they often reappear when a new life event is challenging them. This is called brief intermittent psychotherapy, and I believe in it. Other clients start working on their issues and keep on going for a while. These folks want to go \"deep,\" and I go there with them. The point is: We go wherever we need to help you feel better and have better relationships in your life.",
   },
   {
     title: "Medications",
-    icon: "pill",
+    image: "/assets/about/medications.jpg",
     content: [
       "I tend to be against using medication for emotional/behavioral issues (especially with children and adolescents), yet will tell a client they need to consider starting a medication if they truly need it. I don't believe that medication should be prescribed quickly or cavalierly. I don't believe that a person should be able to tell their doctor they're feeling blue and walk out, 31 minutes later, with a prescription for Prozac. Why are they blue? Why is life not working? What are they trying to do different? After several sessions of psychotherapy, if a client's sadness and hopelessness are still there, then let's go get some Prozac/Zoloft/Effexor/Lexapro/Paxil/Celexa or whatever else the physician or psychiatrist recommends.",
       "I have several psychiatrists that I like to refer clients to, and believe it's important for a person to have a good relationship with their physician. What I don't like is when doctors give drugs as their first response, almost a knee-jerk reaction. As I say elsewhere, \"When the only tool you have is a hammer everything you see is a nail.\" I think therapy works, works well and should be the first course of action. So I obviously don't believe medication is \"the answer,\" but it can certainly help someone to make important changes.",
@@ -53,18 +40,18 @@ const sections = [
   },
   {
     title: "Insurance",
-    icon: "shield",
+    image: "/assets/about/insurance.jpg",
     content: "Many people look only for therapists approved by their insurance plans. I've had clients leave my practice, go to a \"cheaper\" therapist on their plan, and reappear in my waiting room a few months later. I am not \"on\" any insurance plans. Some insurances will pay a substantial amount for your therapy, some will pay a little, and some will pay nothing at all. I will be happy to provide you with receipts for your insurance company, but I will expect you to pay in full at the time of the session.",
     hasInsuranceFaq: true,
   },
   {
     title: "My Clients",
-    icon: "map-pin",
+    image: "/assets/about/my-clients.jpg",
     content: "My office is in the Sandy Springs/Atlanta area. I help people from all over the metro Atlanta area. Clients have also come from as far away as Alabama, North Carolina and South Carolina. I don't think distance should matter when picking a caring, supportive, effective therapist.",
   },
   {
     title: "Kids",
-    icon: "baby",
+    image: "/assets/about/kids.jpg",
     content: [
       "I am an Atlanta child psychologist, and have seen children as young as sisters who were four and two years old. But I don't see kids alone. I see children as a function of where they are within their family. It's not OK to have parents in the waiting room while I \"cure\" their child. Parents need to be in the therapy room with us, contributing solutions to the problems, and working on changing their contributions to the difficulties. If a child improves, but his or her home life remains the same because there was no parental involvement, then the progress may not last.",
       "I don't do much play therapy, and don't believe in play therapy as a primary form of treatment for children, unless, of course, the children are orphans and have no living relatives. Then, break out the toys and board games and let's start playing. I believe the No. 1 problem with children today is that parents are reluctant to be fully in charge, instead preferring to treat their children as peers and equals. I've seen many families in which the children are in charge of their parents when therapy begins. That soon changes!",
@@ -72,27 +59,27 @@ const sections = [
   },
   {
     title: "Teens",
-    icon: "users",
+    image: "/assets/about/teens.jpg",
     content: "I treat teenagers, again, within the context of their families. I usually alternate between individual and family therapy. I love rebellious teenagers. I love unhappy teenagers. I love teenagers who can't fit in. I treated an 18-year-old and his family recently, and the kid had a bumper sticker on his car that said it all: \"I Hate Everything.\" I remember being there not too long ago. (OK, maybe 50 years is long ago.) I deal head-on with drug and alcohol issues, and school/grades/attendance issues, too.",
   },
   {
     title: "Couples",
-    icon: "heart",
+    image: "/assets/about/couples.jpg",
     content: "Couples therapy is hard work. Clients need to look at their own history and see how it impacts today's relationship. I try to do a \"directive\" type of therapy, where I ask couples to go home and practice new behaviors with each other. People have 167 hours in between appointments, and that's where most of the changes will occur.",
   },
   {
     title: "Substance Abusers",
-    icon: "wine",
+    image: "/assets/about/substance-abusers.jpg",
     content: "I treat drug addicts, alcoholics and people who may not be full-blown addicts or alcoholics, but abusing chemicals to the detriment of their lives and the lives of those around them. My experience has taught me that family therapy is essential to recovery. I believe in the 12-step approach and push it hard. If someone refuses to go to Alcoholics Anonymous or Narcotics Anonymous or Cocaine Anonymous meetings, I will work with them anyway. However, I will continue to gently, and not so gently, push them towards meetings. These 12-step programs aren't perfect, but they're free, readily available and the best thing available for addiction recovery.",
   },
   {
     title: "Postpartum Mood Disorders",
-    icon: "stethoscope",
+    image: "/assets/about/postpartum.jpg",
     content: "I treat a lot of couples with postpartum depression (or postpartum mood disorders, which includes anxiety issues). I fell into this specialty because Emory University has a world-renowned program, and the founder of the program, Dr. Zachary Stowe, admired how I worked with the couples he was treating, and sent me the majority of his marital therapy cases. Basically, I am good at getting husbands involved in their wives' recoveries from depression. There are quite a few husbands walking around Atlanta who never changed a diaper until they started therapy with me. I believe in getting uninvolved husbands involved.",
   },
   {
     title: "Adult Individuals",
-    icon: "user",
+    image: "/assets/about/adult-individuals.jpg",
     content: "I see these folks most often in my office — not because they have more issues, but because they seek therapy more often than others. Although therapy takes place with just the individual client, I always consider the context of their lives (work, relationships, etc.). So although therapy takes place individually, our solutions take into account the bigger life picture.",
   },
 ];
@@ -136,49 +123,49 @@ const sections = [
     <div class="container max-w-4xl">
       <div class="grid grid-cols-1 gap-8">
         {sections.map((section) => (
-          <div class="bg-card rounded-xl border border-border p-8 shadow-sm hover:shadow-md transition-shadow">
-            <div class="flex items-start gap-4 mb-4">
-              {section.icon && (
-                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mt-1">
-                  <Fragment set:html={iconSvgs[section.icon] ?? ''} />
-                </div>
-              )}
-              <h2 class="font-display text-2xl font-bold text-foreground">
+          <div class="bg-card rounded-xl border border-border overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <img
+              src={section.image}
+              alt={section.title}
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-8">
+              <h2 class="font-display text-2xl font-bold text-foreground mb-4">
                 {section.title}
               </h2>
-            </div>
-            {Array.isArray(section.content) ? (
-              <div class="space-y-4 text-muted-foreground leading-relaxed">
-                {(section.content as string[]).map((p) => (
-                  <p>{p}</p>
-                ))}
-              </div>
-            ) : (
-              <p class="text-muted-foreground leading-relaxed">{section.content as string}</p>
-            )}
-            {section.hasInsuranceFaq && (
-              <details class="mt-6 border border-border rounded-lg overflow-hidden">
-                <summary class="flex items-center justify-between px-5 py-4 font-semibold text-foreground cursor-pointer bg-muted/40 hover:bg-muted/60 transition-colors select-none">
-                  <span>How to ask your insurance company about what is covered</span>
-                  <svg class="faq-chevron h-4 w-4 text-muted-foreground transition-transform flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="m6 9 6 6 6-6"/>
-                  </svg>
-                </summary>
-                <div class="px-5 py-4">
-                  <p class="text-muted-foreground mb-3">
-                    Call the member services number on the back of your insurance card and ask these questions:
-                  </p>
-                  <ol class="list-decimal list-inside space-y-2 text-muted-foreground">
-                    {insuranceQuestions.map((q) => (
-                      <li>{q}</li>
-                    ))}
-                  </ol>
-                  <p class="text-muted-foreground mt-3 text-sm italic">
-                    Write down the name of the representative you speak with and a reference number for the call, in case you need to follow up.
-                  </p>
+              {Array.isArray(section.content) ? (
+                <div class="space-y-4 text-muted-foreground leading-relaxed">
+                  {(section.content as string[]).map((p) => (
+                    <p>{p}</p>
+                  ))}
                 </div>
-              </details>
-            )}
+              ) : (
+                <p class="text-muted-foreground leading-relaxed">{section.content as string}</p>
+              )}
+              {section.hasInsuranceFaq && (
+                <details class="mt-6 border border-border rounded-lg overflow-hidden">
+                  <summary class="flex items-center justify-between px-5 py-4 font-semibold text-foreground cursor-pointer bg-muted/40 hover:bg-muted/60 transition-colors select-none">
+                    <span>How to ask your insurance company about what is covered</span>
+                    <svg class="faq-chevron h-4 w-4 text-muted-foreground transition-transform flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="m6 9 6 6 6-6"/>
+                    </svg>
+                  </summary>
+                  <div class="px-5 py-4">
+                    <p class="text-muted-foreground mb-3">
+                      Call the member services number on the back of your insurance card and ask these questions:
+                    </p>
+                    <ol class="list-decimal list-inside space-y-2 text-muted-foreground">
+                      {insuranceQuestions.map((q) => (
+                        <li>{q}</li>
+                      ))}
+                    </ol>
+                    <p class="text-muted-foreground mt-3 text-sm italic">
+                      Write down the name of the representative you speak with and a reference number for the call, in case you need to follow up.
+                    </p>
+                  </div>
+                </details>
+              )}
+            </div>
           </div>
         ))}
       </div>
