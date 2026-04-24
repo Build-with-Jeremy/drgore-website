@@ -7,6 +7,7 @@ export default function ContactForm() {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
+  const [honeypot, setHoneypot] = useState('');
   const [stage, setStage] = useState<Stage>('idle');
   const [err, setErr] = useState<string | null>(null);
 
@@ -28,6 +29,7 @@ export default function ContactForm() {
           email: email.trim(),
           phone: phone.trim() || undefined,
           message: message.trim(),
+          _honeypot: honeypot || undefined,
         }),
       });
 
@@ -74,7 +76,7 @@ export default function ContactForm() {
     <form onSubmit={onSubmit} className="space-y-6">
       {/* Honeypot — hidden from real users, catches bots */}
       <div className="absolute -left-[9999px]" aria-hidden="true">
-        <input type="text" name="_honeypot" tabIndex={-1} autoComplete="off" />
+        <input type="text" name="_honeypot" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" />
       </div>
 
       <div className="space-y-2">
