@@ -37,7 +37,7 @@ export const goreProducts: GoreProduct[] = [
     priceValue: 19.95,
     image: '/assets/store/ex-boyfriend-lotion.jpg',
     description:
-      "It's late. You're lonely. He wasn't really that bad, was he? Your friends never REALLY got to know him, did they? What harm can one phone call do? How about just a casual text? STOP! Grab this lotion instead. Resist the urge to call that no good ex-boyfriend.",
+      "It's late. You're lonely. He wasn't really that bad, was he? Your friends never REALLY got to know him, did they? What harm can one phone call do? How about just a casual text? STOP! Grab this lotion instead. Resist the urge to call that No-Good Bum. A quick application of My Dermatologist-Approved lotion will help you stay away from him.",
     category: 'Relationships',
     tag: 'NEW',
     featured: true,
@@ -50,7 +50,7 @@ export const goreProducts: GoreProduct[] = [
     priceValue: 19.95,
     image: '/assets/store/ex-girlfriend-cream.jpg',
     description:
-      "Help you resist the urge to rekindle something that shouldn't be near a flame.",
+      "Sure, she was needy. And a little crazy. And she stalked you. Are you thinking, \"So what?\" Are you wondering if you should reach out to her again? DON'T! Dab some of my Clinically Proven cream anywhere on your skin instead. It will help you resist the urge to rekindle something that shouldn't be near a flame.",
     category: 'Relationships',
     tag: 'NEW',
     soldResponse: 'Out of stock',
@@ -61,7 +61,7 @@ export const goreProducts: GoreProduct[] = [
     price: '$19.95',
     priceValue: 19.95,
     image: '/assets/store/weight-loss-dvd.jpg',
-    description: 'Sit back and buy this revolutionary new weight loss guide.',
+    description: 'Tired of eating healthy foods and working out? Want to lose weight without effort or sacrifice? Have a seat, grab a snack and buy this revolutionary new weight loss guide…',
     category: 'Wellness',
     tag: 'NEW',
     soldResponse: 'Coming Soon',
@@ -73,7 +73,7 @@ export const goreProducts: GoreProduct[] = [
     priceValue: 25.95,
     image: '/assets/store/breathspray.jpg',
     description:
-      'Does he grunt a lot? Have him try my new Breathspray, which, when used twice a day, will get your man to open up and share his deepest thoughts and innermost secrets with you.',
+      "Does your husband not communicate well? Is it tough to get information out of him? Do his stories lack the important details you are seeking? Does he grunt a lot? Have him try my new Breathspray, which, when used twice a day, will get your man to open up and share his deepest thoughts and innermost secrets with you.",
     category: 'Relationships',
     tag: 'NEW',
     soldResponse: 'Back Order',
@@ -85,10 +85,11 @@ export const goreProducts: GoreProduct[] = [
     priceValue: 39.95,
     image: '/assets/store/anti-whining.jpg',
     description:
-      'Are your kids whining? Do they complain when you ask them to do something? Do they ask "How much longer?" every five minutes? Do they make "Mom" into a six syllable word? These new drops, when placed on their tongue, will help.',
+      'Are your kids whining? Do they complain when you ask them to do something? Do they ask "How much longer?" every five minutes? Do they make "Mom" into a six syllable word? These new drops, when placed on their tongue, will cause instant compliance and good cheer in even the most defiant child.',
     category: 'Parenting',
     featured: true,
-    extras: 'BONUS GIFT: A Nose Spray for that annoying nasal whining that drives you crazy.',
+    extras:
+      "Act Now And Get This Free Bonus Gift: A Nose Spray for that annoying nasal whining that drives parents crazy! Two squirts in each nostril and your children\u2019s voice will sound sweet and non-demanding.",
     soldResponse: 'Out of stock',
   },
   {
@@ -109,7 +110,7 @@ export const goreProducts: GoreProduct[] = [
     priceValue: 39.95,
     image: '/assets/store/no-advice-figure.jpg',
     description:
-      'Does your man give unsolicited advice? Does he try to be helpful by problem-solving? Buy my new Action Figure and get that feeling of being understood and accepted.',
+      'Does your man not know how to listen? Does he give unsolicited advice? Does he try to be helpful by problem-solving? Buy my new Action Figure and get that feeling of being understood and accepted.',
     category: 'Relationships',
     soldResponse: 'Sold Out!',
   },
@@ -120,7 +121,7 @@ export const goreProducts: GoreProduct[] = [
     priceValue: 39.95,
     image: '/assets/store/volunteering-flakes.jpg',
     description:
-      'Is your wife over-committed with her volunteering? These gluten-free flakes can be mixed into her coffee or her wine when she is not looking. Clinically proven to stop the urge to be on committees.',
+      'Is your wife over-committed with her volunteering? Try these \u201cStop Signing Up\u201d Flakes. These gluten-free flakes can be mixed into her coffee or her wine when she is not looking. These flakes are clinically proven to stop the urge to be on committees or to help her stop volunteering at the school, again. Just sprinkle some in her steel-cut oatmeal and you\u2019ll soon have a more relaxed, less stressed partner\u2026',
     category: 'Wellness',
     soldResponse: 'Back Order',
   },
@@ -148,12 +149,12 @@ export const goreProducts: GoreProduct[] = [
   },
   {
     slug: 'inlaws-cd',
-    title: 'Get Along With Overly Critical In-Laws Meditation CD',
+    title: 'Get Along With Overly Critical In-Laws Meditation CD (Non-Denominational Version)',
     price: '$9.95',
     priceValue: 9.95,
     image: '/assets/store/inlaws-cd.jpg',
     description:
-      "Do they make you crazy? Do they still have your husband's pictures with his old girlfriend on their mantle? Do they still invite your wife's ex-fiancé to Thanksgiving and let him carve the turkey? This new meditation CD will teach you to accept that you will never measure up, no matter what you do.",
+      "Not feeling good enough for your spouse? Your mother-in-law likes to point out your flaws? Your father-in-law looking at you funny? Do they still have your husband's pictures with his old girlfriend on their mantle? Do they still invite your wife's ex-fianc\u00e9 to Thanksgiving and let him carve the turkey? This new meditation CD will teach you to accept that you will never measure up, no matter what you do\u2026",
     category: 'Relationships',
     soldResponse: 'Sold Out!',
   },
@@ -186,7 +187,7 @@ export const goreProducts: GoreProduct[] = [
     priceValue: 39.95,
     image: '/assets/store/serenity-gel.jpg',
     description:
-      'Have you heard the truism: Would you rather be right or be happy? Grab my new Hair Gel infused with Space-Age Polymers, just rub it in and let serenity take over. Rub this gel in and you will magically lose the urge to win arguments but lose connection.',
+      'We have all heard the truism: Would you rather be right or be happy? Now, putting that into practice has never been easier. When you feel that urge to let your partner know you are right\u2026even though you know it will ruin the evening, the vacation or even just the meal\u2014Then grab my new Hair Gel infused with Space-Age Polymers, just rub it in your thick skull and watch your desire to be \u201cRIGHT\u201d lessen, and your happiness level will rise to new heights.',
     category: 'Self-Help',
     featured: true,
     soldResponse: 'Coming Soon',
@@ -198,7 +199,7 @@ export const goreProducts: GoreProduct[] = [
     priceValue: 19.95,
     image: '/assets/store/defense-spray.jpg',
     description:
-      'Nothing makes me more miffed than when I get bullied by someone. After I stand up for myself, and "push back"...the bully starts crying and says that "I am the bully!" Simply whip this spray out and two spritzes later the bully stops acting like an innocent victim.',
+      'Nothing makes me more miffed than when I get bullied by someone, then, when I have finally have had enough and stand up to her, she starts crying and acting like a victim\u2026like I did something wrong! Now, just spray her with this special Defense Spray, and her tears will dry up and she will be forced to stand there and hear what you have to say.',
     category: 'Self-Help',
     soldResponse: 'Sold Out!',
   },
@@ -209,7 +210,7 @@ export const goreProducts: GoreProduct[] = [
     priceValue: 75.95,
     image: '/assets/store/adult-child-fumigator.jpg',
     description:
-      "He's 34, plays video games all night and sleeps all day. He can't get a job because nobody has driven over to your house and offered him a position worthy of his talents. He doesn't pay rent, or clean up after himself. He doesn't know where the laundry room is and can't help with the lawn because he has a bad back and even worse allergies. Time for the Fumigator.",
+      "He's 34, plays video games all night and sleeps all day. He can't get a job because nobody has driven over to your house and offered him a position worthy of his talents. He doesn't know where the laundry room is and can't help with the lawn because he has a bad back and even worse allergies. Want to get him out? Turn this Fumigator on and run, run, run\u2026 Your \u201cGolden Child\u201d will be independent in a matter of hours\u2026",
     category: 'Parenting',
     tag: 'LIMITED',
     featured: true,
@@ -222,7 +223,7 @@ export const goreProducts: GoreProduct[] = [
     priceValue: 25.95,
     image: '/assets/store/room-deodorant.jpg',
     description:
-      'Is your grown child hinting about "reducing his living expenses?" Is she making references to trying to pay down her maxed-out credit card debt? Is he starting to sleep over more and more? Try this room deodorant! My special formula will make even the most determined kid want to stay independent.',
+      'Is your grown child hinting about \u201creducing his living expenses?\u201d Is she making references to trying to pay down her maxed-out credit card debt? Is he starting to sleep over more and more\u2013and most of his clothes are filling up your guest room closet? Try this room deodorant! My special formula will make even the most determined kid want to stay independent and \u201cmake their own way\u201d in life.',
     category: 'Parenting',
     soldResponse: 'Out of stock',
   },
@@ -233,7 +234,7 @@ export const goreProducts: GoreProduct[] = [
     priceValue: 39.95,
     image: '/assets/store/athlete-pill.jpg',
     description:
-      'Is your child not getting enough playing time? Is he a little slow? Is she a little uncoordinated? Just take three doses a day for three weeks and your kid will be starting and playing lots. Guaranteed to improve your self-image as a parent!',
+      'Is your child not getting enough playing time? Is he a little slow? Is she a little uncoordinated? Try my new \u201cBe A Great Little Athlete Pill\u201d! Just take three doses a day for three weeks and your kid will not only be starting and playing lots\u2026He or she will also be invited to all the \u201ctravel teams\u201d and become a star! Guaranteed to improve your self-image as a parent!\u2026',
     category: 'Parenting',
     soldResponse: 'Coming Soon',
   },
@@ -266,7 +267,7 @@ export const goreProducts: GoreProduct[] = [
     priceValue: 99.5,
     image: '/assets/store/bambian.jpg',
     description:
-      "Does getting your baby to sleep create too much anxiety in you? Can the baby's cries be minimized so you don't feel bad? Try our new BAmbian! — Infant Strength formula. Now available in two Airplane Strengths! Comes in a Two Hour Flight strength and a Four Hour Flight strength.",
+      "Does getting your baby to sleep create too much anxiety in you? Can the baby\u2019s cries be minimized so you don\u2019t feel bad? Try our new BAmbian! \u2013 Infant Strength formula. Now available in Airplane Strength. Comes with an Extra Strong Dose, yet shortened duration. Knock the Lil\u2019un out for the trip, but not for Grandma! Now available in two hour flight strength and four hour flight strength.",
     category: 'Parenting',
     soldResponse: 'Out of Stock',
   },
