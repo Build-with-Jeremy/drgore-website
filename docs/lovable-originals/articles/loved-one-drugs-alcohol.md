@@ -1,0 +1,55 @@
+# Lovable backup for: loved-one-drugs-alcohol
+
+```typescript
+content: [
+      { type: "heading", text: "Here is what not to do:" },
+      {
+        type: "numbered-list",
+        items: [
+          "Stay in denial: Pretend things aren't that bad.",
+          "Stay in denial: Think that what is wrong is NOT a function of the drugs and/or alcohol usage. (He is just depressed./He just has an anxiety disorder./He has ADD./He is under a lot of stress.)",
+          "Stay in denial: Think that things will change.",
+          "Subtly, indirectly, discreetly, and meekly discuss your concerns with the person who drinks/drugs too much. Let's make this pretend \"problem person\" a male (although the likelihood of the problem person being a female is pretty much the same), and call him \"Bud.\" Meekly tell Bud your feelings about his drinking and/or drugging.",
+          "Bud will say, \"I am fine.\"",
+          "Then, meekly tell Bud you don't think he is \"fine\" and you wish he would stop, or at least slow down.",
+          "Two things will happen now:\n  1. Bud will say he will slow down, then not slow down; or\n  2. Bud will say he won't slow down, then not slow down.",
+          "Try wearing him down: Count the drinks, count the money spent, count the meetings missed, count the hours missed with the kids, count the times he is late, etc.",
+          "Now, to really go nowhere: Share these statistics with Bud. Provide charts and spreadsheets, if possible. (Personally, I recommend 3-D Pie Charts.) Bud will ignore them and tell you they aren't accurate statistics.",
+          "I would advise trying to bring the issue with Bud \"to a head\" at this point: Ask him/beg him/threaten him/plead with him to commit to changing.",
+          "Step 10 will fail.",
+          "If you are really, really healthy, then get on with your life without Bud. My experience: Really, really healthy people would have gotten on with their lives without Bud a long, long time ago.",
+          "If you cannot move on with your life, or choose not to move on with your life, it is time to start all over again and go back to the beginning of this list. But, first, try this next one…",
+          "Truly, truly believe that things will be different now.",
+          "Now, repeat Action Steps One through 14 as often as necessary.",
+        ],
+      },
+      { type: "heading", text: "Here is what will work:" },
+      { type: "paragraph", text: "(Careful, this stuff is powerful and shouldn't be initiated until you are ready.) (Note that I said wait until YOU are ready, not until Bud is ready.)" },
+      {
+        type: "numbered-list",
+        items: [
+          "First, accept that you have been in denial.",
+          "Understand that denial is a normal human reaction to overwhelming situations, and that denial is a coping strategy used by everyone. This includes smart folks, educated folks, successful folks, and loving folks.",
+          "Now, directly discuss your concerns with the person who drinks/drugs too much. Let's make this pretend \"problem person\" a male (although the likelihood of the problem person being a female is pretty much the same), and call him \"Bud.\" Tell Bud your feelings about his drinking and/or drugging. Use \"I statements.\" (I see ____, I feel ____, I am ____, I need ____.) Personally, I recommend \"I feel all alone.\"",
+          "Bud will say, \"I am fine.\"",
+          "Then, tell Bud you don't think he is \"fine\" and you wish he would stop, or at least slow down.",
+          "Two things will happen now:\n  1. Bud will say he will slow down, then not slow down; or\n  2. Bud will say he won't slow down, then not slow down.",
+          "Remember Steps 1 and 2 and make sure you are not in denial. Please see that Bud is still drinking and/or drugging.",
+          "Now, to get some real movement you must do these next two very difficult steps. I would advise bringing the issue with Bud \"to a head\" at this point. Give him an ultimatum to commit to changing. This is effective, but very, very hard. Give Bud a consequence if he doesn't slow down: I will tell your parents, I will ask you to move out, I will stop going to parties with you, I won't let you see the kids, I won't talk to you for a week, I will leave for the weekend, I will leave, etc.",
+          "Follow through on the consequence. (I told you these two steps are hard.) Don't waiver from your commitment. Personally, I recommend that you equate this step with loving Bud.",
+          "If you are really, really healthy, then get on with your life without Bud. My experience: Really, really healthy people would have gotten on with their lives without Bud a long, long time ago. However, now you are getting closer to being healthy. (Parents: Please See Note 1.)",
+          "If you cannot move on with your life, or choose not to move on with your life, it is time to make the drastic step of going to an Al-Anon meeting and/or having Bud come to join you in therapy. Do both of these things simultaneously. If you must do only one at a time, start with Al-Anon.",
+          "Al-Anon is a group for people who are in relationships with someone who is struggling with addiction/alcoholism. Bud will not like you going to these meetings. They are free (or you can put a dollar or two in the basket), yet very powerful (if you are open to the process)…so: Go anyway.",
+          "Keep on going to Al-Anon, even if you didn't enjoy the first meeting. Commit to going to at least seven more meetings. Go to different meetings in different places until you feel you have found a few good meetings. If you go to eight meetings and want to stop going, then stop. However, if you go to eight meetings, you will be amazed at the changes that are happening, and you will want to keep on attending.",
+          "Now, try to get Bud (who, you must remember, is \"Fine\") to see someone who knows addiction/alcoholism. Do not go to a therapist who doesn't know addiction/alcoholism inside and out. A good, general, highly-skilled therapist will be roundly defeated by Bud; you need an expert. Bud won't want to see any therapist, let alone someone who knows addiction/alcoholism. One of my favorite clients says to just bring Bud to someone and call it \"counseling\" or \"marriage counseling.\" She recommends \"forgetting\" to mention that the counselor is an addiction expert. Personally, I would never recommend such an underhanded method. (Spouses: Please See Note 2.)",
+          "If he won't go to therapy, and Al-Anon meetings are not allowing you to feel as if life is getting better fast enough, then go to the therapist alone.",
+          "Now, live your life differently. Stop enabling Bud. Stop nagging Bud. Stop threatening Bud. Stop rescuing Bud. Stop focusing on Bud. Stop focusing on Bud and his drinking/drugging. Stop focusing on Bud. Go make new friends and/or take up a new hobby. (Personally, I recommend Clogging.)",
+          "If you start changing YOUR life and how you live it, then, and only then, will there be a tiny chance of Bud saying to you, \"I need help.\"",
+          "There is an alternative approach. It is hard, scary, and takes true commitment: Hiring a professional interventionist.",
+          "Call me if you get stuck. Therapy is expensive, Al-Anon costs a buck.",
+        ],
+      },
+      { type: "paragraph", text: "Note 1. I have been asked, \"How can we 'detach' and move on with our lives if Bud is a minor child, or a grown-up child?\" This is tricky, and difficult, and may call for professional guidance. It is a struggle we all go through as parents: How much help is too much? In short: If Bud is trying to get clean, then help him in selected ways. If Bud is unwilling to get clean, then stop enabling him (see Enabling Versus Caring) and allow Bud to hit his bottom. Then Bud may be ready to accept help. If you are helping Bud avoid \"hitting bottom,\" then you are hurting Bud." },
+      { type: "paragraph", text: "Note 2: This client is an attorney. Pray for her." },
+    ]
+```
