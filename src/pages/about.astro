@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import StoreCallout from '../components/StoreCallout.astro';
 
 const iconSvgs: Record<string, string> = {
   heart: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`,
@@ -135,16 +134,6 @@ const sections = [
   <!-- Content sections -->
   <section class="py-16">
     <div class="container max-w-4xl">
-      <div class="mb-10">
-        <StoreCallout
-          slug="serenity-gel"
-          variant="card"
-          kicker="While you're here"
-          headline="The Gore Store is also open."
-          body="If the philosophies on this page sound like work, Dr. Gore's store offers the lazier option. None of it works, but browsing is free."
-        />
-      </div>
-
       <div class="grid grid-cols-1 gap-8">
         {sections.map((section) => (
           <div class="bg-card rounded-xl border border-border p-8 shadow-sm hover:shadow-md transition-shadow">

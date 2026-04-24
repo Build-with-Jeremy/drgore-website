@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import StoreCallout from '../components/StoreCallout.astro';
 
 const faqs = [
   { q: "Any relation to Al Gore?", a: "No." },
@@ -55,50 +54,6 @@ const schema = {
     </div>
   </section>
 
-  <section class="pt-8 pb-4">
-    <div class="container max-w-5xl">
-      <div class="relative overflow-hidden rounded-xl bg-foreground text-background shadow-lg">
-        <div
-          class="absolute inset-0 opacity-[0.06] pointer-events-none"
-          style="background-image: repeating-linear-gradient(0deg, #ffffff 0, #ffffff 1px, transparent 1px, transparent 4px);"
-        />
-        <div class="relative flex flex-col md:flex-row items-center gap-6 md:gap-8 px-6 py-5 md:py-4 md:pl-8 md:pr-6">
-          <div class="relative w-44 h-20 flex-shrink-0 hidden md:block" aria-hidden="true">
-            <div class="absolute w-16 aspect-[4/5] bg-background p-1 pb-3 shadow-xl" style="top: -6px; left: 0; transform: rotate(-8deg); z-index: 1;">
-              <img src="/assets/store/anti-whining.jpg" alt="" class="w-full h-full object-cover" loading="lazy" />
-            </div>
-            <div class="absolute w-16 aspect-[4/5] bg-background p-1 pb-3 shadow-xl" style="top: -10px; left: 40px; transform: rotate(4deg); z-index: 2;">
-              <img src="/assets/store/scams-guide.jpg" alt="" class="w-full h-full object-cover" loading="lazy" />
-            </div>
-            <div class="absolute w-16 aspect-[4/5] bg-background p-1 pb-3 shadow-xl" style="top: -4px; left: 80px; transform: rotate(-5deg); z-index: 3;">
-              <img src="/assets/store/move-out-fogger.jpg" alt="" class="w-full h-full object-cover" loading="lazy" />
-            </div>
-            <div class="absolute w-16 aspect-[4/5] bg-background p-1 pb-3 shadow-xl" style="top: -12px; left: 120px; transform: rotate(6deg); z-index: 4;">
-              <img src="/assets/store/ex-boyfriend-lotion.jpg" alt="" class="w-full h-full object-cover" loading="lazy" />
-            </div>
-          </div>
-          <div class="flex-1 text-center md:text-left">
-            <p class="font-display italic text-accent text-xs md:text-sm mb-1">
-              A paid message from The Gore Store
-            </p>
-            <p class="font-display text-lg md:text-xl font-bold leading-snug">
-              Got questions? We've got products. <span class="text-background/60 italic font-normal">(They don't work.)</span>
-            </p>
-          </div>
-          <a
-            href="/store"
-            class="flex-shrink-0 inline-flex items-center gap-2 bg-accent text-accent-foreground hover:bg-accent/90 font-bold px-5 py-2.5 rounded-md transition-colors text-xs uppercase tracking-wider whitespace-nowrap"
-          >
-            Visit The Store
-            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="py-10">
     <div class="container max-w-3xl space-y-3">
       {faqs.map((faq) => (
@@ -117,45 +72,4 @@ const schema = {
     </div>
   </section>
 
-  <section class="py-14 bg-secondary">
-    <div class="container max-w-3xl">
-      <div class="text-center mb-8">
-        <p class="text-xs uppercase tracking-widest text-accent font-bold mb-2">
-          And now, the part where we try to sell you something
-        </p>
-        <h2 class="font-display text-2xl md:text-3xl font-bold text-foreground">
-          Still have questions? Try a product instead.
-        </h2>
-        <p class="text-sm text-muted-foreground italic mt-2">
-          Same result. Less effort. No actual improvement.
-        </p>
-      </div>
-      <div class="space-y-4">
-        <StoreCallout
-          slug="scams-guide"
-          variant="inline-mini"
-          kicker="Can't afford the session? Try the book."
-          headline="Save on therapy. Spend $1,299 on a CD instead."
-        />
-        <StoreCallout
-          slug="drinking-pill"
-          variant="inline-mini"
-          kicker="For those unwilling to do the work"
-          headline="The pill that makes AA unnecessary. Allegedly."
-        />
-        <StoreCallout
-          slug="anti-whining"
-          variant="inline-mini"
-          kicker="The low-effort option"
-          headline='Skip family therapy. Try "Anti-Whining" Drops.'
-        />
-      </div>
-      <div class="text-center mt-8">
-        <a href="/store" class="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
-          Browse the full Gore Store
-          <span aria-hidden="true">→</span>
-        </a>
-      </div>
-    </div>
-  </section>
 </Layout>
