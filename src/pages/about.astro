@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import VideoChannelCallout from '../components/VideoChannelCallout.astro';
 
 const insuranceQuestions = [
   "Do I have out-of-network mental health benefits?",
@@ -10,7 +11,7 @@ const insuranceQuestions = [
   "Do I need a referral or prior authorization for out-of-network therapy?",
   "What is the process for submitting out-of-network claims for reimbursement?",
   "What CPT codes are covered? (Common codes: 90834 for a 45-minute session, 90837 for a 60-minute session, 90847 for family therapy)",
-  "Is there a different deductible or reimbursement rate for family or couples therapy?",
+  "Is there a different deductible or reimbursement rate for family therapy?",
   "How long does it typically take to process an out-of-network reimbursement?",
 ];
 
@@ -63,11 +64,6 @@ const sections = [
     content: "I treat teenagers, again, within the context of their families. I usually alternate between individual and family therapy. I love rebellious teenagers. I love unhappy teenagers. I love teenagers who can't fit in. I treated an 18-year-old and his family recently, and the kid had a bumper sticker on his car that said it all: \"I Hate Everything.\" I remember being there not too long ago. (OK, maybe 50 years is long ago.) I deal head-on with drug and alcohol issues, and school/grades/attendance issues, too.",
   },
   {
-    title: "Couples",
-    image: "/assets/about/couples.jpg",
-    content: "Couples therapy is hard work. Clients need to look at their own history and see how it impacts today's relationship. I try to do a \"directive\" type of therapy, where I ask couples to go home and practice new behaviors with each other. People have 167 hours in between appointments, and that's where most of the changes will occur.",
-  },
-  {
     title: "Substance Abusers",
     image: "/assets/about/substance-abusers.jpg",
     content: "I treat drug addicts, alcoholics and people who may not be full-blown addicts or alcoholics, but abusing chemicals to the detriment of their lives and the lives of those around them. My experience has taught me that family therapy is essential to recovery. I believe in the 12-step approach and push it hard. If someone refuses to go to Alcoholics Anonymous or Narcotics Anonymous or Cocaine Anonymous meetings, I will work with them anyway. However, I will continue to gently, and not so gently, push them towards meetings. These 12-step programs aren't perfect, but they're free, readily available and the best thing available for addiction recovery.",
@@ -75,7 +71,7 @@ const sections = [
   {
     title: "Postpartum Mood Disorders",
     image: "/assets/about/postpartum.jpg",
-    content: "I treat a lot of couples with postpartum depression (or postpartum mood disorders, which includes anxiety issues). I fell into this specialty because Emory University has a world-renowned program, and the founder of the program, Dr. Zachary Stowe, admired how I worked with the couples he was treating, and sent me the majority of his marital therapy cases. Basically, I am good at getting husbands involved in their wives' recoveries from depression. There are quite a few husbands walking around Atlanta who never changed a diaper until they started therapy with me. I believe in getting uninvolved husbands involved.",
+    content: "I treat a lot of postpartum depression cases (or postpartum mood disorders, which includes anxiety issues). I fell into this specialty because Emory University has a world-renowned program, and the founder of the program, Dr. Zachary Stowe, admired how I worked with the families he was treating, and sent me the majority of his cases. Basically, I am good at getting husbands involved in their wives' recoveries from depression. There are quite a few husbands walking around Atlanta who never changed a diaper until they started therapy with me. I believe in getting uninvolved husbands involved.",
   },
   {
     title: "Adult Individuals",
@@ -117,6 +113,8 @@ const sections = [
       </div>
     </div>
   </section>
+
+  <VideoChannelCallout />
 
   <!-- Content sections -->
   <section class="py-16">

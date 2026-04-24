@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import VideoChannelCallout from '../components/VideoChannelCallout.astro';
 
 const faqs = [
   { q: "Any relation to Al Gore?", a: "No." },
@@ -18,7 +19,7 @@ const faqs = [
   { q: "Do you accept insurance?", a: "I am not on any insurance plans. Some insurance plans will pay something for out-of-network services. It is expected for you to pay for your session at the time of services." },
   { q: "What can I expect from your services?", a: "1. Fast callbacks from 9:00 AM – Midnight.\n2. I have spent 42 years and over 55,000 hours helping people change. I am at the \"top of my game\".\n3. The \"buck\" stops with me. If you need me, I will be readily available. I will do whatever it takes to help you make the emotional and behavioral changes you need to make now." },
   { q: "How long will it take for us/me to see results?", a: "Pretty quickly, if you so desire. It also depends on the \"depth\" of your problems, and on the level and intensity of your commitment to change." },
-  { q: "What do you specialize in?", a: "I am a general practitioner. I am trained to work with young children, adolescents, and adults of all ages. Here are my \"unique\" specialty niches:\n1. Whole families, two or three generations at a time.\n2. Addicts/alcoholics, both adults or teenagers.\n3. Pregnancy and postpartum mood disorders, and couples/family therapy of women with pregnancy.\n4. Successful men who are not happy, and whose families are not happy, either.\n5. Little kids, ages 3 to 10. I do not do \"play therapy\" with the child. I will see them alone for brief intervals, but I treat young children only with the involvement of the whole family." },
+  { q: "What do you specialize in?", a: "I am a general practitioner. I am trained to work with young children, adolescents, and adults of all ages. Here are my \"unique\" specialty niches:\n1. Whole families, two or three generations at a time.\n2. Addicts/alcoholics, both adults or teenagers.\n3. Pregnancy and postpartum mood disorders, and family therapy for women with pregnancy.\n4. Successful men who are not happy, and whose families are not happy, either.\n5. Little kids, ages 3 to 10. I do not do \"play therapy\" with the child. I will see them alone for brief intervals, but I treat young children only with the involvement of the whole family." },
   { q: 'What do you mean the "whole family?"', a: "At least the Mom, Dad, and children." },
   { q: "What if they are divorced?", a: "Especially if they are divorced." },
   { q: "What if one parent refuses to participate?", a: "I would be proud to say that a sixth specialty of mine is getting uninvolved members more involved in the lives of the \"patient.\" No matter the age of this identified \"patient.\"" },
@@ -72,4 +73,5 @@ const schema = {
     </div>
   </section>
 
+  <VideoChannelCallout />
 </Layout>
