@@ -1,0 +1,57 @@
+---
+// Badge assets pending from Dave. Set imageSrc to the badge image path when received.
+// marriage.com badge intentionally omitted — contradicts sitewide drop-marriage positioning.
+const badges = [
+  {
+    name: 'Psychology Today Verified',
+    url: 'https://www.psychologytoday.com/us/therapists/david-gore-atlanta-ga',
+    imageSrc: null as string | null,
+    imageAlt: 'Verified by Psychology Today',
+    placeholder: 'Psychology Today Verified',
+  },
+  {
+    name: 'AAMFT Clinical Fellow',
+    url: 'https://www.aamft.org',
+    imageSrc: null as string | null,
+    imageAlt: 'American Association for Marriage and Family Therapy Clinical Fellow',
+    placeholder: 'AAMFT Clinical Fellow',
+  },
+];
+
+const activeBadges = badges.filter((b) => b.imageSrc);
+const stubBadges = badges.filter((b) => !b.imageSrc);
+---
+<section class="py-10 border-t border-border bg-background">
+  <div class="container max-w-4xl">
+    <p class="text-xs uppercase tracking-widest text-muted-foreground text-center mb-6">
+      Verified &amp; Credentialed
+    </p>
+    <div class="flex flex-wrap justify-center items-center gap-8">
+      {activeBadges.map((badge) => (
+        <a
+          href={badge.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="opacity-70 hover:opacity-100 transition-opacity"
+          aria-label={badge.name}
+        >
+          <img src={badge.imageSrc!} alt={badge.imageAlt} class="h-16 w-auto" loading="lazy" />
+        </a>
+      ))}
+      {stubBadges.map((badge) => (
+        <a
+          href={badge.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-border text-sm font-medium text-muted-foreground hover:text-foreground hover:border-primary/40 transition-colors"
+          aria-label={badge.name}
+        >
+          <svg class="h-4 w-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          {badge.placeholder}
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
