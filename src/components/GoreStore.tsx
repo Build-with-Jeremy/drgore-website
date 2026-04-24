@@ -93,7 +93,7 @@ export default function GoreStore() {
       </div>
 
       <p className="text-xs text-muted-foreground italic mb-8">
-        Showing {visible.length} of {goreProducts.length}. None of these actually work.
+        Showing {visible.length} of {goreProducts.length} products.
       </p>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -125,9 +125,6 @@ export default function GoreCart() {
               <h2 className="font-display text-2xl font-bold text-foreground">
                 Your Cart
               </h2>
-              <p className="text-xs text-muted-foreground italic">
-                Supplies are extremely limited. (Nonexistent, actually.)
-              </p>
             </div>
             <button
               type="button"
@@ -202,9 +199,6 @@ export default function GoreCart() {
                   {formatUsd(subtotal)}
                 </span>
               </div>
-              <p className="text-xs text-muted-foreground/80 italic leading-snug">
-                Shipping, handling, and regret calculated at checkout.
-              </p>
               <button
                 type="button"
                 onClick={openCheckout}
@@ -224,7 +218,7 @@ export default function GoreCart() {
         </aside>
       </div>
 
-      {/* Joke checkout modal */}
+      {/* Checkout confirmation modal */}
       {ui.checkoutOpen && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
           <div
@@ -257,15 +251,7 @@ export default function GoreCart() {
             </h2>
             <div className="space-y-3 text-muted-foreground leading-relaxed mb-8">
               <p>
-                Your credit card has been declined by The Universe.
-              </p>
-              <p>
-                A therapist will call you shortly to discuss whatever made you think any of this
-                would actually help.
-              </p>
-              <p className="text-xs italic text-muted-foreground/70">
-                Order #{Math.floor(100000 + Math.random() * 900000)} · Tracking
-                number will not be provided.
+                When these items become available, we will notify you. These items are on back order.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">

@@ -25,33 +25,11 @@ export default function GoreStoreHero() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left: copy */}
           <div>
-            <div className="flex items-center gap-2 mb-6">
-              <span className="relative inline-flex h-2.5 w-2.5">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75 animate-ping" />
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-red-500" />
-              </span>
-              <span className="text-xs font-bold tracking-[0.2em] uppercase text-red-400">
-                ON AIR · Live Now
-              </span>
-            </div>
-
-            <p className="font-display italic text-accent text-base md:text-lg mb-3">
-              As Seen On Late-Night Therapy
-            </p>
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.95] mb-6">
               The Gore Store.
             </h1>
-            <p className="text-base md:text-lg text-background/80 leading-relaxed max-w-xl mb-4">
-              Premium therapeutic products that are{' '}
-              <span className="font-semibold text-background">
-                definitely, absolutely, 100% real.
-              </span>{' '}
-              <span className="italic text-background/60">
-                (They're not. Not even a little.)
-              </span>
-            </p>
-            <p className="text-sm text-background/60 italic mb-8">
-              Operators are standing by. Results may vary. Side effects include clarity.
+            <p className="text-base md:text-lg text-background/80 leading-relaxed max-w-xl mb-8">
+              Dr. Gore's collection of premium therapeutic products. Browse by category and add to cart.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
@@ -69,21 +47,15 @@ export default function GoreStoreHero() {
                 onClick={openDrawer}
                 className="inline-flex items-center gap-2 border border-background/30 text-background hover:bg-background/10 font-semibold px-5 py-3 rounded-md transition-colors text-sm"
               >
-                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.91.37 1.8.74 2.64a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.44-1.44a2 2 0 0 1 2.11-.45c.84.37 1.73.62 2.64.74A2 2 0 0 1 22 16.92z" />
-                </svg>
-                Call 1-800-NOT-REAL
+                View cart
               </button>
             </div>
 
             <div className="mt-10 flex items-center gap-6 text-xs uppercase tracking-widest text-background/50">
-              <span>Free shipping*</span>
+              <span>Free shipping</span>
               <span>No refunds</span>
               <span>Act fast</span>
             </div>
-            <p className="text-[0.65rem] text-background/40 mt-2">
-              *Free shipping does not exist. Neither does this store, technically.
-            </p>
           </div>
 
           {/* Right: polaroid collage */}

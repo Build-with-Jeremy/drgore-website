@@ -47,7 +47,7 @@ if (!product) {
             {headline ?? 'Prefer a product to a process?'}
           </h2>
           <p class="text-base md:text-lg text-background/80 leading-relaxed mb-6 max-w-xl mx-auto md:mx-0">
-            {body ?? "No judgment. Dr. Gore's also got a store. The products don't work, but the bit does."}
+            {body ?? "Dr. Gore's also got a store."}
           </p>
           <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start items-center">
             <a
@@ -67,9 +67,6 @@ if (!product) {
               className="!border-background/30 !text-background hover:!bg-background/10"
             />
           </div>
-          <p class="text-[0.7rem] text-background/40 mt-4 italic">
-            100% not real. Mostly.
-          </p>
         </div>
       </div>
     </div>
@@ -102,9 +99,6 @@ if (!product) {
             Browse the store →
           </a>
         </div>
-        <p class="text-[0.7rem] text-muted-foreground/60 mt-3 italic">
-          100% not real. Mostly.
-        </p>
       </div>
     </div>
   </aside>
@@ -127,7 +121,7 @@ if (!product) {
           {headline ?? product.title}
         </p>
         <p class="text-xs text-muted-foreground mt-0.5">
-          {product.price} · <span class="italic">100% not real.</span>
+          {product.price}
         </p>
       </div>
       <AddToCartButton client:load slug={product.slug} variant="mini" label="Add" />
