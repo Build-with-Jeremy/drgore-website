@@ -20,20 +20,6 @@ export interface GoreProduct {
 
 export const goreProducts: GoreProduct[] = [
   {
-    slug: 'scams-guide',
-    title: '"A Psychological Guide To Avoiding Internet Scams"',
-    price: '$1,199.95 (CD) / $1,299.95 (DVD) / $1,499.95 (Blu-Ray)',
-    priceValue: 1199.95,
-    image: '/assets/store/scams-guide.jpg',
-    description:
-      'Tired of being ripped off by phony Internet products? Do people take advantage of your trusting nature? Do you want to stop being a "victim" and start taking charge of your life? To learn more, please send a certified bank check, or cash, to my PO Box today...',
-    category: 'Self-Help',
-    tag: 'BESTSELLER',
-    featured: true,
-    extras: 'Plus $59.00 S&H. Call for Blu-Ray+ pricing.',
-    soldResponse: 'Sold Out!',
-  },
-  {
     slug: 'texting-handbook',
     title: '"How To Stop Your Teenager From Texting" Handbook',
     price: '$9.95',
