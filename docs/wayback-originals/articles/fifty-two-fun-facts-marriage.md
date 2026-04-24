@@ -1,0 +1,120 @@
+---
+title: "fifty-two-fun-facts-marriage"
+date: ""
+wayback_url: "https://web.archive.org/web/20171224152325/http://www.drgore.com:80/fifty-two-free-fun-facts-from-a-marriage-counselor/"
+capture_date: "2017-12-24"
+---
+
+# fifty-two-fun-facts-marriage
+
+Doing marriage therapy is a high-stakes endeavor, with lots of potential to change people’s lives. If divorce occurs, kids can have their childhoods turned upside down, the financial ramifications are huge, and multiple generations are impacted forever. I have treated thousands of couples, and, when a marriage goes from bad to good, it still thrills me to be part of that process. Read this list, memorize some of it, and try to enact a few. Then you won’t need to come see me.
+
+1. You need to set aside time for your marriage and keep that time sacred and immovable.
+
+2. The best gift you can give your kids is a good marriage. Stop buying them so much stuff already.
+
+3. In the old day’s marriages came before the children. If your marriage is central, your kids will not only survive, they will be better off. Our Kids Don’t Need to be Worshipped and Celebrated So Much.
+
+4. Fighting in your marriage is OK. Fighting that yields new information and empathy is really, good.
+
+5. Anger is OK, rage isn’t. If you are raging (over a “five” out of a “ten” on your “Anger Meter”) then YOU take a break and calm down. Then YOU re-engage. Always.
+
+6. Constant fighting will kill your marriage and constant fighting in my office will make me want to call in sick (and I am never sick.)
+
+7. It is better to be happy than to be right.
+
+8. When you say “My feelings just aren’t there anymore” I think you are cheating.
+
+9. When you say “I want to see what else is out there” I know you are cheating.
+
+10. Stop telling friends and family anything you aren’t saying to your spouse. Keep that energy in the marriage.
+
+11. If your husband calls to make the appointment, that usually means my job is going to be very hard (especially if your bags are packed and at the door).
+
+12. If your wife calls to make the appointment, but then you take ten days to tell her or me when you can do a session, my job is going to be really, hard. And now I don’t like you.
+
+And I don’t care how “Big” your job is…
+
+13. Although I (usually) don’t shout “Grow up already!” during a session, I am thinking it. Marriage is for grown-ups.
+
+14. Throwing things is a violent act. It is abusive even if you’re “only” throwing something against a wall.
+
+15. The older I get the more this is true and vital: It isn’t what you say, it is how you say it.
+
+16. Yeah, I am expensive. Go to a hundred dollar an hour counselor and tell me what you’ve accomplished after eight sessions.
+
+17. Ask directly for what you need.
+
+18. Affairs are preventable. It is a gradual slope.
+
+19. Affairs needn’t be fatal to a marriage.
+
+20. Don’t have an affair. Please.
+
+21. The message you send to your partner is not necessarily the message your partner receives. This one keeps my waiting room full.
+
+22. Stonewalling (shutting down and not communicating) will kill your marriage.
+
+23. Constant criticism and/or contempt will kill your marriage.
+
+24. Reluctance to take responsibility for any part of the marital difficulties will kill your marriage.
+
+25. Active addiction or alcoholism will kill your marriage. (Note to “functioning” alcoholics everywhere: I don’t care if you haven’t missed a day of work in fourteen years, your taking the edge off every night makes for one lonely, neglected partner.)
+
+26. Stop viewing him as a remodeling project. He can change, but not as much as you may like.
+
+27. There is a reason s/he was single until s/he was thirty-seven.
+
+28. There is a reason this is his/her third marriage.
+
+29. My number one recommendation: Stop taking each other for granted.
+
+30. You are not the “good one”. There is hardly ever a “good one”.
+
+31. If you say you are going to do something, do it. This is an important part of trust.
+
+32. Nothing feels better than knowing your partner has your back.
+
+33. Step-children issues are difficult to keep separate from marital issues.
+
+34. Extended periods of silence = one angry household.
+
+35. “They” say it is possible to have a good sexless marriage. I haven’t seen one yet, but, I have only treated 2,137 couples.
+
+36. You need to carve-out time for your marriage and keep that time sacred and immovable.
+
+37. Some people just don’t need to be together.
+
+38. Nothing feels worse than if your relationship consists entirely of deciding whether you should be in the relationship or not.
+
+39. My number one recommendation: Do what is necessary for your partner to feel safe. With a sense of safety, “I” can be truly “me.” Without safety, I need to act like someone else. That is exhausting.
+
+40. More safety = More vulnerability. Vulnerability is good.
+
+41. If issues with your “Ex-Spouse” are intruding on your current marriage, you should probably consider truly, truly divorcing your Ex.
+
+42. Women need to understand that men aren’t mind readers. You need to tell them what you need and how you feel. Repeat until they get it.
+
+43. You may need to teach your man how to listen. For example, (1) Listening doesn’t equal advice giving. (2) Look at me when I am talking, please. (3) Please pause the game.
+
+44. It stinks that women must work this hard. The truth is women are better at relationships than men. That is why we men tend to be happier in marriage than women. It isn’t fair, I know, don’t get mad at me.
+
+45. Men need to understand that if you ignore your wife all day she isn’t going to feel amorous at night.
+
+46. My number one recommendation: Truly hear each other.
+
+47. Women want to feel connected.
+
+48. Men want to be held in awe, but will settle for appreciation. And please don’t shame us.
+
+49. Women want appreciation, too, but if you ask them about their day, and listen…That’ll usually work.
+
+50. Go ahead and give’em a good foot rub once in a while.
+
+51. If your problems have been going on for ten years, I won’t fix you in five sessions.
+
+52. Remodeling your kitchen won’t save the marriage. Neither will that trip to Europe.
+
+53. My number one recommendation: Be nice to each other.
+
+54. You need to create time for your marriage and keep that time sacred and immovable.

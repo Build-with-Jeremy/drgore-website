@@ -1,0 +1,60 @@
+---
+title: "addiction-defined"
+date: ""
+wayback_url: "https://web.archive.org/web/20190412204946/http://www.drgore.com/addiction-defined/"
+capture_date: "2019-04-12"
+---
+
+# addiction-defined
+
+What is addiction? Addiction and alcoholism are two terms which are used interchangeably and describe a   condition of powerlessness over something. Addiction is when "it" has   more control over you than you have over "it". The "it" can be alcohol,   marijuana, heroin, sex, gambling, food, or any other drug or   mood-altering behavior.
+
+If you are reading this and you are wondering whether or not you have an   addiction of some kind, you need to understand that everything you hear   or see, you hear and see through an "addiction filter." In other words,   if you do have a problem with addiction, anything you perceive relating   to whether or not you have a problem, you perceive through the filters   that currently exist within your mind; within your thinking. These   "filters" will often prevent you from seeing the truth about where you   are in relationship to your drug of choice.
+
+"Drug of Choice" is a term to describe your #1 favorite way to alter   your state of consciousness. We all have drugs of choice which often   shift over time. For example, in our teens, smoking marijuana may be our   favorite activity; when we hit our 30’s, we become more invested in   drinking beer and martinis than in smoking pot.
+
+I consider addiction to be a disease. A disease which is Primary, Progressive and Chronic. Primary means that it must be treated as the most important aspect of someone   getting better.  For example, if someone is depressed and addicted to   valium, that person must stop the valium use first, then deal with the   depression. A lot of therapists and psychiatrist believe that if the   depression improves, the need for valium will stop. This is not true.   The depressed addict will continue to take the valium. Progressive means the disease gets worse over time.  There may be instances where   improvements occur, but these times of abstinence or "moderate" use will   not last. Chronic means the disease does not go away. Ever.
+
+And, by the way, addiction is fatal, too. It will kill you eventually. A   little known fact, for example: alcohol abuse causes more heart disease   every year than does cigarette smoking.  But you won’t see that on beer   commercials.
+
+Another definition of addiction is: continued use of substances (or   behaviors) even when confronted with the reality that negative   consequences happen after using these substances or behaviors. In other   words, this definition describes the person who keeps on doing the same   behaviors over and over again with the same negative consequences   occurring. Again, this is where denial serves the alcoholic very well.
+
+I had a client once, a 26 year old mother of two who initially showed up   in my office to deal with her older daughter’s behavior problem. It   soon became obvious that the problem did not exist with the daughter but   with the mother, and the therapy shifted to focus on her. After several   sessions, the mother admitted she was smoking marijuana on a daily   basis in addition to her sporadic abuse of other chemicals. Throughout   the ongoing therapy and with much reluctance, she became fully honest   with me and admitted she was in fact getting high 3 to 6 times a day. We   began to look at the pattern of addiction in her life and after   resistance, she agreed to try a program of abstinence. Her sobriety   would last for varying time periods but she always returned back to the   drugs. At one point, she said to me, "I don’t know if I’m a pot addict   or what, but I do know I have a rather bizarre relationship with pot." I   replied to her, "That is the best definition of addiction I have ever   heard."
+
+Can you imagine having a "bizarre relationship" with heroin? Or a   "bizarre relationship" with gambling or alcohol? For the record, most   normal people do not have relationships of any kind with these chemicals   or with these behaviors. Once you do get into a relationship with these   things…these "it’s," and the relationship becomes qualified as   "bizarre," at that point, almost anyone would say that you are in fact   dealing with an active addiction.
+
+This client has recently called me from New Jersey and insists I tell  everyone that she now has been clean from all drugs and alcohol for over  three years now.  She is proud of herself, and rightly so.
+
+THE "OFFICIAL" DEFINITION OF ADDICTION
+
+
+
+Criteria for Substance Dependence* – A maladaptive pattern of substance   use, leading to clinically significant impairment or distress, as   manifested by three (or more) of the following, occurring at any time in   the same 12-month period:
+
+(1) Tolerance, as defined by either of the following:
+
+        a. A need for markedly increased amounts of the substance to achieve intoxication or           desired effect
+
+        b. Markedly diminished effect with continued use of the same amount of the           substance
+
+(2) Withdrawal, as manifested by either of the following:
+
+        a. The characteristic withdrawal syndrome for the substance
+
+        b. The same (or a closely related) substance is taken to relieve or avoid withdrawal           symptoms
+
+(3) The substance is often taken in larger amounts or over a longer period than was       intended
+
+(4) There is a persistent desire or effort to cut down or control substance use
+
+(5) A great deal of time is spent in activities necessary to obtain the substance (e.g.,       visiting multiple doctors or driving long distances), 
+
+      use the substance (e.g., chain       smoking), or recover from its effects
+
+(6) Important social, occupational, or recreational activities are given up or reduced       because of substance use
+
+(7) The substance use is continued despite knowledge of having persistent or recurrent       physical or psychological problem that is likely to 
+
+      have been caused or exacerbated       by the substance (e.g., current cocaine use despite recognition of cocaine-induced       depression, or       continued drinking despite recognition that an ulcer was made worse       by alcohol consumption).
+
+*Diagnostic And Statistical Manual Of Mental Disorders. 4th ed. Washington: American  Psychiatric Association., 1994

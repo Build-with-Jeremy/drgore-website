@@ -1,0 +1,62 @@
+---
+title: "why-play-therapy-is-stupid"
+date: ""
+wayback_url: "https://web.archive.org/web/20161221003628/http://www.drgore.com/why-play-therapy-is-stupid/"
+capture_date: "2016-12-21"
+---
+
+# why-play-therapy-is-stupid
+
+Play therapists believe the way to   help a child is through  accessing their “inner world” via play.   They   get on the floor and play board games with the children, play in    sandboxes and dollhouses, have the kids do drawings and make other forms   of art  work, and engage and interact with children.
+
+Now, I think playing with children is   quite important. I  love playing with children.  However, I  think   having parents sit in my waiting room while I engage their child in a    game is vainly wrong.  Who am I to think  that one hour a week with me,   even if I am the greatest child therapist in the  world, is going to   create a change in the child who is with their parents for the  other   167 hours of the week?
+
+All behavior must be viewed and   understood in context.  Allow me to repeat myself:  All behavior must be   viewed and understood in  context.  A child’s context consists of    their home, their siblings, their friends, their school, their parents   and anyone  else with whom they have significant contact (nannies,   grandparents, aunts,  etc.)
+
+Now, play therapy is useful, if you   are working with  orphans.  You need to get into their  heads to   understand their issues (which usually consist of “Why am I in an    orphanage?”, “How am I doing in this orphanage?” and, “How can I get out   of this  orphanage?”).  If there are no parents  with whom to interact,   then let the play therapy begin.
+
+And, play therapy may be useful for   one or two sessions as a  way to engage the child more fully into the   family therapy.  Or, it is one way to help understand the  child and how   he or she fits or doesn’t “fit” with the rest of his or her  family.
+
+My strong belief is:   To help children, the modality of choice is family therapy.
+
+Family therapy is difficult for   parents.  We don’t usually sit around and discuss what  you did   right…the focus tends to be on changing interactions that don’t work    well for your family.
+
+Some Examples of Problems That Can Be Resolved with Family Therapy
+
+The problems can be quite different,   yet, research shows most  problems with children can be resolved via   family-based interventions.
+
+School Avoidance:    Family therapy should be utilized to make the  little student go to   school.  The cure  for school avoidance is school attendance.   And that   means tomorrow, not next week.
+
+Depression in  children:    Family therapy should be  utilized to help engage the child in   activities that do not serve the  depression well, like, exercise,   joining clubs, playing with others, getting  some excitement going about   learning a new skill, etc.  Note:   Drug companies don’t agree, but, I   think true depression in children is  fairly uncommon.  Depression can   occur  for periods of time in children, but, children are remarkably   resilient.  Drugs may be indicated for a child, but,  again, only after   other therapies have failed.   To treat a child with drugs as the first   attempt at treatment is  wrong.  And, to medicate a child without   therapy  is wrong.  Let me say this again:  To medicate a child without   therapy is wrong.
+
+HOT DIAGNOSIS ALERT:    Attention, consumers of mental health  services, there is new diagnosis   being highly-touted and advertised by the  pharmaceutical industry.    That hot, hip  diagnosis is Bipolar Disorder in your child.   DO NOT BE   GULLIBLE.  There are  some Bipolar Children out there, like, maybe,  four in all of Georgia.  If somebody told you your child is Bipolar,    please get a second opinion.  If your kid  is sad sometimes, and really   angry at other times:  It means he or she has feelings, not a  Bipolar Disorder.
+
+Social difficulties:    Family therapy should be utilized to help  engage the child in   activities that enable shy, socially awkward or isolative  children to   be with other children.  The  cure for social difficulties is to get a   child to be more social…not to play  Candyland with his or her   therapist.   And, our playing with sand figures won’t help his or her   social issues,  either.
+
+Anxiety in children:    Family therapy should be utilized to help  decrease anxiety in   children.  I am now  going to say something really hard for parents to   hear:  I have never treated an anxious child who did  not have at least   one anxious parent.  This  is really important, so, I will say it   twice:   I have never treated a child for anxiety who did not have at   least one  anxious parent.  A family pattern of anxiety  is a gift that   keeps on giving and giving and giving….
+
+“Acting out”  behaviors in children:    Family  therapy should be utilized to help decrease the “acting out”   types of  behaviors.  These behaviors include:  attention deficit types   of behaviors, impulsivity,  anger and angry outbursts, distractibility,   overt defiance at home or school,  minor criminal behaviors,   destructiveness, threatening acts, violence, etc.  I can get on the   floor and play with clay and  figure out why Johnny is smashing dishes   during dinner, or, we can work as a  family to end this “Pathological   Plate Smashing Disorder” right away.
+
+Does family therapy always work   on these acting-out  behaviors?  No.  Sometimes, families just wait too   long to get  help.  I can’t count the number of times  I have had   families say to me, “I wish we did this when Junior was seven years    old, instead of now.”
+
+Does family therapy usually work for these  behaviors?  Yes.
+
+Does individual therapy for a child often go “hand in hand”  with the family therapy?  Yes.
+
+Is individual therapy  ever appropriate?    I feel individual  therapy is very appropriate when the entire system   is also being “worked  on.”  Individual therapy for a child  (including   Play Therapy) is great, as long as the contextual issues are being    addressed clearly and directly.  My  experience is that if the entire   family is dealing directly with the issues,  then there is often no real   need for individual child therapy.
+
+Beware:  I have   worked at places that proclaim to do  family therapy, yet, do hardly any   family therapy at all.  They meet with the parents for a few minutes    (or, usually, with the mother because the father is at work), then meet   with  the child for a half hour, then finish up by meeting with the   mother  again.  Sometimes, if these “family therapists”  are feeling   particularly bold that day, they finish up with the mother and the    child together (!!) in the same room for a few minutes.  This is not   family therapy.  This is dangerous because it can create the  illusion   that the parents have truly attempted to address their issues.
+
+To close:  I believe that children can be compared to “gas”  as it was described in one my daughter’s middle school Physics textbook:
+
+A gas has no definite   volume or  definite shape.  A gas always takes both  the volume and the   shape of any container into which it is placed.
+
+I can go on, but, my point is simple:    You are the most important agent of change  for your child or   teenager.  There are  168 hours in week.  One hour per week of  trying   to better understand what a child is experiencing is not going to help    if a child’s context doesn’t allow or create change.
+
+Please allow me to repeat myself:  One   hour per week of trying to better  understand what a child is   experiencing is not going to help if a child’s  context doesn’t allow or   create change.
+
+Sincere Apology  Section:
+
+Pre-emptive Apology  and Disclaimer:  This article has  angered some Play Therapists.   Sorry.  The above is   just my  opinion.  I am sure play therapy, by  itself, has helped   dozens of children over the last fifty years.
+
+No, Really, Here Is  the Truth:  I guess I am not all that  sorry about this article.  I truly  believe   that individually treating children usually doesn’t help children, and,    in fact, often prevents children from getting the help they need.  And,   in no way did I mean to insult orphans,  either.
