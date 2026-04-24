@@ -1,0 +1,24 @@
+---
+import { testimonials, hasTestimonials } from '../data/testimonials';
+---
+{hasTestimonials && (
+  <section class="py-16 bg-background">
+    <div class="container max-w-4xl">
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-foreground mb-10 text-center">
+        What Clients Say
+      </h2>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {testimonials.map((t) => (
+          <blockquote class="rounded-xl border border-border bg-card p-6 space-y-3">
+            <p class="text-muted-foreground leading-relaxed italic">
+              &ldquo;{t.quote}&rdquo;
+            </p>
+            <footer class="text-sm font-medium text-foreground">
+              &mdash; {t.name}{t.context ? `, ${t.context}` : ''}
+            </footer>
+          </blockquote>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
