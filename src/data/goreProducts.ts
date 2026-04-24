@@ -203,13 +203,13 @@ export const goreProducts: GoreProduct[] = [
     soldResponse: 'Sold Out!',
   },
   {
-    slug: 'move-out-fogger',
-    title: 'Get Your Adult Children To Move Out Whole House Fogger',
+    slug: 'adult-child-fumigator',
+    title: 'The Adult-Child Fumigator',
     price: '$75.95',
     priceValue: 75.95,
-    image: '/assets/store/move-out-fogger.jpg',
+    image: '/assets/store/adult-child-fumigator.jpg',
     description:
-      "He's 34, plays video games all night and sleeps all day. He can't get a job because nobody has driven over to your house and offered him a position worthy of his talents. He doesn't pay rent, or clean up after himself. He doesn't know where the laundry room is and can't help with the lawn because he has a bad back and even worse allergies. Time for the Fogger.",
+      "He's 34, plays video games all night and sleeps all day. He can't get a job because nobody has driven over to your house and offered him a position worthy of his talents. He doesn't pay rent, or clean up after himself. He doesn't know where the laundry room is and can't help with the lawn because he has a bad back and even worse allergies. Time for the Fumigator.",
     category: 'Parenting',
     tag: 'LIMITED',
     featured: true,

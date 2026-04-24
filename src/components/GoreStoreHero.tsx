@@ -3,7 +3,7 @@ import { openDrawer } from '../stores/cartStore';
 const collage = [
   { src: '/assets/store/anti-whining.jpg', rotate: -6, top: '4%', left: '2%' },
   { src: '/assets/store/ex-boyfriend-lotion.jpg', rotate: 5, top: '6%', left: '38%' },
-  { src: '/assets/store/move-out-fogger.jpg', rotate: -3, top: '10%', left: '70%' },
+  { src: '/assets/store/adult-child-fumigator.jpg', rotate: -3, top: '10%', left: '70%' },
   { src: '/assets/store/serenity-gel.jpg', rotate: 4, top: '48%', left: '8%' },
   { src: '/assets/store/breathspray.jpg', rotate: -5, top: '52%', left: '42%' },
   { src: '/assets/store/bambian.jpg', rotate: 7, top: '55%', left: '72%' },

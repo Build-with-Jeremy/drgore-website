@@ -208,6 +208,7 @@
     { "source": "/links/index_dev.php", "destination": "/links", "permanent": true },
     { "source": "/links/index_dev_Test.php", "destination": "/links", "permanent": true },
     { "source": "/test.php", "destination": "/", "permanent": true },
-    { "source": "/sample-page/:path*", "destination": "/", "permanent": true }
+    { "source": "/sample-page/:path*", "destination": "/", "permanent": true },
+    { "source": "/store/move-out-fogger", "destination": "/store/adult-child-fumigator", "permanent": true }
   ]
 }
