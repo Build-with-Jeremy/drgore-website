@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import VideoReelsGrid from '../../components/VideoReelsGrid';
+import TrustBadges from '../../components/TrustBadges.astro';
 import { videos, getAllUsedTags } from '../../data/videos';
 
 const allTags = getAllUsedTags();
@@ -26,6 +27,8 @@ const allTags = getAllUsedTags();
       <VideoReelsGrid videos={videos} allTags={allTags} client:load />
     </div>
   </section>
+
+  <TrustBadges />
 
   <section class="py-16 bg-secondary">
     <div class="container max-w-3xl text-center">
