@@ -5,7 +5,7 @@ import { blogPosts } from '../../data/blogPosts';
 
 export async function getStaticPaths() {
   return videos
-    .filter((video) => video.transcript && video.transcript.length > 0 && video.youtubeId)
+    .filter((video) => video.transcript && video.transcript.length > 0)
     .map((video) => ({
       params: { slug: video.slug },
       props: { video },
@@ -24,10 +24,10 @@ const videoSchema = {
   '@type': 'VideoObject',
   name: video.title,
   description: video.summary,
-  thumbnailUrl: video.youtubeId ? `https://i.ytimg.com/vi/${video.youtubeId}/maxresdefault.jpg` : undefined,
+  thumbnailUrl: `https://i.ytimg.com/vi/${video.youtubeId}/maxresdefault.jpg`,
   uploadDate: video.date,
-  contentUrl: video.youtubeId ? `https://www.youtube.com/watch?v=${video.youtubeId}` : video.instagramUrl,
-  embedUrl: video.youtubeId ? `https://www.youtube.com/embed/${video.youtubeId}` : undefined,
+  contentUrl: `https://www.youtube.com/watch?v=${video.youtubeId}`,
+  embedUrl: `https://www.youtube.com/embed/${video.youtubeId}`,
   ...(video.transcript ? { transcript: video.transcript.map((b) => b.text).join('\n\n') } : {}),
 };
 ---
@@ -35,7 +35,7 @@ const videoSchema = {
   title={`${video.title} — Dr. Gore Videos`}
   description={video.summary}
   canonical={`https://drgore.com/videos/${video.slug}`}
-  ogImage={video.youtubeId ? `https://i.ytimg.com/vi/${video.youtubeId}/maxresdefault.jpg` : undefined}
+  ogImage={`https://i.ytimg.com/vi/${video.youtubeId}/maxresdefault.jpg`}
   schema={videoSchema}
 >
   <section class="py-12 md:py-16 bg-secondary">
@@ -64,15 +64,13 @@ const videoSchema = {
         }`}
         style={`aspect-ratio: ${isVertical ? '9 / 16' : '16 / 9'};`}
       >
-        {video.youtubeId && (
-          <iframe
-            src={`https://www.youtube.com/embed/${video.youtubeId}?rel=0`}
-            title={video.title}
-            class="absolute inset-0 w-full h-full"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        )}
+        <iframe
+          src={`https://www.youtube.com/embed/${video.youtubeId}?rel=0`}
+          title={video.title}
+          class="absolute inset-0 w-full h-full"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
       </div>
 
       <p class="mt-8 text-lg text-foreground leading-relaxed">
@@ -179,16 +177,12 @@ const videoSchema = {
                 class="group relative block overflow-hidden rounded-xl bg-muted"
                 style={`aspect-ratio: ${isV ? '9 / 16' : '16 / 9'};`}
               >
-                {r.youtubeId ? (
-                  <img
-                    src={`https://i.ytimg.com/vi/${r.youtubeId}/maxresdefault.jpg`}
-                    alt={r.title}
-                    loading="lazy"
-                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                ) : (
-                  <div class="absolute inset-0 bg-gradient-to-br from-[#833ab4] via-[#fd1d1d] to-[#fcb045]" />
-                )}
+                <img
+                  src={`https://i.ytimg.com/vi/${r.youtubeId}/maxresdefault.jpg`}
+                  alt={r.title}
+                  loading="lazy"
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                 <div class="absolute inset-x-0 bottom-0 p-3 text-white">
                   <h3 class="font-display font-semibold text-sm leading-tight line-clamp-2 drop-shadow-md">

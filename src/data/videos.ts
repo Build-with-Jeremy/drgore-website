@@ -5,9 +5,7 @@ export interface TranscriptBlock {
 
 export interface Video {
   slug: string;
-  youtubeId?: string;
-  instagramUrl?: string;
-  featured?: boolean;
+  youtubeId: string;
   title: string;
   date: string;
   summary: string;
@@ -33,38 +31,6 @@ export const VIDEO_TAGS = [
 ] as const;
 
 export const videos: Video[] = [
-  // REVIEW: Confirm title/summary/tags after viewing each Reel.
-  // Cross-check YouTube channel first — prefer youtubeId over instagramUrl for SEO.
-  {
-    slug: "viral-reel-1m-dbpfsbse1qc",
-    instagramUrl: "https://www.instagram.com/reel/DBPfSbES1QC/",
-    featured: true,
-    title: "1M+ Views — [REVIEW: confirm title after viewing Reel]",
-    date: "2024",
-    summary: "[REVIEW: add 1-2 sentence summary after viewing Reel at https://www.instagram.com/reel/DBPfSbES1QC/]",
-    tags: ["Therapy", "Self-Growth"],
-    orientation: "vertical",
-  },
-  {
-    slug: "viral-reel-841k-c-f6o80pxnj",
-    instagramUrl: "https://www.instagram.com/reel/C-f6O80PXNj/",
-    featured: true,
-    title: "841K Views — [REVIEW: confirm title after viewing Reel]",
-    date: "2024",
-    summary: "[REVIEW: add 1-2 sentence summary after viewing Reel at https://www.instagram.com/reel/C-f6O80PXNj/]",
-    tags: ["Therapy", "Self-Growth"],
-    orientation: "vertical",
-  },
-  {
-    slug: "viral-reel-335k-c-i8ig6vhot",
-    instagramUrl: "https://www.instagram.com/reel/C_i8Ig6vHOt/",
-    featured: true,
-    title: "335K Views — [REVIEW: confirm title after viewing Reel]",
-    date: "2024",
-    summary: "[REVIEW: add 1-2 sentence summary after viewing Reel at https://www.instagram.com/reel/C_i8Ig6vHOt/]",
-    tags: ["Therapy", "Self-Growth"],
-    orientation: "vertical",
-  },
   {
     slug: "modern-parenting-nailing-it-or-failing-it",
     youtubeId: "gVvfnKY2Pss",

@@ -77,7 +77,7 @@ export default function VideoReelsGrid({ videos, allTags }: VideoReelsGridProps)
         .toLowerCase();
       return haystack.includes(q);
     });
-    return [...filtered].sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+    return filtered;
   }, [videos, searchTerm, activeTags]);
 
   const toggleTag = (tag: string) => {
@@ -97,8 +97,6 @@ export default function VideoReelsGrid({ videos, allTags }: VideoReelsGridProps)
   const handleCardClick = (video: Video) => {
     if (video.transcript) {
       window.location.href = `/videos/${video.slug}`;
-    } else if (video.instagramUrl) {
-      window.open(video.instagramUrl, "_blank", "noopener,noreferrer");
     } else {
       setModalVideo(video);
     }
@@ -196,7 +194,7 @@ export default function VideoReelsGrid({ videos, allTags }: VideoReelsGridProps)
         onClick={handleBackdropClick}
         className="backdrop:bg-black/70 bg-transparent p-0 max-w-[95vw] max-h-[95vh] rounded-xl"
       >
-        {modalVideo && modalVideo.youtubeId && (
+        {modalVideo && (
           <div className="relative bg-black rounded-xl overflow-hidden shadow-2xl">
             <button
               type="button"
@@ -241,11 +239,10 @@ interface VideoCardProps {
 
 function VideoCard({ video, onClick }: VideoCardProps) {
   const [imgSrc, setImgSrc] = useState(
-    video.youtubeId ? `https://i.ytimg.com/vi/${video.youtubeId}/maxresdefault.jpg` : null,
+    `https://i.ytimg.com/vi/${video.youtubeId}/maxresdefault.jpg`,
   );
   const duration = formatDuration(video.durationSec);
   const isVertical = video.orientation !== "horizontal";
-  const isInstagram = !!video.instagramUrl && !video.youtubeId;
 
   return (
     <button
@@ -254,36 +251,17 @@ function VideoCard({ video, onClick }: VideoCardProps) {
       className="group relative block w-full overflow-hidden rounded-xl bg-muted text-left focus:outline-none focus:ring-2 focus:ring-ring"
       style={{ aspectRatio: isVertical ? "9 / 16" : "16 / 9" }}
     >
-      {imgSrc ? (
-        <img
-          src={imgSrc}
-          alt={video.title}
-          loading="lazy"
-          onError={() =>
-            video.youtubeId
-              ? setImgSrc(`https://i.ytimg.com/vi/${video.youtubeId}/hqdefault.jpg`)
-              : setImgSrc(null)
-          }
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-      ) : (
-        <div className="absolute inset-0 bg-gradient-to-br from-[#833ab4] via-[#fd1d1d] to-[#fcb045]" />
-      )}
+      <img
+        src={imgSrc}
+        alt={video.title}
+        loading="lazy"
+        onError={() => setImgSrc(`https://i.ytimg.com/vi/${video.youtubeId}/hqdefault.jpg`)}
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity" />
       <div className="absolute top-2 right-2 flex items-center gap-1 bg-black/60 text-white text-xs font-medium px-2 py-1 rounded-md backdrop-blur-sm">
-        {isInstagram ? (
-          <span className="uppercase tracking-wide text-[10px]">IG</span>
-        ) : duration ? (
-          duration
-        ) : (
-          <Play className="h-3 w-3" />
-        )}
+        {duration ? duration : <Play className="h-3 w-3" />}
       </div>
-      {video.featured && (
-        <div className="absolute top-2 left-2 bg-amber-400 text-black text-[10px] font-bold uppercase tracking-wide px-1.5 py-0.5 rounded">
-          Top
-        </div>
-      )}
       <div className="absolute inset-x-0 bottom-0 p-3 text-white">
         <h3 className="font-display font-semibold text-sm leading-tight line-clamp-2 drop-shadow-md">
           {video.title}
