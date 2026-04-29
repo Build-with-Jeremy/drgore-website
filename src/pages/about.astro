@@ -20,6 +20,7 @@ const sections = [
   {
     title: "Professional, Caring and Responsive",
     image: "/assets/about/professional-caring.jpg",
+    imagePosition: "object-bottom",
     content: "I will treat you with care, respect and dignity. I am always available by phone, and I will call you back as quickly as I can. Asking for help is hard, and I promise to make it as easy as possible for you to get started.",
   },
   {
@@ -54,6 +55,7 @@ const sections = [
   {
     title: "Kids",
     image: "/assets/about/kids.jpg",
+    imagePosition: "object-[center_25%]",
     content: [
       "I am an Atlanta child psychologist, and have seen children as young as sisters who were four and two years old. But I don't see kids alone. I see children as a function of where they are within their family. It's not OK to have parents in the waiting room while I \"cure\" their child. Parents need to be in the therapy room with us, contributing solutions to the problems, and working on changing their contributions to the difficulties. If a child improves, but his or her home life remains the same because there was no parental involvement, then the progress may not last.",
       "I don't do much play therapy, and don't believe in play therapy as a primary form of treatment for children, unless, of course, the children are orphans and have no living relatives. Then, break out the toys and board games and let's start playing. I believe the No. 1 problem with children today is that parents are reluctant to be fully in charge, instead preferring to treat their children as peers and equals. I've seen many families in which the children are in charge of their parents when therapy begins. That soon changes!",
@@ -62,6 +64,7 @@ const sections = [
   {
     title: "Teens",
     image: "/assets/about/teens.jpg",
+    imagePosition: "object-[35%_30%]",
     content: "I treat teenagers, again, within the context of their families. I usually alternate between individual and family therapy. I love rebellious teenagers. I love unhappy teenagers. I love teenagers who can't fit in. I treated an 18-year-old and his family recently, and the kid had a bumper sticker on his car that said it all: \"I Hate Everything.\" I remember being there not too long ago. (OK, maybe 50 years is long ago.) I deal head-on with drug and alcohol issues, and school/grades/attendance issues, too.",
   },
   {
@@ -77,6 +80,7 @@ const sections = [
   {
     title: "Adult Individuals",
     image: "/assets/about/adult-individuals.jpg",
+    imagePosition: "object-top",
     content: "I see these folks most often in my office — not because they have more issues, but because they seek therapy more often than others. Although therapy takes place with just the individual client, I always consider the context of their lives (work, relationships, etc.). So although therapy takes place individually, our solutions take into account the bigger life picture.",
   },
 ];
@@ -126,7 +130,11 @@ const sections = [
             <img
               src={section.image}
               alt={section.title}
-              class="w-full h-48 object-cover"
+              class:list={[
+                'w-full aspect-[3/2] md:aspect-[16/9] object-cover',
+                section.imagePosition || 'object-center',
+              ]}
+              loading="lazy"
             />
             <div class="p-8">
               <h2 class="font-display text-2xl font-bold text-foreground mb-4">
