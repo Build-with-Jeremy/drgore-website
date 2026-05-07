@@ -102,11 +102,11 @@ export default function GoreStore() {
             key={product.slug}
             className="group flex flex-col overflow-hidden border rounded-lg bg-card transition-all hover:shadow-xl hover:-translate-y-0.5"
           >
-            <div className="relative overflow-hidden">
+            <div className="relative overflow-hidden bg-secondary/40">
               <img
                 src={product.image}
                 alt={product.title}
-                className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-44 object-contain p-3 transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
               {product.tag && (

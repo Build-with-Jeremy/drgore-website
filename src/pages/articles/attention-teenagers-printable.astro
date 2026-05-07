@@ -1,0 +1,53 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout
+  title="Attention Teenagers and Parents — Printable Version"
+  description="A humorous message for teenagers — suitable for framing."
+  canonical="https://drgore.com/articles/attention-teenagers-printable"
+>
+  <style>
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white; }
+    }
+  </style>
+
+  <div class="no-print py-6 container max-w-3xl">
+    <div class="flex items-center justify-between">
+      <a href="/articles/attention-teenagers-and-parents" class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="m15 18-6-6 6-6"/>
+        </svg>
+        Back to Article
+      </a>
+      <button onclick="window.print()" class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 6 2 18 2 18 9"/>
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+          <rect x="6" y="14" width="12" height="8"/>
+        </svg>
+        Print this page
+      </button>
+    </div>
+  </div>
+
+  <section class="py-12">
+    <div class="container max-w-2xl">
+      <div class="border-4 border-foreground p-10 text-center space-y-4 font-display">
+        <p class="text-2xl font-bold tracking-widest">____________________________________</p>
+        <p class="text-5xl font-bold tracking-wide">TEENAGERS!</p>
+        <p class="text-2xl">Tired of being hassled by</p>
+        <p class="text-2xl">your stupid parents?</p>
+        <p class="text-3xl font-bold">Act NOW</p>
+        <p class="text-2xl">Move out, get a job,</p>
+        <p class="text-2xl">pay your own bills….</p>
+        <p class="text-2xl">Do it now while</p>
+        <p class="text-2xl">you still know</p>
+        <p class="text-5xl font-bold">EVERYTHING!</p>
+        <p class="text-2xl font-bold tracking-widest">____________________________________</p>
+        <p class="text-sm text-muted-foreground mt-6">— Dr. David Gore &nbsp;|&nbsp; drgore.com</p>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -8,9 +8,11 @@ export interface Article {
 }
 
 export interface ArticleSection {
-  type: "paragraph" | "heading" | "subheading" | "list" | "quote" | "note" | "comparison" | "numbered-list";
+  type: "paragraph" | "heading" | "subheading" | "list" | "quote" | "note" | "comparison" | "numbered-list" | "footnote" | "link";
   text?: string;
+  href?: string;
   items?: string[];
+  start?: number;
   columns?: { left: string[]; right: string[] };
 }
 
@@ -35,7 +37,8 @@ export const articles: Article[] = [
       { type: "paragraph", text: "you still know" },
       { type: "paragraph", text: "EVERYTHING!" },
       { type: "heading", text: "____________________________________" },
-      { type: "paragraph", text: "To view a copy of this that is ready to print and suitable for framing, please click here. I can’t guarantee that your teenagers will be grateful, but they will have a reaction." },
+      { type: "paragraph", text: "To view a copy of this that is ready to print and suitable for framing, see the link below. I can’t guarantee that your teenagers will be grateful, but they will have a reaction." },
+      { type: "link", text: "Print-ready version — suitable for framing", href: "/articles/attention-teenagers-printable" },
     ],
   },
   {
@@ -282,6 +285,16 @@ export const articles: Article[] = [
     ],
   },
   {
+    slug: "what-is-procrastination",
+    title: "What is Procrastination?",
+    date: "September 1, 2009",
+    summary: "Dr. Gore\u2019s definitive article on procrastination. It will be published shortly.",
+    thumbnail: "/assets/articles/procrastination-thumb.jpg",
+    content: [
+      { type: "paragraph", text: "This page will be published by September 2009." },
+    ],
+  },
+  {
     slug: "how-to-raise-a-juvenile-delinquent",
     title: "How to Raise a Juvenile Delinquent",
     date: "January 29, 2015",
@@ -292,38 +305,16 @@ export const articles: Article[] = [
       { type: "paragraph", text: "This handout gets a lot of reactions from people. It was written by policemen, not psychologists or psychiatrists. It appears to have been written in 1959. I like it because it addresses the \"Number One Problem\" facing families in the Metro Atlanta area: The reluctance of parents to be firmly in charge of their children." },
       { type: "numbered-list", items: [
         "Give the child everything he wants. In this way he will grow up believing the world owes him a living.",
-      ] },
-      { type: "numbered-list", items: [
-        "When he picks up bad words, laugh at him. This will make him think he’s cute. It will also      encourage him to pick up cuter phrases that will blow off the top of your head later.",
-      ] },
-      { type: "numbered-list", items: [
+        "When he picks up bad words, laugh at him. This will make him think he’s cute. It will also encourage him to pick up cuter phrases that will blow off the top of your head later.",
         "Never give him any spiritual training. Wait until he’s 21 and let him decide for himself.",
-      ] },
-      { type: "numbered-list", items: [
-        "Pick up everything he leaves lying around – books, shoes, clothing. Do everything for him so      he will be experienced in throwing all responsibility to others.",
-      ] },
-      { type: "numbered-list", items: [
-        "Avoid the use of the word \"wrong.\" He may develop a guilt complex. This will condition him      to believe later, when he is arrested for stealing a car, that society is against him and he is      being persecuted.",
-      ] },
-      { type: "numbered-list", items: [
-        "Let him read any printed matter he can get his hands on. Be careful that the silverware and      drinking glasses are sterilized, but let his mind feed on garbage.",
-      ] },
-      { type: "numbered-list", items: [
-        "Quarrel frequently in the presence of your children. In this way they will not be too shocked      when the home is broken up later.",
-      ] },
-      { type: "numbered-list", items: [
+        "Pick up everything he leaves lying around – books, shoes, clothing. Do everything for him so he will be experienced in throwing all responsibility to others.",
+        "Avoid the use of the word \"wrong.\" He may develop a guilt complex. This will condition him to believe later, when he is arrested for stealing a car, that society is against him and he is being persecuted.",
+        "Let him read any printed matter he can get his hands on. Be careful that the silverware and drinking glasses are sterilized, but let his mind feed on garbage.",
+        "Quarrel frequently in the presence of your children. In this way they will not be too shocked when the home is broken up later.",
         "Give a child all the spending money he wants.",
-      ] },
-      { type: "numbered-list", items: [
-        "Satisfy his every craving for food, drink and comfort. See that every sensual desire is      gratified. Denial may lead to harmful frustration.",
-      ] },
-      { type: "numbered-list", items: [
-        "Take his side against neighbors, teachers and policemen. They are all prejudiced against      your child.",
-      ] },
-      { type: "numbered-list", items: [
-        "When he gets into real trouble, apologize for yourself by saying, \"I never could do anything      with him.\"",
-      ] },
-      { type: "numbered-list", items: [
+        "Satisfy his every craving for food, drink and comfort. See that every sensual desire is gratified. Denial may lead to harmful frustration.",
+        "Take his side against neighbors, teachers and policemen. They are all prejudiced against your child.",
+        "When he gets into real trouble, apologize for yourself by saying, \"I never could do anything with him.\"",
         "Prepare for a life of grief. You will be apt to have it.",
       ] },
     ],
@@ -337,6 +328,33 @@ export const articles: Article[] = [
     content: [
       { type: "paragraph", text: "From a handout of Onsite Workshops (www.onsiteworkshops.com), with additional information from Dr. Gore." },
       { type: "paragraph", text: "If we have any national fault, it is hiding our own anger from ourselves. Here is a checklist to help you determine if you are hiding your anger from yourself. Any of these is usually a sign of hidden, unexpected anger. If several of these items fit you, you would probably benefit from learning to better acknowledge your feelings." },
+
+      { type: "numbered-list", items: [
+        "Procrastination",
+        "Perpetual or habitual lateness",
+        "A liking for sadistic or sarcastic humor",
+        "Cynicism or flippancy in conversation",
+        "Over-politeness, constant cheerfulness, attitude of \"grin and bear it\"",
+        "Frequent sighing",
+        "Smiling while you are hurting inside",
+        "Difficulty in getting to sleep or sleep through the night",
+        "Slowing down of movements",
+        "Getting tired more easily than usual",
+        "Excessive irritability over trivial things",
+        "Sleeping more than usual -- maybe 12 to 14 hours a day",
+        "Waking up tired rather than rested",
+        "Excessive worrying",
+        "Overeating",
+        "Undereating",
+        "Overconsumption of alcohol",
+        "Getting sick more than usual",
+        "High blood pressure",
+        "Grinding teeth",
+        "Being accident prone",
+        "Frequent headaches",
+        "Gastrointestinal distress",
+        "Skin problems",
+      ] },
       { type: "paragraph", text: "Hidden anger is not about rage. This is about the feelings we call \"irritation,\" \"annoyance,\" getting mad\", etc. All these negative feelings have one thing in common: They are considered undesirable at best, and destructive at worst. We are taught to avoid them if possible (it isn’t) and certainly to avoid expressing them. Unfortunately, many people go overboard in controlling negative feelings: they control not only their expression, but their awareness of them as well." },
       { type: "paragraph", text: "Because you are unaware of being angry does not mean that you are not angry. It is the anger you are unaware of which can do most damage to you and your relationship with other people. The anger does get expressed, but in inappropriate ways. Freud once likened anger to the smoke in an old-fashioned wood burning stove. The normal avenue for the discharge of smoke is up the flue and out of the chimney. If the normal avenue is blocked, the smoke will leak out of the stove in unintended ways…around the door, through the grate, etc. choking everyone in the room. If all avenues of escape are blocked, the fire goes out and the stove ceases to function. Likewise the normal, human expression of anger is gross physical movement and/or loud vocalization: watch an unhappy baby sometime." },
       { type: "paragraph", text: "By age five or so we learn that such expressions are unacceptable to others and lead to undesirable consequences, such as being yelled at, beaten or having affection/attention withheld. We learn to \"be nice,\" which means (among other things) hiding \"bad\" feelings. By adulthood, even verbal expression is curtailed, since a civilized person is expected to be \"civil.\" Thus, expression is stifled, and to protect ourselves from the unbearable burden on continually unexpressed \"bad\" feelings, we go to the next step and convince ourselves that we are not angry, even when we are. Such self-deception is never completely successful, however–the blocked anger leaks out in inappropriate ways, some of which are listed above." },
@@ -356,7 +374,7 @@ export const articles: Article[] = [
     summary: "Understanding the difference between thinking and feeling, with short, medium, and long lists to help you identify your emotions.",
     thumbnail: "/assets/articles/feelings-thumb.jpg",
     content: [
-      { type: "paragraph", text: "In this video I talk about emotions, and how to lean into them, not steer away from them. It is scary, it is sad, it will make you feel lonely….nah, it won’t, but it’ll explain why emotions are important." },
+      { type: "paragraph", text: "I want to talk about emotions, and how to lean into them, not steer away from them. It is scary, it is sad, it will make you feel lonely….nah, it won’t, but it’ll explain why emotions are important." },
       { type: "paragraph", text: "Embracing feelings is not easy, in fact, a lot of people spend a lot of energy trying to avoid their feelings. Thinking is easier and safer for most, thinking uses logic and rational ideas. Emotions are “wilder” and more unpredictable. They can overwhelm you. They can confuse you. Some of us have spent our whole lives running from them." },
       { type: "paragraph", text: "We try to cover up our feelings with success. We try to cover up our emotions with activities. We try drugs and alcohol. We try over-exercising, over-eating or over-working…but, our feelings remain with us." },
       { type: "paragraph", text: "Most of us were not given a vocabulary of feelings, we weren’t taught the language. It is a simple lexicon: mad, sad, happy, fear, aloneness, connectedness, shame, happiness and guilt. Because I am in a good mood: I will allow “disgust” to be included in this list of core feelings." },
@@ -370,7 +388,7 @@ export const articles: Article[] = [
     thumbnail: "/assets/articles/passive-assertive-thumb.jpg",
     content: [
       { type: "paragraph", text: "No matter what problems bring people into therapy, I am amazed at the number of people who have difficulties with assertiveness. Here is a hand out that my clients have found helpful. (*From an anonymous handout, with additional information from Dr. Gore)" },
-      { type: "paragraph", text: "NOTE: This page does NOT discuss passive-aggressive behavior. For a discussion of this issue, please click here." },
+      { type: "note", text: "This page does NOT discuss passive-aggressive behavior. An article on passive-aggressive behavior is coming soon." },
       { type: "paragraph", text: "WHAT IS PASSIVE BEHAVIOR?" },
       { type: "paragraph", text: "It allows others to choose for you." },
       { type: "paragraph", text: "It denies you feelings." },
@@ -529,13 +547,13 @@ export const articles: Article[] = [
     content: [
       { type: "paragraph", text: "What is child psychology1? For most professionals who work with children, a child psychologist is someone whose job is to \"fix\" your child. They usually \"fix\" your child by spending many, many, many sessions with your child. First, they form a relationship with your child. This will take an average of six and one-half sessions2. Then, these individually-focused therapists use this new \"relationship\" to try to get your child to gain insight into their maladaptive behaviors. Then, they tell you to have patience, as this type of therapy takes a long time3 to have an impact. During this therapy, they will meet with you, the parents, briefly and sporadically. These individually-focused therapists will tell you that things are either progressing well, or, not so well. But, they will meet with you occasionally. I was trained differently, and, I believe most child psychologists (and play therapists) are really trying to perform a \"Parentectomy4.\"" },
       { type: "paragraph", text: "What do I do with my child psychology clients? First, as a child psychologist, I know children really well. And, as a family therapist, I understand families really well. I meet with the whole family for the initial visit, sometimes meeting alone with parts of the family for parts of this first session. But, I always keep the whole system5 in mind. I believe that parents can be put in a position to help their children NOT need a child psychologist. This shouldn’t take a long, long, long time." },
-      { type: "paragraph", text: "Footnotes:" },
-      { type: "paragraph", text: "1- This is the first sentence of this article, which, I feel, effectively captures the tone of this piece." },
-      { type: "paragraph", text: "2- I made this up, but I am pretty sure I am close." },
-      { type: "paragraph", text: "3- Originally written as \"a long, long, long time\"" },
-      { type: "paragraph", text: "4- A painful surgical procedure where a child is artificially treated (and viewed) as if they exist independently of his or her parents." },
-      { type: "paragraph", text: "5- Most child psychologists see a child as existing in a world where parents are merely impediments to a child’s health6." },
-      { type: "paragraph", text: "6- I am not sure if one is allowed to footnote a footnote, but, I feel parents are a child’s best chance of the child \"getting his or her act together.\"" },
+      { type: "heading", text: "Footnotes" },
+      { type: "footnote", text: "1- This is the first sentence of this article, which, I feel, effectively captures the tone of this piece." },
+      { type: "footnote", text: "2- I made this up, but I am pretty sure I am close." },
+      { type: "footnote", text: "3- Originally written as \"a long, long, long time\"" },
+      { type: "footnote", text: "4- A painful surgical procedure where a child is artificially treated (and viewed) as if they exist independently of his or her parents." },
+      { type: "footnote", text: "5- Most child psychologists see a child as existing in a world where parents are merely impediments to a child’s health6." },
+      { type: "footnote", text: "6- I am not sure if one is allowed to footnote a footnote, but, I feel parents are a child’s best chance of the child \"getting his or her act together.\"" },
     ],
   },
   {
@@ -571,7 +589,7 @@ export const articles: Article[] = [
     thumbnail: "/assets/articles/bipolar-thumb.jpg",
     content: [
       { type: "paragraph", text: "No." },
-      { type: "paragraph", text: "Note: Drug companies and psychiatrists believe bipolar disorder in adults occurs with some frequency, I feel it is a rare phenomenon. Most folks mislabeled bipolar are, in fact, people who are abusing drugs and alcohol (prescribed drugs and non-prescribed drugs). True bipolar disorders in adults hardly happens and is misdiagnosed frequently. With children, I believe there may be fourteen kids in all of America who have bipolar disorder in childhood. Everyone else is a child who is defiant, impulsive, explosive, unpredictable, angry, violent, threatening, etc. Why would children act this way? Because they can. And, because it “works” for them. These children have convinced their parents and their teachers that they are simultaneously in charge of the family/classroom while simultaneously being totally out of control. Your child is not bipolar, your child needs to learn to behave by you parenting him or her differently." },
+      { type: "note", text: "Drug companies and psychiatrists believe bipolar disorder in adults occurs with some frequency, I feel it is a rare phenomenon. Most folks mislabeled bipolar are, in fact, people who are abusing drugs and alcohol (prescribed drugs and non-prescribed drugs). True bipolar disorders in adults hardly happens and is misdiagnosed frequently. With children, I believe there may be fourteen kids in all of America who have bipolar disorder in childhood. Everyone else is a child who is defiant, impulsive, explosive, unpredictable, angry, violent, threatening, etc. Why would children act this way? Because they can. And, because it “works” for them. These children have convinced their parents and their teachers that they are simultaneously in charge of the family/classroom while simultaneously being totally out of control. Your child is not bipolar, your child needs to learn to behave by you parenting him or her differently." },
     ],
   },
   {
@@ -772,11 +790,7 @@ export const articles: Article[] = [
       { type: "paragraph", text: "I have a custom-designed Three Point Plan that is tailored to fit your particular needs:" },
       { type: "numbered-list", items: [
         "Stop enabling him or her.",
-      ] },
-      { type: "numbered-list", items: [
         "Stop enabling him or her.",
-      ] },
-      { type: "numbered-list", items: [
         "Stop enabling him or her.",
       ] },
       { type: "paragraph", text: "To do this is simple, but very, very difficult. Let me help you launch your baby into the real world. To paraphrase my favorite toy store, Home Depot, “You can do it, I can help.”" },
@@ -1139,9 +1153,7 @@ export const articles: Article[] = [
         "Went to a Jonas   Brothers/Hannah Montana concert",
       ] },
       { type: "paragraph", text: "Best Stephen King Movie Adaptations (in ascending order)" },
-      { type: "numbered-list", items: [
-        "The       Shining",
-      ] },
+      { type: "paragraph", text: "4. The Shining" },
       { type: "paragraph", text: "3. The Green Mile" },
       { type: "paragraph", text: "2. Stand By Me" },
       { type: "paragraph", text: "1. The Shawshank Redemption" },
@@ -1291,165 +1303,61 @@ export const articles: Article[] = [
       { type: "paragraph", text: "Doing marriage therapy is a high-stakes endeavor, with lots of potential to change people’s lives. If divorce occurs, kids can have their childhoods turned upside down, the financial ramifications are huge, and multiple generations are impacted forever. I have treated thousands of couples, and, when a marriage goes from bad to good, it still thrills me to be part of that process. Read this list, memorize some of it, and try to enact a few. Then you won’t need to come see me." },
       { type: "numbered-list", items: [
         "You need to set aside time for your marriage and keep that time sacred and immovable.",
-      ] },
-      { type: "numbered-list", items: [
         "The best gift you can give your kids is a good marriage. Stop buying them so much stuff already.",
-      ] },
-      { type: "numbered-list", items: [
         "In the old day’s marriages came before the children. If your marriage is central, your kids will not only survive, they will be better off. Our Kids Don’t Need to be Worshipped and Celebrated So Much.",
-      ] },
-      { type: "numbered-list", items: [
         "Fighting in your marriage is OK. Fighting that yields new information and empathy is really, good.",
-      ] },
-      { type: "numbered-list", items: [
         "Anger is OK, rage isn’t. If you are raging (over a “five” out of a “ten” on your “Anger Meter”) then YOU take a break and calm down. Then YOU re-engage. Always.",
-      ] },
-      { type: "numbered-list", items: [
         "Constant fighting will kill your marriage and constant fighting in my office will make me want to call in sick (and I am never sick.)",
-      ] },
-      { type: "numbered-list", items: [
         "It is better to be happy than to be right.",
-      ] },
-      { type: "numbered-list", items: [
         "When you say “My feelings just aren’t there anymore” I think you are cheating.",
-      ] },
-      { type: "numbered-list", items: [
         "When you say “I want to see what else is out there” I know you are cheating.",
-      ] },
-      { type: "numbered-list", items: [
         "Stop telling friends and family anything you aren’t saying to your spouse. Keep that energy in the marriage.",
-      ] },
-      { type: "numbered-list", items: [
         "If your husband calls to make the appointment, that usually means my job is going to be very hard (especially if your bags are packed and at the door).",
-      ] },
-      { type: "numbered-list", items: [
         "If your wife calls to make the appointment, but then you take ten days to tell her or me when you can do a session, my job is going to be really, hard. And now I don’t like you.",
       ] },
-      { type: "paragraph", text: "And I don’t care how “Big” your job is…" },
-      { type: "numbered-list", items: [
+            { type: "paragraph", text: "And I don’t care how “Big” your job is…" },
+      { type: "numbered-list", start: 13, items: [
         "Although I (usually) don’t shout “Grow up already!” during a session, I am thinking it. Marriage is for grown-ups.",
-      ] },
-      { type: "numbered-list", items: [
         "Throwing things is a violent act. It is abusive even if you’re “only” throwing something against a wall.",
-      ] },
-      { type: "numbered-list", items: [
         "The older I get the more this is true and vital: It isn’t what you say, it is how you say it.",
-      ] },
-      { type: "numbered-list", items: [
         "Yeah, I am expensive. Go to a hundred dollar an hour counselor and tell me what you’ve accomplished after eight sessions.",
-      ] },
-      { type: "numbered-list", items: [
         "Ask directly for what you need.",
-      ] },
-      { type: "numbered-list", items: [
         "Affairs are preventable. It is a gradual slope.",
-      ] },
-      { type: "numbered-list", items: [
         "Affairs needn’t be fatal to a marriage.",
-      ] },
-      { type: "numbered-list", items: [
         "Don’t have an affair. Please.",
-      ] },
-      { type: "numbered-list", items: [
         "The message you send to your partner is not necessarily the message your partner receives. This one keeps my waiting room full.",
-      ] },
-      { type: "numbered-list", items: [
         "Stonewalling (shutting down and not communicating) will kill your marriage.",
-      ] },
-      { type: "numbered-list", items: [
         "Constant criticism and/or contempt will kill your marriage.",
-      ] },
-      { type: "numbered-list", items: [
         "Reluctance to take responsibility for any part of the marital difficulties will kill your marriage.",
-      ] },
-      { type: "numbered-list", items: [
         "Active addiction or alcoholism will kill your marriage. (Note to “functioning” alcoholics everywhere: I don’t care if you haven’t missed a day of work in fourteen years, your taking the edge off every night makes for one lonely, neglected partner.)",
-      ] },
-      { type: "numbered-list", items: [
         "Stop viewing him as a remodeling project. He can change, but not as much as you may like.",
-      ] },
-      { type: "numbered-list", items: [
         "There is a reason s/he was single until s/he was thirty-seven.",
-      ] },
-      { type: "numbered-list", items: [
         "There is a reason this is his/her third marriage.",
-      ] },
-      { type: "numbered-list", items: [
         "My number one recommendation: Stop taking each other for granted.",
-      ] },
-      { type: "numbered-list", items: [
         "You are not the “good one”. There is hardly ever a “good one”.",
-      ] },
-      { type: "numbered-list", items: [
         "If you say you are going to do something, do it. This is an important part of trust.",
-      ] },
-      { type: "numbered-list", items: [
         "Nothing feels better than knowing your partner has your back.",
-      ] },
-      { type: "numbered-list", items: [
         "Step-children issues are difficult to keep separate from marital issues.",
-      ] },
-      { type: "numbered-list", items: [
         "Extended periods of silence = one angry household.",
-      ] },
-      { type: "numbered-list", items: [
         "“They” say it is possible to have a good sexless marriage. I haven’t seen one yet, but, I have only treated 2,137 couples.",
-      ] },
-      { type: "numbered-list", items: [
         "You need to carve-out time for your marriage and keep that time sacred and immovable.",
-      ] },
-      { type: "numbered-list", items: [
         "Some people just don’t need to be together.",
-      ] },
-      { type: "numbered-list", items: [
         "Nothing feels worse than if your relationship consists entirely of deciding whether you should be in the relationship or not.",
-      ] },
-      { type: "numbered-list", items: [
         "My number one recommendation: Do what is necessary for your partner to feel safe. With a sense of safety, “I” can be truly “me.” Without safety, I need to act like someone else. That is exhausting.",
-      ] },
-      { type: "numbered-list", items: [
         "More safety = More vulnerability. Vulnerability is good.",
-      ] },
-      { type: "numbered-list", items: [
         "If issues with your “Ex-Spouse” are intruding on your current marriage, you should probably consider truly, truly divorcing your Ex.",
-      ] },
-      { type: "numbered-list", items: [
         "Women need to understand that men aren’t mind readers. You need to tell them what you need and how you feel. Repeat until they get it.",
-      ] },
-      { type: "numbered-list", items: [
         "You may need to teach your man how to listen. For example, (1) Listening doesn’t equal advice giving. (2) Look at me when I am talking, please. (3) Please pause the game.",
-      ] },
-      { type: "numbered-list", items: [
         "It stinks that women must work this hard. The truth is women are better at relationships than men. That is why we men tend to be happier in marriage than women. It isn’t fair, I know, don’t get mad at me.",
-      ] },
-      { type: "numbered-list", items: [
         "Men need to understand that if you ignore your wife all day she isn’t going to feel amorous at night.",
-      ] },
-      { type: "numbered-list", items: [
         "My number one recommendation: Truly hear each other.",
-      ] },
-      { type: "numbered-list", items: [
         "Women want to feel connected.",
-      ] },
-      { type: "numbered-list", items: [
         "Men want to be held in awe, but will settle for appreciation. And please don’t shame us.",
-      ] },
-      { type: "numbered-list", items: [
         "Women want appreciation, too, but if you ask them about their day, and listen…That’ll usually work.",
-      ] },
-      { type: "numbered-list", items: [
         "Go ahead and give’em a good foot rub once in a while.",
-      ] },
-      { type: "numbered-list", items: [
         "If your problems have been going on for ten years, I won’t fix you in five sessions.",
-      ] },
-      { type: "numbered-list", items: [
         "Remodeling your kitchen won’t save the marriage. Neither will that trip to Europe.",
-      ] },
-      { type: "numbered-list", items: [
         "My number one recommendation: Be nice to each other.",
-      ] },
-      { type: "numbered-list", items: [
         "You need to create time for your marriage and keep that time sacred and immovable.",
       ] },
     ],
