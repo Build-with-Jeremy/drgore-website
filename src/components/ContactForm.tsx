@@ -37,6 +37,16 @@ export default function ContactForm() {
       if (res.ok && data?.ok) {
         setStage('success');
         setName(''); setEmail(''); setPhone(''); setMessage('');
+        // Fire conversion event for GA4 / Google Ads
+        const w = window as unknown as { gtag?: (...args: unknown[]) => void };
+        if (typeof w.gtag === 'function') {
+          w.gtag('event', 'consultation_request', { source: 'contact_form' });
+          const adsId = import.meta.env.PUBLIC_GOOGLE_ADS_ID;
+          const adsLabel = import.meta.env.PUBLIC_GOOGLE_ADS_CONVERSION_LABEL;
+          if (adsId && adsLabel) {
+            w.gtag('event', 'conversion', { send_to: `${adsId}/${adsLabel}` });
+          }
+        }
       } else {
         setStage('error');
         setErr(typeof data?.error === 'string' ? data.error : 'Send failed. Please try again.');
