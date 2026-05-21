@@ -1,6 +1,4 @@
 {
-  "trailingSlash": false,
-  "cleanUrls": true,
   "redirects": [
     { "source": "/about/", "destination": "/about", "permanent": true },
     { "source": "/about/index.php", "destination": "/about", "permanent": true },
