@@ -13,7 +13,7 @@ function getResend(): Resend {
 interface ContactFormData {
   name: string;
   email: string;
-  phone?: string;
+  phone: string;
   message: string;
   _honeypot?: string;
 }
@@ -40,8 +40,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(200).json({ ok: true });
     }
 
-    // Validate required fields
-    if (!name || !email || !message) {
+    // Validate required fields (phone is now required per client request)
+    if (!name || !email || !phone || !message) {
       return res.status(400).json({ error: 'Please fill in all required fields.' });
     }
 

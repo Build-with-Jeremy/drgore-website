@@ -17,6 +17,7 @@ export default function ContactForm() {
 
     if (!name.trim()) return setErr('Please enter your name.');
     if (!/.+@.+\..+/.test(email)) return setErr('Please enter a valid email.');
+    if (phone.replace(/\D/g, '').length < 7) return setErr('Please enter a valid phone number.');
     if (!message.trim()) return setErr('Please enter a message.');
 
     setStage('sending');
@@ -27,7 +28,7 @@ export default function ContactForm() {
         body: JSON.stringify({
           name: name.trim(),
           email: email.trim(),
-          phone: phone.trim() || undefined,
+          phone: phone.trim(),
           message: message.trim(),
           _honeypot: honeypot || undefined,
         }),
@@ -118,7 +119,7 @@ export default function ContactForm() {
       </div>
 
       <div className="space-y-2">
-        <label htmlFor="cphone" className="text-base font-medium block text-foreground">Phone (optional)</label>
+        <label htmlFor="cphone" className="text-base font-medium block text-foreground">Phone *</label>
         <input
           id="cphone"
           type="tel"
