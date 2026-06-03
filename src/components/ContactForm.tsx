@@ -2,6 +2,14 @@ import { useState } from 'react';
 
 type Stage = 'idle' | 'sending' | 'success' | 'error';
 
+// Format US phone numbers progressively as the user types: (XXX) XXX-XXXX
+function formatPhoneNumber(value: string): string {
+  const digits = value.replace(/\D/g, '').slice(0, 10);
+  if (digits.length < 4) return digits;
+  if (digits.length < 7) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+  return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+}
+
 export default function ContactForm() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -17,7 +25,7 @@ export default function ContactForm() {
 
     if (!name.trim()) return setErr('Please enter your name.');
     if (!/.+@.+\..+/.test(email)) return setErr('Please enter a valid email.');
-    if (phone.replace(/\D/g, '').length < 7) return setErr('Please enter a valid phone number.');
+    if (phone.replace(/\D/g, '').length < 10) return setErr('Please enter a valid phone number, including area code.');
     if (!message.trim()) return setErr('Please enter a message.');
 
     setStage('sending');
@@ -124,7 +132,7 @@ export default function ContactForm() {
           id="cphone"
           type="tel"
           value={phone}
-          onChange={(e) => setPhone(e.target.value)}
+          onChange={(e) => setPhone(formatPhoneNumber(e.target.value))}
           className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
           placeholder="(555) 123-4567"
           disabled={disabled}
