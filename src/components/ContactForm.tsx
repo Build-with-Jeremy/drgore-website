@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 type Stage = 'idle' | 'sending' | 'success' | 'error';
 
@@ -18,6 +18,22 @@ export default function ContactForm() {
   const [honeypot, setHoneypot] = useState('');
   const [stage, setStage] = useState<Stage>('idle');
   const [err, setErr] = useState<string | null>(null);
+  const started = useRef(false);
+
+  // GA4 form_start — fire once on first interaction with the form. We own this
+  // in code (with GA4 Enhanced Measurement's "Form interactions" turned off) so
+  // there is a single, reliable source for both form_start and form_submit with
+  // consistent params, and no double-counting from GA4's auto-detection.
+  function handleFormStart() {
+    if (started.current) return;
+    started.current = true;
+    const w = window as unknown as { gtag?: (...args: unknown[]) => void };
+    w.gtag?.('event', 'form_start', {
+      form_id: 'contact',
+      form_name: 'Contact Form',
+      source: 'contact_form',
+    });
+  }
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -101,7 +117,7 @@ export default function ContactForm() {
   const disabled = stage === 'sending';
 
   return (
-    <form onSubmit={onSubmit} className="space-y-6">
+    <form onSubmit={onSubmit} onFocusCapture={handleFormStart} className="space-y-6">
       {/* Honeypot — hidden from real users, catches bots */}
       <div className="absolute -left-[9999px]" aria-hidden="true">
         <input type="text" name="_honeypot" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" />
