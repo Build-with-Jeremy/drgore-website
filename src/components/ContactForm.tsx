@@ -46,14 +46,23 @@ export default function ContactForm() {
       if (res.ok && data?.ok) {
         setStage('success');
         setName(''); setEmail(''); setPhone(''); setMessage('');
-        // Fire conversion event for GA4 / Google Ads
+        // Fire the single completion/conversion event on confirmed success.
+        // GA4 Enhanced Measurement's automatic form_submit is unreliable for
+        // React/AJAX forms (preventDefault + fetch, no navigation), so we fire it
+        // explicitly here with transport_type:'beacon' to guarantee delivery.
         const w = window as unknown as { gtag?: (...args: unknown[]) => void };
         if (typeof w.gtag === 'function') {
-          w.gtag('event', 'consultation_request', { source: 'contact_form' });
+          w.gtag('event', 'form_submit', {
+            form_id: 'contact',
+            form_name: 'Contact Form',
+            form_submit_text: 'Send Message',
+            source: 'contact_form',
+            transport_type: 'beacon',
+          });
           const adsId = import.meta.env.PUBLIC_GOOGLE_ADS_ID;
           const adsLabel = import.meta.env.PUBLIC_GOOGLE_ADS_CONVERSION_LABEL;
           if (adsId && adsLabel) {
-            w.gtag('event', 'conversion', { send_to: `${adsId}/${adsLabel}` });
+            w.gtag('event', 'conversion', { send_to: `${adsId}/${adsLabel}`, transport_type: 'beacon' });
           }
         }
       } else {

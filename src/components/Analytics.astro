@@ -22,7 +22,7 @@ const enabled = Boolean(GA4_ID || ADS_ID);
         const eventName = el.getAttribute('data-gtag-event');
         const source = el.getAttribute('data-gtag-source') || 'unknown';
         gtag('event', eventName, { source: source });
-        if (ADS_ID && ADS_LABEL && eventName === 'consultation_request') {
+        if (ADS_ID && ADS_LABEL && eventName === 'form_submit') {
           gtag('event', 'conversion', { send_to: `${ADS_ID}/${ADS_LABEL}` });
         }
       });
