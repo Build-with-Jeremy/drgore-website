@@ -2,46 +2,78 @@
 import Layout from '../layouts/Layout.astro';
 import VideoChannelCallout from '../components/VideoChannelCallout.astro';
 
-const faqs = [
-  { q: "Any relation to Al Gore?", a: "No." },
-  { q: "Are you sure there is not any family connection at all?", a: 'My father (who was a brand-new American), had our name shortened to Gore, from Gorewicz. "Gorewicz" is a Russian/Polish slang word that means "Easily cures depression," ironically enough.' },
-  { q: "Why did you become a psychologist?", a: 'I help people, it is fun, it is extremely challenging and it is never, ever boring. And, it is a career for a lifetime. A novelist once said, "I am going to be an even better novelist in my fifties than I am in my forties, and I will be an even better writer in my sixties than in my fifties." The same is true with being a psychotherapist.' },
-  { q: "What is your therapeutic approach?", a: "I variously practice Structural-strategic therapy, experiential therapy, cognitive-behavioral therapy, Bowenian therapy, and psychodynamic therapy (for long-term work) depending upon my client's individual needs. I do whatever works." },
-  { q: "How come you are not on a lot of managed care provider panels?", a: "Most often, effective therapy does not accompany rigid timetables — each family, couple, and individual is unique, and deserves treatment appropriate to their needs. They also reimburse quite poorly. Lastly, and perhaps most importantly, confidentiality is (at best) compromised, and (usually) disregarded altogether. Computers tend to have a lot of memory." },
+// Q&A content from Dr. Gore's revised FAQ (June 2026). Rendered as a single
+// simplified static page (no accordion). The out-of-network insurance answer
+// opens the reimbursement guide in a popup instead of linking to a separate page.
+type Faq = { q: string; a: string; kind?: 'insurance' };
+
+const faqs: Faq[] = [
+  { q: "Do you watch the show “Shrinking”?", a: "Yes, I think it’s sweet how genuinely these people support one another." },
+  { q: "Do you like how therapists are portrayed?", a: "No. It leans hard into the “therapists are a mess” trope. Harrison Ford needs Parkinson’s to talk to his kid? Jimmy can’t parent through grief? Gaby can’t commit? Sure, some therapists are unhealthy, but the show makes it look universal." },
+  { q: "Are you messed up?", a: "No." },
+  { q: "Were you messed up?", a: "Yes." },
+  { q: "Really?", a: "Yep. Then I did “the work” — therapy, supervision, training, recovery, healthy living. My kids are proof of the turnaround. And my wife deserves a medal." },
+  { q: "Did you see the episode on Shrinking where Jimmy asks his patient to…", a: "Enough about Shrinking. Not everybody has Apple TV." },
+  { q: "Why did you become a psychologist?", a: "I help people, it is fun, it is extremely challenging and it is never, ever boring. And it is a career for a lifetime. A famous writer once said, “I am going to be an even better novelist in my fifties than I am in my forties, and I will be an even better writer in my sixties than in my fifties.” The same is true with being a psychotherapist." },
+  { q: "What is your therapeutic approach?", a: "I practice: Structural-strategic therapy, experiential therapy, cognitive-behavioral therapy, Bowenian therapy, and psychodynamic therapy (for long-term work) depending upon my client’s individual needs. At this stage, I have my own style and framework. I do whatever works for my clients." },
+  { q: "Do you take insurance?", a: "Not for decades. I used to take insurance, but then the MBA’s at United Health Care and Blue Cross started telling me what to do, and how often I can do it. I told them to kiss my…" },
+  { q: "Was it hard to walk away from accepting insurance?", a: "It was difficult. And risky. It was worth it. Every year insurance companies make the lives of providers increasingly difficult. My loyalty is to you, not their claims department." },
   { q: "Will I receive therapy directly from you?", a: "Yes. My practice is a solo, fee-for-service practice, and I treat my clients as I would want my own family members treated. And some of them needed a lot of treatment." },
-  { q: "What makes your practice so unique?", a: "Directive and effective treatment. Immediate responses to emergencies. Fast callbacks from 9:00 AM to Midnight. The \"buck\" stops with me. I will do whatever it takes to help you make the emotional and behavioral changes you need to make now." },
-  { q: "What are your fees?", a: "I currently charge $415.00 for Individual sessions (fifty-minute sessions). Initial Appointments, Couple's and Family Therapy sessions are $500.00 (sixty-minute sessions)." },
-  { q: "Do you take Blue Cross Insurance?", a: "No." },
-  { q: "Do you take Humana Insurance?", a: "No." },
-  { q: "Do you take Aetna Health Insurance?", a: "No." },
-  { q: "Do you take Eastern Central Michigan Teacher's Insurance?", a: "Yes." },
-  { q: "Really?", a: "No, I don't." },
-  { q: "Do you accept insurance?", a: "I am not on any insurance plans. Some insurance plans will pay something for out-of-network services. It is expected for you to pay for your session at the time of services." },
-  { q: "I have questions about fees or insurance reimbursement. Who can help?", a: "Text Alyssa, my Billing Manager, at (404) 444-6228 — she can answer questions about fees or insurance. If you already know my fees and you're ready to get started, just call me." },
-  { q: "What can I expect from your services?", a: "1. Fast callbacks from 9:00 AM – Midnight.\n2. I have spent 42 years and over 55,000 hours helping people change. I am at the \"top of my game\".\n3. The \"buck\" stops with me. If you need me, I will be readily available. I will do whatever it takes to help you make the emotional and behavioral changes you need to make now." },
-  { q: "How long will it take for us/me to see results?", a: "Pretty quickly, if you so desire. It also depends on the \"depth\" of your problems, and on the level and intensity of your commitment to change." },
-  { q: "What do you specialize in?", a: "I am a general practitioner. I am trained to work with young children, adolescents, and adults of all ages. Here are my \"unique\" specialty niches:\n1. Whole families, two or three generations at a time.\n2. Addicts/alcoholics, both adults or teenagers.\n3. Pregnancy and postpartum mood disorders, and family therapy for women with pregnancy.\n4. Successful men who are not happy, and whose families are not happy, either.\n5. Little kids, ages 3 to 10. I do not do \"play therapy\" with the child. I will see them alone for brief intervals, but I treat young children only with the involvement of the whole family." },
-  { q: 'What do you mean the "whole family?"', a: "At least the Mom, Dad, and children." },
+  { q: "What about your associates?", a: "They are a great option for you, too. They are good therapists, have immediate openings, and are cheaper than me." },
+  { q: "What are your fees?", a: "I currently charge $415.00 for individual sessions (50-minute sessions). Longer individual appointments and family therapy sessions are $500.00 (60-minute sessions)." },
+  { q: "I have questions about getting insurance reimbursement for you on an “out-of-network” basis. How do I get this information?", a: "", kind: 'insurance' },
+  { q: "What makes your practice so unique?", a: "1. Directive and effective treatment.\n2. Immediate responses to emergencies.\n3. Fast callbacks from 9:00 AM – Midnight.\n4. The “buck” stops with me. Other than my answering service, I deal directly with you: no receptionists, practice managers or overseas call centers.\n5. I will do whatever it takes to help you change. Now, not a few years from now." },
+  { q: "How long will it take for us/me to see results?", a: "Usually pretty quickly." },
+  { q: "I hate my job… Can I continue to work at this company and be happy?", a: "No." },
+  { q: "Why not?", a: "You can’t be miserable for half your waking hours and call it “happiness.” Change the job or change your attitude." },
+  { q: "I am in a lousy relationship… Can I stay in this relationship and be happy?", a: "No." },
+  { q: "Why not?", a: "Your primary relationship is too important. If you’re not deeply connected, life doesn’t work well." },
+  { q: "What does “falling in love” and “being in love” have in common?", a: "Nothing." },
+  { q: "Huh?", a: "These are two totally different processes. Falling in love is effortless. Staying in love takes effort. That’s why you don’t marry someone on the third date. Or get matching tattoos on your first vacation." },
+  { q: "What is the best gift I can give my child?", a: "A good marriage." },
+  { q: "What is the sound of one hand clapping?", a: "…" },
+  { q: "Knock, knock?", a: "Who’s there?" },
+  { q: "A control freak. Now, you are supposed to say, “Control freak who.”", a: "Stop it." },
+  { q: "My child is turning sixteen soon… should I get Chase a new car?", a: "No. Give Chase something to look forward to, why don’t you? Please. And make him or her work a little bit and financially contribute to the purchase of this first, used, safe car. Kids that help pay for cars take more pride in the car’s appearance, take better care of the car and drive more safely." },
+  { q: "They really drive more safely?", a: "No, I just made that part up. They do take better care of the car when they make a significant financial contribution. Please, don’t just hand your kid a new car." },
+  { q: "My eight-year-old son is having trouble at school. I have two other children, and they all play soccer, basketball, baseball and tennis. There are also tutors and piano lessons. I would have difficulty finding a time for us all to meet, and besides, my spouse works all the time. Can I just bring the one son to you, run a few errands, and pick him up after your session?", a: "No." },
+  { q: "Why not?", a: "Family therapy is vital to resolving any school problem. If you find a therapist who works primarily individually with an eight-year-old, then you should find a new therapist. And you should stop overscheduling your family. Slow down." },
+  { q: "My twelve-year-old plays video games every chance he gets. If we let him, he will play for over ten hours a day on the weekends. What should we do?", a: "Don’t let him play so much." },
+  { q: "My two-year-old is not eating, and, when she eats, she eats only sweets or canned ravioli. What should we do?", a: "Provide a healthy assortment of food, and don’t make a battle out of it. A child can go for three minutes without air, three days without water and three weeks without food. A parent’s job is to provide a healthy assortment of food, not to get the child to eat a healthy assortment of food." },
+  { q: "Timeouts don’t seem to work with my six-year-old. What should I do?", a: "Timeouts work 99% of the time, when done right. There should be zero distractions available, and the timeouts should be lengthened until they prove to be boring enough that your child attempts to avoid getting a timeout. Basically, you want to bore your child to tears…" },
+  { q: "When I punish my child, he gets really unhappy…. What am I doing wrong?", a: "Nothing. Punishments should make a child feel bad. News Flash: it is OK for your child to not be happy all the time." },
+  { q: "What are your specialties?", a: "I am a general practitioner. I am trained to work with young children, adolescents, and adults of all ages, from diapers to diapers. Here are my “unique” specialty niches:\n1. Whole families, two or three generations at a time.\n2. Addicts/alcoholics, both adults or teenagers.\n3. Pregnancy and postpartum mood disorders, and individual and family therapy for women with maternal mental health concerns.\n4. Successful men who are not happy, and whose families are not happy, either. I seem to treat a lot of miserable real estate developers, doctors and lawyers.\n5. Little kids, ages 3 to 10. I do not “do play therapy” with the child. I will see them alone for brief intervals, but I treat young children only with the involvement of the whole family.\n6. Teens. Sad ones and angry ones. Lonely ones? Put ’em into a group with other lonely outcasts. Then it is tough for them to continue feeling alone." },
+  { q: "What do you mean by therapy for “the whole family?”", a: "At least the Mom, the Dad, and children." },
   { q: "What if they are divorced?", a: "Especially if they are divorced." },
-  { q: "What if one parent refuses to participate?", a: "I would be proud to say that a sixth specialty of mine is getting uninvolved members more involved in the lives of the \"patient.\" No matter the age of this identified \"patient.\"" },
-  { q: "What if my child is the one having problems? Can't I just drop him or her off and go run over to Phipps?", a: "If you want to do that, then I am not the right doctor for you. Anybody who treats children or adolescents mainly through individual therapy is doing the wrong thing." },
-  { q: "Given your specialties, is it true that most of your clientele is composed of adult individual clients?", a: "Yes, because that group seeks therapy most often." },
-  { q: "Are you sure you are not related to Al Gore?", a: "You are starting to bother me. No." },
+  { q: "What if one parent refuses to participate?", a: "I would be proud to say that a seventh specialty of mine is getting uninvolved members more involved in the lives of the “patient.” No matter the age of this identified “patient.”" },
+  { q: "Given your specialties, is it true that most of your clientele is composed of adult individual clients?", a: "Yes. Most people seeking therapy are adults, so that naturally makes up the largest part of my practice." },
+  { q: "You seem to talk about kids a lot on this website. You sure you’re okay helping adults?", a: "Absolutely. I work with children, teens, families, and adults. While the issues may look different on the surface, the process of helping people make meaningful, lasting changes is remarkably similar. After more than 40 years as a psychologist, helping people change is what I do." },
+  { q: "Are you worried about AI taking your job away?", a: "I think AI can be a “below-average” therapist today. In a couple of years, it may become an “average” therapist. But AI will not become a “great” therapist in the next decade or two." },
+  { q: "Who is your favorite character in Shrinking?", a: "I am done with you." },
 ];
+
+const insuranceSchemaText =
+  "If you wish to use your insurance, you will need to find out from them what is covered and what is not. " +
+  "Some plans pay out-of-network benefits and some pay nothing. Ask your insurer about procedure code 90837, " +
+  "your deductible, the maximum reimbursement per session, precertification, and the dollar amount they consider " +
+  "“customary and reasonable” for a 90837 session. You will need a diagnosis to receive reimbursement. " +
+  "For questions, text my Billing Manager Alyssa at (404) 444-6228.";
 
 const schema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": faqs.map((f) => ({
-    "@type": "Question",
-    "name": f.q,
-    "acceptedAnswer": { "@type": "Answer", "text": f.a }
-  }))
+  "mainEntity": faqs
+    .filter((f) => f.a || f.kind === 'insurance')
+    .map((f) => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.kind === 'insurance' ? insuranceSchemaText : f.a },
+    })),
 };
 ---
 <Layout
   title="FAQ — Dr. David Gore, Atlanta Family Therapist"
-  description="Frequently asked questions about Dr. Gore's practice: fees, insurance, therapeutic approach, specialties, and what to expect from therapy."
+  description="Frequently asked questions about Dr. Gore's practice: fees, insurance reimbursement, therapeutic approach, specialties, and what to expect from therapy."
   canonical="https://drgore.com/faqs"
   schema={schema}
 >
@@ -51,28 +83,147 @@ const schema = {
         Frequently Asked Questions
       </h1>
       <p class="text-muted-foreground text-lg">
-        Common questions about Dr. Gore's practice, fees, insurance, and therapeutic approach.
+        Straight answers (and a few jokes) about Dr. Gore's practice, fees, insurance, and how he works.
       </p>
     </div>
   </section>
 
-  <section class="py-10">
-    <div class="container max-w-3xl space-y-3">
-      {faqs.map((faq) => (
-        <details class="border rounded-lg bg-card overflow-hidden">
-          <summary class="flex items-center justify-between px-6 py-4 font-semibold text-foreground cursor-pointer hover:bg-muted/30 transition-colors select-none gap-4">
-            <span>{faq.q}</span>
-            <svg class="faq-chevron h-4 w-4 text-muted-foreground transition-transform flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="m6 9 6 6 6-6"/>
-            </svg>
-          </summary>
-          <div class="px-6 pb-5 text-muted-foreground leading-relaxed whitespace-pre-line">
-            {faq.a}
+  <section class="py-12">
+    <div class="container max-w-3xl">
+      <dl class="divide-y divide-border">
+        {faqs.map((faq) => (
+          <div class="py-6 first:pt-0">
+            <dt class="font-display text-xl font-semibold text-foreground">{faq.q}</dt>
+            {faq.kind === 'insurance' ? (
+              <dd class="mt-2 text-muted-foreground leading-relaxed">
+                Read this:{' '}
+                <button
+                  type="button"
+                  id="insurance-open"
+                  class="font-semibold text-primary underline underline-offset-2 hover:opacity-80 transition-opacity"
+                >
+                  How to get insurance reimbursement (out-of-network)
+                </button>{' '}
+                or text Alyssa, my Billing Manager, at{' '}
+                <a href="tel:+14044446228" class="font-semibold text-primary hover:opacity-80">(404)&nbsp;444-6228</a>
+                {' '}&mdash; she can answer questions about fees or insurance. Or, if you already know my fees and you're
+                ready to get started, just call me at{' '}
+                <a href="tel:+14042374300" class="font-semibold text-primary hover:opacity-80">(404)&nbsp;237-4300</a>.
+              </dd>
+            ) : (
+              <dd class="mt-2 text-muted-foreground leading-relaxed whitespace-pre-line">{faq.a}</dd>
+            )}
           </div>
-        </details>
-      ))}
+        ))}
+      </dl>
     </div>
   </section>
+
+  <!-- Out-of-network insurance reimbursement popup -->
+  <dialog
+    id="insurance-dialog"
+    class="m-auto w-[min(92vw,640px)] rounded-xl border border-border bg-card p-0 text-card-foreground shadow-2xl backdrop:bg-black/50"
+  >
+    <div class="flex items-start justify-between gap-4 border-b border-border px-6 py-4">
+      <h2 class="font-display text-2xl font-bold text-foreground">
+        How to Determine if Your Insurance Will Help You Pay for Therapy
+      </h2>
+      <button
+        type="button"
+        id="insurance-close"
+        aria-label="Close"
+        class="-mr-1 shrink-0 rounded-md p-1 text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
+      >
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6 6 18M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="max-h-[70vh] overflow-y-auto px-6 py-5 text-muted-foreground leading-relaxed space-y-5">
+      <p>If you wish to use your insurance, you will need to find out from them what is covered and what is not covered.</p>
+
+      <div>
+        <h3 class="font-display text-lg font-semibold text-foreground mb-1">Fees</h3>
+        <p>
+          I charge $415.00 for a fifty-minute individual therapy session. Ask your insurance company about procedure code
+          90837. I currently charge $500.00 for a sixty-minute couple, family, or extended individual therapy session.
+          You can also use the 90837 code to see what they will reimburse for that one-hour session.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-display text-lg font-semibold text-foreground mb-1">Questions to Ask Your Insurance Company</h3>
+        <p class="mb-2">
+          Some insurance plans pay out-of-network benefits. Some pay a substantial amount. Some pay very little. Some pay
+          nothing at all. The only way to know is to call your insurance company and tell them:
+          <em>"I would like to see an out-of-network Licensed Psychologist."</em> Then ask:
+        </p>
+        <ul class="list-disc space-y-1 pl-5">
+          <li>What is my deductible?</li>
+          <li>What is the maximum reimbursement amount per session?</li>
+          <li>Do I need precertification or prior authorization?</li>
+          <li>Is there a yearly maximum for sessions or benefits?</li>
+          <li>Is there a lifetime maximum?</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-display text-lg font-semibold text-foreground mb-1">The Most Important Question</h3>
+        <p class="mb-2">
+          Most people understand deductibles. The question that will really determine how much money you get back is:
+          <em>"What is the maximum dollar amount you consider customary and reasonable for a 90837 psychotherapy session?"</em>
+        </p>
+        <p class="mb-2">
+          Like most therapists, I charge more than most insurance companies consider "customary and reasonable." Insurance
+          companies generally won't tell me what that number is, but they will often tell you if you ask directly and persist.
+          Here's why that matters.
+        </p>
+        <p class="mb-2">
+          If an Evil Insurance Company considers $30.00 per session reasonable and reimburses 80%, they will only pay $24.00
+          per session. If a Good Insurance Company considers $350.00 per session reasonable and reimburses 80%, they will
+          reimburse $280.00 per session. That is a very big difference.
+        </p>
+        <p>Remember, you &mdash; not me &mdash; will be getting reimbursed by your insurance company.</p>
+      </div>
+
+      <div>
+        <h3 class="font-display text-lg font-semibold text-foreground mb-1">Diagnosis Requirement</h3>
+        <p>
+          Please know that you will need a diagnosis to receive reimbursement from your insurance company. For many people,
+          this has no negative impact whatsoever. However, there can occasionally be implications later (for example, if you
+          are applying for life insurance).
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-display text-lg font-semibold text-foreground mb-1">Questions?</h3>
+        <p>
+          If you have further questions, please text my Billing Manager Alyssa at{' '}
+          <a href="tel:+14044446228" class="font-semibold text-primary hover:opacity-80">(404)&nbsp;444-6228</a>. She will be
+          happy to answer all your questions; her primary purpose on this planet is to help my current and future clients
+          navigate this stuff.
+        </p>
+        <p class="mt-3">Thanks,<br />Dr. Gore</p>
+      </div>
+    </div>
+  </dialog>
+
+  <script is:inline>
+    (() => {
+      const dialog = document.getElementById('insurance-dialog');
+      const openBtn = document.getElementById('insurance-open');
+      const closeBtn = document.getElementById('insurance-close');
+      if (!dialog || !openBtn) return;
+      openBtn.addEventListener('click', () => dialog.showModal());
+      closeBtn && closeBtn.addEventListener('click', () => dialog.close());
+      // Close when clicking the backdrop: a backdrop click targets the <dialog>
+      // element itself, while clicks on the inner content target child elements.
+      dialog.addEventListener('click', (e) => {
+        if (e.target === dialog) dialog.close();
+      });
+    })();
+  </script>
 
   <VideoChannelCallout />
 </Layout>
