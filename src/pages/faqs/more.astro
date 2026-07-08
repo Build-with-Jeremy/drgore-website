@@ -1,0 +1,68 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import VideoChannelCallout from '../../components/VideoChannelCallout.astro';
+import { faqsPart2, buildFaqSchema } from '../../data/faqs';
+
+// Part 2 of the FAQ (parenting, relationships, and life questions). Its own page so
+// each visit is a Google Analytics pageview — that's how we track "more FAQs" reads.
+const schema = buildFaqSchema(faqsPart2);
+---
+<Layout
+  title="More FAQs — Parenting, Relationships & Life | Dr. David Karol Gore"
+  description="More of Dr. Gore's straight-talking FAQs on parenting, marriage, kids, screens, and getting unstuck, from an Atlanta family therapist with 40+ years of experience."
+  canonical="https://drgore.com/faqs/more"
+  schema={schema}
+>
+  <section class="py-16 bg-secondary">
+    <div class="container max-w-3xl">
+      <a href="/faqs" class="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:opacity-80 mb-4">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5M11 18l-6-6 6-6" />
+        </svg>
+        Back to the FAQs
+      </a>
+      <h1 class="font-display text-4xl font-bold text-foreground mb-4">
+        More FAQs — Parenting, Relationships &amp; Life
+      </h1>
+      <p class="text-muted-foreground text-lg">
+        More straight answers (and a few jokes) on marriage, kids, screens, and getting unstuck.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="container max-w-3xl">
+      <dl class="divide-y divide-border">
+        {faqsPart2.map((faq) => (
+          <div class="py-6 first:pt-0">
+            <dt class="font-display text-xl font-semibold text-foreground">{faq.q}</dt>
+            <dd class="mt-2 text-muted-foreground leading-relaxed whitespace-pre-line">
+              {faq.a}{faq.footnote ? <sup class="ml-0.5 text-primary font-semibold">1</sup> : null}
+            </dd>
+          </div>
+        ))}
+      </dl>
+
+      {faqsPart2.some((f) => f.footnote) && (
+        <div class="mt-8 border-t border-border pt-5 text-sm text-muted-foreground leading-relaxed space-y-3">
+          {faqsPart2
+            .filter((f) => f.footnote)
+            .map((f) => (
+              <p><sup class="mr-1 text-primary font-semibold">1</sup>{f.footnote}</p>
+            ))}
+        </div>
+      )}
+
+      <div class="mt-10 text-center">
+        <a href="/faqs" class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:opacity-80">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5M11 18l-6-6 6-6" />
+          </svg>
+          Back to the FAQs
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <VideoChannelCallout />
+</Layout>
