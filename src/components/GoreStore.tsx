@@ -26,9 +26,6 @@ export default function GoreStore() {
         ? [...goreProducts]
         : goreProducts.filter((p) => p.category === category);
 
-    const tagRank = (tag?: string) =>
-      tag === 'BESTSELLER' ? 0 : tag === 'NEW' ? 1 : tag === 'LIMITED' ? 2 : 3;
-
     switch (sort) {
       case 'price-asc':
         return filtered.sort((a, b) => a.priceValue - b.priceValue);
@@ -42,11 +39,9 @@ export default function GoreStore() {
         });
       case 'featured':
       default:
-        return filtered.sort((a, b) => {
-          if (a.featured && !b.featured) return -1;
-          if (!a.featured && b.featured) return 1;
-          return tagRank(a.tag) - tagRank(b.tag);
-        });
+        // Default view preserves Dr. Gore's curated order from his store
+        // document (the source array order); filtering keeps that order too.
+        return filtered;
     }
   }, [category, sort]);
 
