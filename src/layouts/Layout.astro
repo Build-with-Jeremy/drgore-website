@@ -11,7 +11,7 @@ interface Props {
   canonical?: string;
   ogImage?: string;
   keywords?: string;
-  schema?: object;
+  schema?: object | object[];
   noIndex?: boolean;
 }
 
@@ -79,6 +79,21 @@ const businessSchema = {
     }
   ]
 };
+
+// Site-wide WebSite entity — reinforces the canonical site name Google shows in
+// results and is one of the signals Google uses when deciding whether to render
+// sitelinks for a brand/name query.
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Dr. David Karol Gore",
+  "alternateName": "Dr. Gore — Atlanta Psychologist",
+  "url": "https://drgore.com"
+};
+
+// Normalize the per-page schema prop to an array so pages can pass a single
+// object (backward compatible) or several JSON-LD blocks (e.g. Article + BreadcrumbList).
+const pageSchemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -117,10 +132,13 @@ const businessSchema = {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-    <!-- Business Schema -->
+    <!-- Business + Website Schema (site-wide) -->
     <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
 
-    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+    {pageSchemas.map((s) => (
+      <script type="application/ld+json" set:html={JSON.stringify(s)} />
+    ))}
 
     <!-- Analytics (GA4 + Google Ads) -->
     <Analytics />

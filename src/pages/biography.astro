@@ -25,11 +25,50 @@ const milestones = [
   { year: 'March 2020', event: 'Designs and tries to rent out an eleven-office suite, which led to the beginning of covid.' },
   { year: 'March 2026', event: 'Malcolm Gladwell estimates that Dr. Gore has practiced over 55,142 hours of therapy.' },
 ];
+
+// Person entity for Dr. Gore — reinforces Google's understanding of him as the
+// individual behind the practice (supports the knowledge-panel-style result that
+// already appears for brand queries). Only verifiable facts from this bio page.
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Dr. David Karol Gore',
+  jobTitle: 'Psychologist & Family Therapist',
+  description: 'Atlanta psychologist and family therapist practicing since 1983 — kids, teens, families, and individuals dealing with depression, anxiety, and addiction.',
+  image: 'https://drgore.com/assets/dr-gore.png',
+  url: 'https://drgore.com/biography',
+  worksFor: {
+    '@type': 'LocalBusiness',
+    name: 'Dr. David Karol Gore — Atlanta Family Therapist',
+    url: 'https://drgore.com',
+  },
+  alumniOf: [
+    { '@type': 'CollegeOrUniversity', name: 'University of Pennsylvania' },
+    { '@type': 'CollegeOrUniversity', name: 'Georgia State University' },
+  ],
+  knowsAbout: ['Family Therapy', 'Child Psychology', 'Addiction Treatment', 'Anxiety', 'Depression'],
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Atlanta',
+    addressRegion: 'GA',
+    addressCountry: 'US',
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://drgore.com' },
+    { '@type': 'ListItem', position: 2, name: 'Biography', item: 'https://drgore.com/biography' },
+  ],
+};
 ---
 <Layout
   title="Biography — Dr. David Karol Gore, Atlanta Psychologist"
   description="Meet Dr. David Karol Gore — Atlanta psychologist and family therapist since 1983. Board-certified, University of Pennsylvania B.A., Georgia State University Ph.D."
   canonical="https://drgore.com/biography"
+  schema={[personSchema, breadcrumbSchema]}
 >
   <!-- Hero -->
   <section class="bg-secondary py-16">

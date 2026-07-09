@@ -10,11 +10,43 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
+const canonical = `https://drgore.com/blog/${post.slug}`;
+
+const blogSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.title,
+  description: post.summary,
+  image: `https://drgore.com${post.thumbnail}`,
+  author: {
+    '@type': 'Person',
+    name: 'Dr. David Karol Gore',
+    url: 'https://drgore.com/biography',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Dr. David Karol Gore',
+    logo: { '@type': 'ImageObject', url: 'https://drgore.com/assets/og-image.jpg' },
+  },
+  mainEntityOfPage: canonical,
+  ...(post.date ? { datePublished: post.date } : {}),
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://drgore.com' },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://drgore.com/blog' },
+    { '@type': 'ListItem', position: 3, name: post.title, item: canonical },
+  ],
+};
 ---
 <Layout
   title={`${post.title} — Dr. David Karol Gore`}
   description={post.summary}
-  canonical={`https://drgore.com/blog/${post.slug}`}
+  canonical={canonical}
+  schema={[blogSchema, breadcrumbSchema]}
 >
   <section class="py-16 bg-secondary">
     <div class="container max-w-3xl">

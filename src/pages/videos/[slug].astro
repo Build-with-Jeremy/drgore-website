@@ -30,13 +30,23 @@ const videoSchema = {
   embedUrl: `https://www.youtube.com/embed/${video.youtubeId}`,
   ...(video.transcript ? { transcript: video.transcript.map((b) => b.text).join('\n\n') } : {}),
 };
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://drgore.com' },
+    { '@type': 'ListItem', position: 2, name: 'Videos', item: 'https://drgore.com/videos' },
+    { '@type': 'ListItem', position: 3, name: video.title, item: `https://drgore.com/videos/${video.slug}` },
+  ],
+};
 ---
 <Layout
   title={`${video.title} — Dr. David Karol Gore Videos`}
   description={video.summary}
   canonical={`https://drgore.com/videos/${video.slug}`}
   ogImage={`https://i.ytimg.com/vi/${video.youtubeId}/maxresdefault.jpg`}
-  schema={videoSchema}
+  schema={[videoSchema, breadcrumbSchema]}
 >
   <section class="py-12 md:py-16 bg-secondary">
     <div class="container max-w-3xl">

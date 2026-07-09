@@ -10,11 +10,43 @@ export async function getStaticPaths() {
 }
 
 const { article } = Astro.props;
+const canonical = `https://drgore.com/articles/${article.slug}`;
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: article.title,
+  description: article.summary,
+  image: `https://drgore.com${article.thumbnail}`,
+  author: {
+    '@type': 'Person',
+    name: 'Dr. David Karol Gore',
+    url: 'https://drgore.com/biography',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Dr. David Karol Gore',
+    logo: { '@type': 'ImageObject', url: 'https://drgore.com/assets/og-image.jpg' },
+  },
+  mainEntityOfPage: canonical,
+  ...(article.date ? { datePublished: article.date } : {}),
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://drgore.com' },
+    { '@type': 'ListItem', position: 2, name: 'Articles', item: 'https://drgore.com/articles' },
+    { '@type': 'ListItem', position: 3, name: article.title, item: canonical },
+  ],
+};
 ---
 <Layout
   title={`${article.title} — Dr. David Karol Gore`}
   description={article.summary}
-  canonical={`https://drgore.com/articles/${article.slug}`}
+  canonical={canonical}
+  schema={[articleSchema, breadcrumbSchema]}
 >
   <section class="py-16 bg-secondary">
     <div class="container max-w-3xl">
