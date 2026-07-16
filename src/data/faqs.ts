@@ -36,7 +36,7 @@ export const faqsPart2: Faq[] = [
   { q: "What does “falling in love” and “being in love” have in common?", a: "Nothing." },
   { q: "Huh?", a: "These are two totally different processes. Falling in love is effortless. Staying in love takes effort. That’s why you don’t marry someone on the third date. Or get matching tattoos on your first vacation." },
   { q: "What is the best gift I can give my child?", a: "A good marriage." },
-  { q: "What is the sound of one hand clapping?", a: "…" },
+  { q: "What is the sound of one hand clapping?", a: "" },
   { q: "I am successful. Why am I still unhappy?", a: "Because success solves different problems than most people think it does. Money can buy comfort. Achievement can buy status. Neither guarantees a close marriage, a meaningful life, or peace of mind. I spend a lot of time helping successful people build the parts of life their careers couldn’t build for them. That’s some of my favorite work." },
   { q: "My child is turning sixteen soon… should I get Chase a new car?", a: "No. Give Chase something to look forward to. Please. And make him or her work a little bit and financially contribute to the purchase of this first, used, safe car. Kids that help pay for cars take more pride in the car’s appearance, take better care of the car, and drive more safely." },
   { q: "They really drive more safely?", a: "No, I just made that part up. They do take better care of the car when they make a significant financial contribution. Please, don’t just hand your kid a new car." },

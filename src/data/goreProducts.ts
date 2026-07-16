@@ -49,7 +49,7 @@ export const goreProducts: GoreProduct[] = [
   },
   {
     slug: 'ex-boyfriend-lotion',
-    title: '“Don\'t Call That No Good Ex-Boyfriend” Lotion',
+    title: '“Don\'t Call That No Good Ex-Boyfriend” Eau de Parfum',
     price: '$19.95',
     priceValue: 19.95,
     image: '/assets/store/ex-boyfriend-lotion.jpg',
