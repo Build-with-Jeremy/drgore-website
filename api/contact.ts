@@ -18,9 +18,32 @@ interface ContactFormData {
   _honeypot?: string;
 }
 
+/**
+ * Origins allowed to POST this endpoint.
+ *
+ * This is deliberately NOT `*`. The handler emits mail from a verified sending
+ * domain on an unauthenticated request, so an endpoint open to every origin is a
+ * spam relay that would burn our Resend sender reputation — which is shared
+ * across every BWJ client site. Vercel preview deploys get an allowance so the
+ * form stays testable.
+ */
+const ALLOWED_ORIGINS = [
+  'https://www.drgore.com',
+  'https://drgore.com',
+];
+
+function isAllowedOrigin(origin: string | undefined): boolean {
+  if (!origin) return false;
+  if (ALLOWED_ORIGINS.includes(origin)) return true;
+  return /^https:\/\/[a-z0-9-]+\.vercel\.app$/.test(origin);
+}
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  // CORS headers
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  const origin = req.headers.origin;
+  if (isAllowedOrigin(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin!);
+  }
+  res.setHeader('Vary', 'Origin');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
@@ -30,6 +53,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  // Same-origin form posts send no Origin header, so only reject an Origin that
+  // is present and not on the list — that is the cross-site case.
+  if (origin && !isAllowedOrigin(origin)) {
+    return res.status(403).json({ error: 'Forbidden' });
   }
 
   try {
