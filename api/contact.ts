@@ -91,7 +91,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const emailResponse = await resend.emails.send({
       from: 'drgore.com <noreply@mail.buildwithjeremy.com>',
       to: ['dave@drgore.com'],
-      cc: ['jeremy@buildwithjeremy.com'],
+      // Bcc, not cc: replyTo is the prospect's address, so a cc'd monitoring
+      // address lands in Dave's Reply All and leaks to the lead.
+      bcc: ['jeremy@buildwithjeremy.com'],
       replyTo: email,
       subject: `New Message from ${escapeHtml(name)} — drgore.com`,
       html: `
