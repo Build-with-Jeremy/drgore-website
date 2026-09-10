@@ -1,6 +1,9 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { blogPosts } from '../../data/blogPosts';
+import { assertThumbnails } from '../../utils/assertThumbnails';
+
+assertThumbnails(blogPosts);
 ---
 <Layout
   title="Blog — Dr. David Karol Gore, Atlanta Family Therapist"

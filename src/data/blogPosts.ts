@@ -124,7 +124,7 @@ export const blogPosts: BlogPost[] = [
     slug: "stages-of-being-in-a-car",
     title: "The Stages of Being In a Car",
     date: "September 16, 2024",
-    summary: "A life-cycle essay tracing parenthood through car seats, learner's permits, and finally — a limo and a hearse.",
+    summary: "A life-cycle essay tracing parenthood through car seats.",
     thumbnail: "/assets/blog/stages-of-being-in-a-car.jpg",
     content: [
     "- The hospital says no kid can be sent home unless you have an approved car seat.  You make sure the car seat is installed properly.  You make sure the tension in the restraining seat belts wouldn’t give a quarter inch in an 9.7 earthquake.  The kid sits in a rear-facing seat in the back of the car.  You break your back putting him in, taking him out.  You get an aerobic workout removing or installing the seat.  Often you rig up a set of mirrors so you can see that the kid is sleeping.  Often you buy a set of neck supports so the little darling’s head can’t swivel, like a NASCAR driver.  You drive slow, you listen to Baby Einstein crap on the stereo.",
@@ -297,17 +297,6 @@ export const blogPosts: BlogPost[] = [
   ],
   },
   {
-    slug: "grandmas-birthday-card",
-    title: "My Nine Year Old Boy Celebrates His Grandma's Birthday",
-    date: "December 14, 2014",
-    summary: "My son makes great cards. He puts a lot of thought and love into his masterpieces. Here is what he wrote this morning.",
-    thumbnail: "/assets/blog/grandmas-birthday-card.jpg",
-    content: [
-    "My son makes great cards, he puts a lot of thought and love into his masterpieces.  Here is what he wrote this morning:  Cover… 86    Open the card:  He attached $2.50 for his present to my mother.  He wrote:  Happy Birthday.   86.   As you turn 86 you’ll love It.  86:  That’s you.   86 years man I can’t count that far!",
-    "Happy New Year to All of You!",
-  ],
-  },
-  {
     slug: "women-medicated-twice-rate",
     title: "Why Are Women Medicated at Nearly Twice the Rate of Men?",
     date: "2015",
@@ -317,14 +306,6 @@ export const blogPosts: BlogPost[] = [
     "It is no secret I believe that too many people are on too many medicines.  And that good therapy will decrease or eliminate the need for pills.  As a person who is male, I feel awkward discussing the gender bias against people who are female. Wait… Is it still OK to make this “division”?  Well, read this and listen to a female psychiatrist express her sorrow and fear.",
     "If you like the article, maybe, buy Dr. Holland’s book with a great title:  “Moody Bitches: The Truth About the Drugs You’re Taking, the Sleep You’re Missing, the Sex You’re Not Having, and What’s Really Making You Crazy.”",
     "NOTE:  Yes, I know some of you are doing much better because of medication.  I know you would suffer without it, I know it is OK for some folks to be on medicine for years and years.  I am not saying “NOBODY should be on meds!”  I am saying:  Some people would be better of working on their “issues” and seeing if their med use can go down.",
-    "Click Here to see full article.",
-    "Leave a Reply Cancel reply",
-    "Your email address will not be published. Required fields are marked *",
-    "Comment",
-    "Name *",
-    "Email *",
-    "Website",
-    "Save my name, email, and website in this browser for the next time I comment.",
   ],
   },
   {

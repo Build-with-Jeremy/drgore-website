@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { blogPosts } from '../../data/blogPosts';
+import { linkify } from '../../utils/linkify';
 
 export async function getStaticPaths() {
   return blogPosts.map((post) => ({
@@ -79,7 +80,18 @@ const breadcrumbSchema = {
       <div class="space-y-5">
         {post.content.map((paragraph: string) => (
           <p class="text-muted-foreground leading-relaxed whitespace-pre-line">
-            {paragraph}
+            {linkify(paragraph).map((segment) =>
+              segment.type === 'link' ? (
+                <a
+                  href={segment.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-primary underline underline-offset-2 hover:no-underline break-words"
+                >{segment.value}</a>
+              ) : (
+                segment.value
+              )
+            )}
           </p>
         ))}
       </div>
