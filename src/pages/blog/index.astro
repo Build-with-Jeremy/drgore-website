@@ -2,8 +2,10 @@
 import Layout from '../../layouts/Layout.astro';
 import { blogPosts } from '../../data/blogPosts';
 import { assertThumbnails } from '../../utils/assertThumbnails';
+import { byNewestFirst } from '../../utils/postDate';
 
 assertThumbnails(blogPosts);
+const posts = byNewestFirst(blogPosts);
 ---
 <Layout
   title="Blog — Dr. David Karol Gore, Atlanta Family Therapist"
@@ -23,7 +25,7 @@ assertThumbnails(blogPosts);
 
   <section class="py-16">
     <div class="container max-w-5xl space-y-10">
-      {blogPosts.map((post) => (
+      {posts.map((post) => (
         <a
           href={`/blog/${post.slug}`}
           class="group block overflow-hidden rounded-xl border bg-card hover:shadow-lg transition-all hover:border-primary/30"
