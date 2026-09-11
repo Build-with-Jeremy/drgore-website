@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 475 355" width="475" height="355" role="img" aria-label="Line chart. Vertical axis labelled GIVING-A-F@#K, horizontal axis labelled Age. The line rises steeply in youth, peaks early, then declines steadily to zero and stays flat.">
+  <rect x="0" y="0" width="475" height="355" fill="#ffffff"/>
+  <rect x="1" y="1" width="473" height="353" fill="none" stroke="#000000" stroke-width="2"/>
+  <path d="M 42.5 13 L 42.5 322 L 433 322" fill="none" stroke="#000000" stroke-width="2"/>
+  <polyline points="44,318 98,65 392,316 432,316" fill="none" stroke="#c00000" stroke-width="3" stroke-linejoin="miter"/>
+  <text transform="translate(24 190) rotate(-90)" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#000000">GIVING-A-F@#K</text>
+  <text x="240" y="344" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#000000">Age</text>
+</svg>

@@ -6,7 +6,10 @@ import { fileURLToPath } from 'node:url';
 // looked fine to us and looked empty to the client, for months. The browser
 // fallback stays (a visitor should never see a broken-image icon) — this makes the
 // same failure loud at build time instead, which is where we can still fix it.
-export function assertThumbnails(posts: { slug: string; thumbnail: string }[]): void {
+export function assertThumbnails(
+  posts: { slug: string; thumbnail: string }[],
+  kind = 'blog post',
+): void {
   const publicDir = fileURLToPath(new URL('../../public', import.meta.url));
   const missing = posts
     .filter((post) => !existsSync(`${publicDir}${post.thumbnail}`))
@@ -14,9 +17,24 @@ export function assertThumbnails(posts: { slug: string; thumbnail: string }[]): 
 
   if (missing.length > 0) {
     throw new Error(
-      `${missing.length} blog post(s) reference a thumbnail that does not exist in public/:\n`
+      `${missing.length} ${kind}(s) reference an image that does not exist in public/:\n`
         + `${missing.join('\n')}\n`
         + 'Create the image, or remove the reference. Do not ship a phantom path.',
     );
   }
+}
+
+// Articles carry a thumbnail and can also place an image in the body. A body
+// image is the content itself, not decoration, so a missing one has to fail the
+// build too rather than render as an empty figure.
+export function assertArticleImages(
+  articles: { slug: string; thumbnail: string; content: { type: string; href?: string }[] }[],
+): void {
+  assertThumbnails(articles, 'article');
+  const inline = articles.flatMap((article) =>
+    article.content
+      .filter((section) => section.type === 'image' && section.href)
+      .map((section) => ({ slug: `${article.slug} (body image)`, thumbnail: section.href as string })),
+  );
+  assertThumbnails(inline, 'article body image');
 }

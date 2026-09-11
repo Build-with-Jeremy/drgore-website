@@ -118,6 +118,18 @@ const breadcrumbSchema = {
             </p>
           );
         }
+        if (section.type === 'image') {
+          return (
+            <figure class="my-2">
+              <img
+                src={section.href}
+                alt={section.text}
+                class="w-full rounded-lg border border-border bg-white"
+                loading="lazy"
+              />
+            </figure>
+          );
+        }
         if (section.type === 'link') {
           return (
             <a href={section.href} class="inline-flex items-center gap-2 text-primary hover:underline font-medium">
