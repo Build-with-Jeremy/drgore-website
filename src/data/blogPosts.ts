@@ -306,6 +306,7 @@ export const blogPosts: BlogPost[] = [
     "It is no secret I believe that too many people are on too many medicines.  And that good therapy will decrease or eliminate the need for pills.  As a person who is male, I feel awkward discussing the gender bias against people who are female. Wait… Is it still OK to make this “division”?  Well, read this and listen to a female psychiatrist express her sorrow and fear.",
     "If you like the article, maybe, buy Dr. Holland’s book with a great title:  “Moody Bitches: The Truth About the Drugs You’re Taking, the Sleep You’re Missing, the Sex You’re Not Having, and What’s Really Making You Crazy.”",
     "NOTE:  Yes, I know some of you are doing much better because of medication.  I know you would suffer without it, I know it is OK for some folks to be on medicine for years and years.  I am not saying “NOBODY should be on meds!”  I am saying:  Some people would be better of working on their “issues” and seeing if their med use can go down.",
+    "[Click Here to see full article.](https://www.nytimes.com/2015/03/01/opinion/sunday/medicating-womens-feelings.html)",
   ],
   },
   {
