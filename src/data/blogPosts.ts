@@ -208,7 +208,7 @@ export const blogPosts: BlogPost[] = [
     summary: "A page about procrastination. Coming soon.",
     thumbnail: "/assets/blog/procrastination.jpg",
     content: [
-    "This page will published by September 2009",
+    "This page will be published by September 2009",
   ],
   },
   {
