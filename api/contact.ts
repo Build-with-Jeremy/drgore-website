@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { Resend } from 'resend';
+import { classify, holdSubmission, isHeld, type Submission } from './_contact-filter.js';
 
 // Lazy initialization — env vars injected at runtime by Vercel
 let _resend: Resend | null = null;
@@ -88,6 +89,23 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const sanitizedPhone = phone ? phone.replace(/[^\d\s\-\+\(\)\.]/g, '').slice(0, 20) : '';
 
     const resend = getResend();
+
+    // Contact filter [WI:bd168620]: hold confident pitches and spam, deliver
+    // everything else. Fails open; see api/_contact-filter.ts.
+    const submission: Submission = {
+      site: 'drgore.com',
+      name,
+      email,
+      phone: sanitizedPhone,
+      topic: '',
+      message,
+      received_at: new Date().toISOString(),
+    };
+    const verdict = await classify(submission);
+    if (isHeld(verdict) && (await holdSubmission(submission, verdict, resend))) {
+      return res.status(200).json({ ok: true });
+    }
+
     const emailResponse = await resend.emails.send({
       from: 'drgore.com <noreply@mail.buildwithjeremy.com>',
       to: ['dave@drgore.com'],

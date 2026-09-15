@@ -1,4 +1,10 @@
 {
+  "crons": [
+    {
+      "path": "/api/filter-roundup",
+      "schedule": "0 13 * * 1"
+    }
+  ],
   "redirects": [
     {
       "source": "/about/",
