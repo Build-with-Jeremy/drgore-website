@@ -5,6 +5,8 @@ export interface Article {
   summary: string;
   thumbnail: string;
   content: ArticleSection[];
+  seoTitle?: string;
+  metaDescription?: string;
 }
 
 export interface ArticleSection {
@@ -393,6 +395,8 @@ export const articles: Article[] = [
     date: "",
     summary: "What does it mean to hit rock bottom? Understanding low-bottoms, high-bottoms, denial, and the path to recovery.",
     thumbnail: "/assets/articles/hitting-bottom-thumb.jpg",
+    seoTitle: "Hitting Rock Bottom in Addiction | Dr. Gore, Atlanta",
+    metaDescription: "Low-bottom or high-bottom, the denial works the same way. What hitting rock bottom means, and why some people get into recovery faster than others.",
     content: [
       { type: "paragraph", text: "What does it mean to hit rock bottom? When it comes to alcohol and drug addiction, \"hitting rock bottom\" means that the user comes to a place where he decides he does not wish to continue living the way he is living, and hopefully, is now ready to make changes." },
       { type: "paragraph", text: "Low-Bottoms/High-Bottoms" },

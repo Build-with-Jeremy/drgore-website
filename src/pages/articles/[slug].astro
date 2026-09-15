@@ -11,6 +11,8 @@ export async function getStaticPaths() {
 
 const { article } = Astro.props;
 const canonical = `https://drgore.com/articles/${article.slug}`;
+const pageTitle = article.seoTitle ?? `${article.title} — Dr. David Karol Gore`;
+const pageDescription = article.metaDescription ?? article.summary;
 
 const articleSchema = {
   '@context': 'https://schema.org',
@@ -43,8 +45,8 @@ const breadcrumbSchema = {
 };
 ---
 <Layout
-  title={`${article.title} — Dr. David Karol Gore`}
-  description={article.summary}
+  title={pageTitle}
+  description={pageDescription}
   canonical={canonical}
   schema={[articleSchema, breadcrumbSchema]}
 >
