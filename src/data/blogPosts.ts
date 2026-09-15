@@ -6,8 +6,15 @@ export interface BlogPost {
   summary: string;
   thumbnail: string;
   content: string[];
+  video?: { provider: "facebook" | "youtube"; url: string; title: string };
 }
 
+// Seven posts arrived from the WordPress recovery with only a year. Their dates are
+// ASSIGNED, not recovered: Dave approved invented dates on 2026-09-14. Do not cite
+// them as publication history. Work item 3cbd9831.
+//   this-was-written-in-2012, why-lousy-relationships, women-medicated-twice-rate,
+//   girl-who-runs, just-showing-up-is-enough, big-news-social-media,
+//   i-am-green-but-not-this-kind-of-green
 export const blogPosts: BlogPost[] = [
   {
     slug: "a-message-for-dads",
@@ -35,7 +42,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "i-am-green-but-not-this-kind-of-green",
     title: "I Am Green, But Not This Kind of Green",
-    date: "2025",
+    date: "April 22, 2025",
     summary: "I'm firmly against recycling — emotional recycling, that is. When we keep re-using what hasn't worked, we pass fear, anger, and silence to the next generation.",
     thumbnail: "/assets/blog/green-recycling.jpg",
     content: [
@@ -70,7 +77,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "just-showing-up-is-enough",
     title: "Just Showing Up Is Enough",
-    date: "2025",
+    date: "April 20, 2015",
     summary: "When suffering shows up, presence beats advice almost every time. You don't need a psychology degree — you need courage.",
     thumbnail: "/assets/blog/showing-up.jpg",
     content: [
@@ -82,7 +89,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "this-was-written-in-2012",
     title: "This Was Written In 2012, And Things Are Somehow Not Improving",
-    date: "2012",
+    date: "June 11, 2012",
     summary: "Every kid pulled out a screen. Heads down. Thumbs moving. They looked content — but they weren't talking. The less they interact now, the harder it will be later.",
     thumbnail: "/assets/blog/screens-disconnect.jpg",
     content: [
@@ -322,7 +329,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "women-medicated-twice-rate",
     title: "Why Are Women Medicated at Nearly Twice the Rate of Men?",
-    date: "2015",
+    date: "March 4, 2015",
     summary: "It is no secret I believe that too many people are on too many medicines. A female psychiatrist expresses her own sorrow and fear about the gender gap in psychiatric prescribing.",
     thumbnail: "/assets/blog/women-medicated-twice-rate.jpg",
     content: [
@@ -335,7 +342,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "why-lousy-relationships",
     title: "Why We Have Lousy Relationships",
-    date: "2014",
+    date: "February 12, 2014",
     summary: "Why do we end up with our partners? Who we end up with says a lot about who we are.",
     thumbnail: "/assets/blog/why-lousy-relationships.jpg",
     content: [
@@ -357,17 +364,22 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "girl-who-runs",
     title: "This Girl Just Runs and Runs",
-    date: "2015",
+    date: "March 12, 2015",
     summary: "I spent many hours at track meets. Running long distances is about perseverance. This story made me cry — as a Dad, as a former athlete, and as a fan of what humans can do.",
     thumbnail: "/assets/blog/girl-who-runs.jpg",
+    video: {
+      provider: "facebook",
+      url: "https://www.facebook.com/watch/?v=234901827879757",
+      title: "Catching Kayla (ESPN E:60)",
+    },
     content: [
-    "I spent many hours at track meets, I was an average discus thrower and shot putter on a very good team.  Running long distances is about perseverance,  This story makes me cry, as a Dad, as a (former) athlete, and as a fan of what humans can do….  https://www.youtube.com/watch?v=kpA-FsKLA6A",
+    "I spent many hours at track meets, I was an average discus thrower and shot putter on a very good team.  Running long distances is about perseverance,  This story makes me cry, as a Dad, as a (former) athlete, and as a fan of what humans can do….",
   ],
   },
   {
     slug: "big-news-social-media",
     title: "Big News for the Modern Age",
-    date: "2023",
+    date: "April 3, 2023",
     summary: "Dr. Gore has entered the social media world. His video about NOT taking three-year-olds to Disneyworld hit 480K views. Follow along at @The.Cynical.Psychologist.",
     thumbnail: "/assets/blog/big-news-social-media.jpg",
     content: [

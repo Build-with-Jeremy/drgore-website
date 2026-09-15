@@ -96,6 +96,24 @@ const breadcrumbSchema = {
         ))}
       </div>
 
+      {post.video && (
+        <div class="mt-10">
+          <div class="relative w-full overflow-hidden rounded-xl bg-muted aspect-video">
+            <iframe
+              src={post.video.provider === "facebook"
+                ? `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(post.video.url)}&show_text=false`
+                : post.video.url.replace("watch?v=", "embed/")}
+              title={post.video.title}
+              class="absolute inset-0 w-full h-full"
+              style="border:none;overflow:hidden"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      )}
+
       <div class="mt-12 pt-8 border-t border-border">
         <p class="text-foreground font-medium mb-2">
           Ready to break the cycle?
