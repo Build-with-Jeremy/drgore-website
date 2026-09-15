@@ -53,7 +53,7 @@ Labels:
 - client: someone seeking therapy or counseling for themselves, a partner, a child, a parent, or a family. Includes questions about cost, insurance, availability, location, fit, or scheduling; referrals from another person; short or vague requests for an appointment; people in crisis or distress.
 - unsure: anything that is not clearly a client and not clearly selling something. Includes job applicants, clinicians or doctors referring a patient, students, journalists, patients or former clients with admin questions, and anything you cannot place with confidence.
 - solicitation: someone selling or pitching a product or service TO the practice: marketing, SEO, web design, content writing, advertising, lead generation, software or EHR, telehealth platforms, billing, bookkeeping, staffing, virtual assistants, recruiting agencies, facilities (HVAC, janitorial, parking lots), Wikipedia pages, link or resource placement requests, partnership or collaboration pitches, "outcomes" or measurement tools.
-- spam: gibberish, bot text, keyboard mashing, or content unrelated to the practice.
+- spam: gibberish, bot text, keyboard mashing, or machine-generated junk (links, adult content, crypto, product ads) with no real person writing to the practice. A message a person wrote to the practice that is not selling something is never spam, even if it is not a client: that is unsure. Website test submissions are unsure.
 
 Decision rules:
 - A wrongly held client is far worse than a pitch getting through. If you are not confident it is solicitation or spam, choose client or unsure.
